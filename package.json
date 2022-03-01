@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "A little e-commerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niicoojk/grupo_01_DHaunters.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niicoojk/grupo_01_DHaunters/issues"
+  },
+  "homepage": "https://github.com/Niicoojk/grupo_01_DHaunters#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
