@@ -1,0 +1,45 @@
+body{
+    color: whitesmoke;
+    background-color: #132E35;
+    overflow-x: hidden;
+}
+header nav{
+    display:block;
+    width: 100%;
+}
+header nav ul li a{
+    color:white;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    color:white;
+    text-decoration: none;
+}
+header nav ul li a:visited{
+    color:white;
+    text-decoration: none;
+}
+main.resume{
+    display: block;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    margin-top: 20vh;
+}
+ul.index{
+    display: flex;
+    margin-left: 2em;
+}
+ul.index li{
+    display: inline-flex;
+    padding-left: 1em;
+}
+ul.accounts{
+    color: #FFFFFF;
+    display: flex;
+    margin-right: 2em;
+}
+ul.accounts li{
+    display: inline-flex;
+    margin-right: 1em;
+}
