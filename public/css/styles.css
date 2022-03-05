@@ -7,6 +7,7 @@ body{
     color: whitesmoke;
     background-color: #132E35;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 a{
     color:white;
@@ -87,6 +88,10 @@ main.marketplace{
     display: flex;
     flex-direction: row;
     flex: 1 1.5 auto;
+    font-family: 'Smooch Sans', sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+    font-stretch: normal;
 }
 .productOnGrid{
     border: transparent;
