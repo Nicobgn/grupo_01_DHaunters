@@ -1,24 +1,72 @@
+/* General */
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body{
     color: whitesmoke;
     background-color: #132E35;
     overflow-x: hidden;
 }
-header nav{
-    display:block;
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    text-decoration: none;
+}
+a:visited{
+    color:white;
+    text-decoration: none;
+}
+a button{
+    background-color: transparent;
+    border: none;
+}
+
+/* Header */
+header{
+    padding-top: 0.75%;
+    display: block;
     width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #104C53;
+    height: 8.5%;
 }
-header nav ul li a{
-    color:white;
-    text-decoration: none;
+header nav{
+    display:inline-flex;
+    width: 100%;
+    height: fit-content;
 }
-header nav ul li a:hover{
-    color:white;
-    text-decoration: none;
+ul.index{
+    display: flex;
+    margin-left: 1em;
+    position: absolute;
+    left: 1px;
 }
-header nav ul li a:visited{
-    color:white;
-    text-decoration: none;
+ul.index li{
+    display: inline-flex;
+    padding-right: 1em;
 }
+ul.accounts{
+    color: #FFFFFF;
+    display: flex;
+    margin-right: 1em;
+    position: absolute;
+    right: 1px;
+}
+ul.accounts li{
+    display: inline-flex;
+    margin-left: 1em;
+}
+img.accNav{
+    width: 2.5em;
+    height: 2.5em;
+}
+
+/* Main */
 main.resume{
     display: block;
     text-align: center;
@@ -26,20 +74,24 @@ main.resume{
     width: 100%;
     margin-top: 20vh;
 }
-ul.index{
-    display: flex;
-    margin-left: 2em;
+
+/* Aside */
+
+
+/* Footer */
+footer{
+    background-color: #104C53;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    padding-inline: 0.75%;
 }
-ul.index li{
-    display: inline-flex;
-    padding-left: 1em;
+.abtUs{
+    display: inline-block;
 }
-ul.accounts{
-    color: #FFFFFF;
-    display: flex;
-    margin-right: 2em;
-}
-ul.accounts li{
-    display: inline-flex;
-    margin-right: 1em;
+.footer{
+    display: inline;
 }
