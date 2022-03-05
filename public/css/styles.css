@@ -64,6 +64,7 @@ ul.accounts li{
 img.accNav{
     width: 2.5em;
     height: 2.5em;
+    color: #02C1CA;
 }
 
 /* Main */
@@ -74,6 +75,30 @@ main.resume{
     width: 100%;
     margin-top: 20vh;
 }
+main.marketplace{
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 97%;
+    margin-top: 10vh;
+    height: 75%;
+}
+.productGrid{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1.5 auto;
+}
+.productOnGrid{
+    border: transparent;
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 25%;
+    width: 25%;
+    min-width: 18%;
+    margin: 0.25%;
+    margin-left: 0px;
+}
+
 
 /* Aside */
 
@@ -88,10 +113,13 @@ footer{
     padding-top: 1%;
     padding-bottom: 2%;
     padding-inline: 0.75%;
+    margin-bottom: 0px;
 }
 .abtUs{
     display: inline-block;
+    max-width: 25%;
 }
 .footer{
-    display: inline;
+    display: inline-block;
+    max-width: 25%;
 }
