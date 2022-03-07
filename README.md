@@ -8,7 +8,7 @@ Somos una empresa dedicada a la creación de e-commerce. En este caso creamos un
 
 Barragan, Nicolas:
 
-Giraldo, Juan Diego:
+Giraldo Gómez, Juan Diego: Actualmente estoy estudiando ingeniería eléctrica este es mi primer acercamiento con la programación para darle un énfasis diferente a mi carrera y porque no terminarme dedicando a esto, tengo 22 años y vivo en Medellín Colombia.
 
 Micha, Anthony: Tengo 26 años Soy de CABA, BsAs Argentina (porteño hecho y derecho). Ansio aprender programacion Web para poder encontrar una profesion que me apasione.
 Hobbies: Producir musica electronica, GYM y testeo de cafes.
