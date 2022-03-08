@@ -1,8 +1,8 @@
-// const path=require('path')
 // const express=require('express')
-// const app=express()
 // const router=express.Router()
-
+// const path=require('path')
+// const bRoot = path.resolve(__dirname,('/..'));
+// const app=express()
 
 // app.get("/404", (req, res) => {
 //   res.send("Error, página no encontrada.");

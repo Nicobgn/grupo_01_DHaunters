@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 // routes
-// app.use(router)
+// app.use('/', router)
 app.get("/404", (req, res) => {
   res.send("Error, página no encontrada.");
 });
@@ -51,5 +51,5 @@ app.use(express.static('public'));
 
 // start server
 app.listen(app.get('port'),()=>{
-    console.log(`Server is running on port${app.get('port')}`)
+    console.log(`Server is running on port ${app.get('port')}`)
 });
