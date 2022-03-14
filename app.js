@@ -46,6 +46,10 @@ app.get('/sign-in', (req, res) => {
   res.sendFile(bRoot + '/views/sign-in');
 }); //Register
 
+app.get('/productDetail', (req, res) => {
+  res.sendFile(bRoot + '/views/productDetail.html')
+})//ProductDetail
+
 // statics
 app.use(express.static('public'));
 

@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.product-detail {
+    height: 50%;
+};
+
+.product-description {
+    height: 50%;
+};
+
+@media (min-width: 481px) {};
+@media (min-width: 769px) {};
+@media (min-width: 1280px) {};
