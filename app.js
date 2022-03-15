@@ -34,7 +34,7 @@ app.get('/carrito', (req, res) => {
   res.sendFile(bRoot + '/views/cart.html');
 }); //Cart
 app.get("/iniciarSesion", (req, res) => {
-  res.sendFile(bRoot + '/views/log-in');
+  res.sendFile(bRoot + '/views/log-in.html');
 }); //Log in
 app.get('/mercado',(req,res)=>{
     res.sendFile(bRoot+'/views/marketplace.html')

@@ -117,6 +117,12 @@ main {
 footer {
     display: flex;
     background-color: var(--footer);
+    padding: 10px;
+    justify-content: space-around;
+}
+
+footer div p {
+    text-align: center;
 }
 
 .fa-github{
