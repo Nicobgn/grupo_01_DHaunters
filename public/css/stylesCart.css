@@ -1,0 +1,88 @@
+/* Colors
+    Header-Footer: #104C53;
+    Nav Icons: #02C1CA;
+*/
+/* General */
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    color: whitesmoke;
+    background-color: #132E35;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    text-decoration: none;
+}
+a:visited{
+    color:white;
+    text-decoration: none;
+}
+.accounts a button{
+    background-color: transparent;
+    border: none;
+}
+
+/* Header */
+header{
+    width: 100vw;
+    background-color: #104C53;
+    display: block;
+    padding: 0.75% 0.5% 1.25%;
+}
+
+
+/* Main */
+
+main>.cartDisplay{
+    width: 90vw;
+    display: block;
+    margin: 15px 5% 15px;
+    background-color: #000;
+}
+section>h3{
+    display: inline-block;
+}
+
+/* Footer */
+footer{
+    background-color: #104C53;
+    width: 100vw;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+}
+footer div{
+    display: block;
+}
+/* Queries */
+@media (min-width:481px) {
+    /* Header */
+    header{
+        min-height: 8.5vh;
+    }
+    header nav{
+        display: inline-block;
+    }
+    ul li{
+        display: inline-block;
+    }
+
+    /* Main */
+    main section{
+        width: 85vw;
+    }
+        
+    /* Footer */
+}

@@ -33,7 +33,7 @@ app.get('/',(req,res)=>{
 app.get('/carrito', (req, res) => {
   res.sendFile(bRoot + '/views/cart.html');
 }); //Cart
-app.get("/log-in", (req, res) => {
+app.get("/iniciarSesion", (req, res) => {
   res.sendFile(bRoot + '/views/log-in');
 }); //Log in
 app.get('/mercado',(req,res)=>{
@@ -42,13 +42,16 @@ app.get('/mercado',(req,res)=>{
 app.get('/coleccion',(req,res)=>{
     res.sendFile(bRoot+'/views/myCollection.html')
 }); //Collection
-app.get('/sign-in', (req, res) => {
+app.get('/registro', (req, res) => {
   res.sendFile(bRoot + '/views/sign-in');
 }); //Register
-
 app.get('/productDetail', (req, res) => {
   res.sendFile(bRoot + '/views/productDetail.html')
-})//ProductDetail
+}); //ProductDetail
+app.get('/misFavoritos', (req, res) => {
+  res.sendFile(bRoot + '/views/myFavourites.html')
+}); //Favourites
+
 
 // statics
 app.use(express.static('public'));

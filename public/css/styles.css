@@ -34,32 +34,35 @@ header{
     position: absolute;
     top: 0px;
     background-color: #104C53;
-    height: 8.5%;
+    height: fit-content;
+    min-height: 8.5%;
 }
 header nav{
-    display:inline-flex;
+    display:inline;
     width: 100%;
     height: fit-content;
 }
 ul.index{
-    display: flex;
+    display: inline;
     margin-left: 1em;
     position: absolute;
     left: 1px;
+    bottom: 1em;
 }
 ul.index li{
-    display: inline-flex;
+    display: inline-block;
     padding-right: 1em;
 }
 ul.accounts{
     color: #FFFFFF;
-    display: flex;
+    display: inline;
     margin-right: 1em;
     position: absolute;
     right: 1px;
+    top: 1em;
 }
 ul.accounts li{
-    display: inline-flex;
+    display: inline-block;
     margin-left: 1em;
 }
 img.accNav{
@@ -111,20 +114,18 @@ main.marketplace{
 /* Footer */
 footer{
     background-color: #104C53;
-    width: 100%;
+    width: 100vw;
     display: block;
     position: absolute;
     bottom: 1px;
+    height: auto;
     padding-top: 1%;
     padding-bottom: 2%;
     padding-inline: 0.75%;
     margin-bottom: 0px;
 }
-.abtUs{
-    display: inline-block;
-    max-width: 25%;
-}
-.footer{
-    display: inline-block;
+footer div{
+    display: inline;
+    justify-content: space-between;
     max-width: 25%;
 }
