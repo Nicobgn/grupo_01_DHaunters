@@ -5,28 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHaunters</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400&family=Smooch+Sans:wght@300;500;700;900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- link de Awesome (iconos) -->
+    <script src="https://kit.fontawesome.com/438a418e01.js" crossorigin="anonymous"></script>
+
     <!-- link de los estilos de la pagina de detalles del producto -->
     <link rel="stylesheet" href="/css/styleProDeta.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="index">
-                <li><a href="/coleccion">Mi Colección</a></li>
-                <li><a href="/mercado">Mercado</a></li>
-            </ul>
-            <ul class="accounts">
-                <li><a href=""><button><img src="/img/accLogo.svg" alt="Mi Cuenta" class="accNav"></button></a></li>
-                <li><a href="/carrito"><button><img src="/img/cart.svg" alt="Mi Carrito" class="accNav"></button></a></li>
-            </ul>
-        </nav>
+        <div class="burger"> <!-- va la hamburgesa para pantallas chicas -->
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="logo"> <!-- aca iria la imagen del logo -->
+            <p>logo</p>
+        </div>
+        <div class="nav"> <!-- aca va el navegador -->
+            <nav>
+                <ul>
+                    <li>Marketplace</li>
+                    <li>My Colection</li>
+                    <li>My Favorite</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="user-buy"> <!-- usuarios y carrito -->
+            <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
     </header>
+
     <main class="resume">
         <!-- se crea un articule para detallar lo que se compra: foto, nombre, precio y botones -->
         <article class="product-detail">
@@ -35,26 +50,49 @@
             </div>
             <div class="product-price">
                 <h3>Mewtwo</h3>
-                <p>N de ID del producto</p>
-                <p>precio</p>
-                <div class="button">
-                    <button type="submit">comprar</button>
-                    <button type="submit">agregar a favoritos</button>
+                <p class="product-id">N de ID del producto</p>
+                <p class="precio">precio</p>
+                <div>
+                    <button type="submit" class="button">comprar</button>
+                    <button type="submit" class="button">agregar a favoritos</button>
                 </div>
             </div>
         </article>
+        <!-- se crea un articule para la descripcion del producto -->
         <article class="product-description">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero labore dolorem aperiam veritatis possimus quisquam ab enim error maxime assumenda, officia placeat natus minima temporibus. Dolores, accusamus. Ratione, excepturi inventore!</p>
         </article>
     </main>
+
     <footer>
-        <div class="abtUs">
-            <h4>Sobre nosotros</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem praesentium aperiam voluptate nam hic quidem ratione earum impedit soluta est labore ex quia, adipisci corporis sint. Aliquid, facilis sequi!</p>
+        <!-- aca pondriamos nuestros linkeling o GitHub como enlaces -->
+        <div>
+            <h4>Anthony Micha</h4>
+            <p>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </p>
         </div>
-        <div class="footer">
-            <h4>Contacta con nosotros</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rem dicta fuga consequuntur incidunt ipsum aperiam odit. Corrupti, minus quos adipisci maxime distinctio, eaque quae voluptates ullam, molestias ea ad.</p>
+        <div>
+            <h4>Diego Giraldo</h4>
+            <p>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </p>
+        </div>
+        <div>
+            <h4>Nicolas Barragan</h4>
+            <p>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </p>
+        </div>
+        <div>
+            <h4>Matias Torres</h4>
+            <p>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </p>
         </div>
     </footer>
 </body>

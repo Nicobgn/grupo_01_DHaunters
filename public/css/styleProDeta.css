@@ -1,15 +1,131 @@
+:root{
+    --footer: #104c53;
+    --body: #132e35;
+    --card: #196460;
+    --bottonFondo: #8cd01a;
+    --botton: #d2e669;
+    --carritoYusuario: #02c1ca;
+    --corazon: #19c7cf;
+    --eliminar: #f91313;
+    --agregarCarrito: #0f8b8d;
+    --letras: #fff;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+/* caracteristicas generales del body */
+body{
+    background-color: var(--body);
+    color: var(--letras);
+    font-size: 1.5rem;
+}
+
+/* estilos del header */
+header {
+    background-color: var(--footer);
+    display: flex;
+    padding: 10px;
+}
+
+
+.burger button {
+    background-color: var(--body);
+    border-radius: 15%;
+    color: var(--letras);
+    width: 2rem;
+    height: 2rem;
+    font-size: 90%;
+    justify-content: center;
+    align-items: initial;
+    flex-grow: 0.25;
+}
+
+.nav {
+    display: none;
+}
+
+.logo {
+    padding: 0 10% 0 10%;
+    flex-grow: 1;
+}
+
+.user-buy {
+    flex-grow: 0.25;
+    display: flex;
+}
+
+.user-buy i {
+    flex-grow: 1;
+    text-align: center;
+    color: var(--carritoYusuario);
+}
+
+/* caracteristicas del menu */
+
+main {
+    display: block;
+    margin: 5%;
+    text-align: center;
+    padding: auto;
+}
+
 .product-detail {
-    height: 50%;
-};
+    display: flex;
+    flex-direction: column;
+}
+
+.product-price{
+    padding: 15px 0px;
+    border-bottom: 1px solid #fff;
+}
+
+.product-price h3 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.product-id {
+    padding: 0 0 3rem 0;
+}
+
+.precio {
+    padding: 0 0 1rem 0;
+}
+
+.button {
+    padding: 15px;
+    margin: 1rem;
+    border-radius: 10% ;
+    font-size: 1rem;
+    background-color: var(--bottonFondo);
+    color: var(--letras);
+    border: 5px solid var(--botton);
+    transition: 450ms;
+}
+
+.button:hover{
+    background-color: gray;
+}
 
 .product-description {
-    height: 50%;
-};
+    padding: 1rem;
+}
+
+footer {
+    display: flex;
+    background-color: var(--footer);
+}
+
+.fa-github{
+    color: black;
+}
+
+.fa-linkedin {
+    color: blue;
+}
 
 @media (min-width: 481px) {};
 @media (min-width: 769px) {};
