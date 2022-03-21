@@ -226,10 +226,6 @@ footer i{
     .navBar ul{
         flex-direction: row;
     }
-<<<<<<< HEAD
-=======
-    /* Footer */
->>>>>>> b88f207d4ab60c843b710f78ab186d9b66640084
 }
 @media (min-width: 769px) {
     /* Header */
@@ -245,10 +241,4 @@ footer i{
 
 }
 @media (min-width: 1280px) {
-<<<<<<< HEAD
-=======
-    /* Header */
-    
-    /* Footer */
->>>>>>> b88f207d4ab60c843b710f78ab186d9b66640084
 }
