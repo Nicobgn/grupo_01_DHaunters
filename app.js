@@ -43,7 +43,7 @@ app.get('/coleccion',(req,res)=>{
     res.sendFile(bRoot+'/views/myCollection.html')
 }); //Collection
 app.get('/registro', (req, res) => {
-  res.sendFile(bRoot + '/views/sign-in');
+  res.sendFile(bRoot + '/views/sign-up.html');
 }); //Register
 app.get('/productDetail', (req, res) => {
   res.sendFile(bRoot + '/views/productDetail.html')

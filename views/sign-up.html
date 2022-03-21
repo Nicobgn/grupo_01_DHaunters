@@ -1,113 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <title>Registrarse</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/stylesLogSign.css">
-</head>
-<body>
-    <header>
-        <section class="topHeader f">
-            <figure>
-                <a href="/">
-                    <img src="" alt="DHaunters Logo">
-                </a>
-            </figure>
-            <ul class="row">
-                <li>
-                    <button id="abrirPopUp">
-                        <i class="fa-solid fa-user"></i>
-                    </button>
-                </li>
-                <li>
-                    <a href="/carrito">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section class="toggleNavBar active" id="openNavBar">
-            <button>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </section>
-        <section class="botHeader" id="botHeader">
-            <nav class="navBar">
-                <ul class="f">
-                    <li>
-                        <a href="/">Inicio</a>
-                    </li>
-                    <a href="/mercado">Mercado</a>
-                    </li>
-                    <li>
-                        <a href="/coleccion">Mi Colección</a>
-                    </li>
-                    <li>
-                        <a href="/favoritos">Mis Favoritos</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-        <section class="toggleNavBar" id="closeNavBar">
-            <button>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </section>
-        <section class="overlay col" id="overlayLogOrSign">
-            <article class="popUp" id="popUpLogOrSign">
-                <a href="" class="btnCerrarPopUp" id="closePopUpLogOrSign">
-                    <i class="fa-solid fa-xmark"></i>
-                </a>
-                <div class="optionContainer f">
-                    <button class="logIn">
-                        <a href="/iniciarSesion">Iniciar Sesión</a>
-                    </button>
-                    <button class="register">
-                        <a href="/registro">Registrarse</a>
-                    </button>
-                </div>
-            </article>
-        </section>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Iniciar Sesión</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/stylesForms.css" />
+  </head>
 
-    <footer>
-        <section class="topFooter">
-            <article class="col">
-                <i class="fa-solid fa-users"></i>
-                <h5>Sobre Nosotros</h5>
-                <p class="footerText">Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros
-                    integrantes son: Barragán, Giraldo, Micha y Torres</p>
-            </article>
-            <article class="col">
-                <i class="fa-solid fa-truck-plane"></i>
-                <h5>Envios Internacionales</h5>
-                <p>Nos encargamos de conseguir el mejor envío costo-beneficio.</p>
-            </article>
-            <article class="col">
-                <i class="fa-solid fa-envelope"></i>
-                <h5>Contacta con nosotros</h5>
-                <ul>
-                    <li>
-                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters">GitHub</a>
-                    </li>
-                </ul>
-            </article>
-            <article class="col">
-                <h5></h5>
-                <p></p>
-            </article>
-        </section>
-        <section class="botFooter f">
-            <h6>Copyright
-                <i class="fa-solid fa-copyright"></i>
-                2022 DigitalHaunters S.R.L.
-            </h6>
-        </section>
-    </footer>
-    <script src="/js/popUps.js"></script>
-    <script src="/js/toggle.js"></script>
-</body>
+  <body>
+    <header>
+      <div class="logo"> <a href="/"><h2>LOGO</h2></a></div>
+      <p class="login"><a href="./iniciarsesion">Iniciar sesión</a></p>
+    </header>
+    <main>
+      <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
+      <form action="#" method="get">
+        <h3>Información del usuario</h3>
+
+        <div class="datos-u">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombres"
+            id="nombre"
+            class="drawer"
+            minlength="4"
+            required
+          />
+          <input
+            type="text"
+            name="apellidos"
+            placeholder="Apellidos"
+            id="apellidos"
+            class="drawer"
+            minlength="4"
+            required
+          />
+
+          <input
+            type="text"
+            name="usuario-n"
+            placeholder="Nombre de usuario"
+            id="usuiario-n"
+            class="drawer"
+            minlength="4"
+            required
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="E-mail"
+            id="email"
+            class="drawer"
+            required
+          />
+          <input
+            type="text"
+            name="direccion"
+            placeholder="Dirección"
+            id="direccion"
+            class="drawer"
+            required
+          />
+          <input
+            type="password"
+            name="contraseña"
+            placeholder="Contraseña"
+            id="contraseña"
+            class="drawer"
+            minlength="8"
+            required
+          />
+          <input
+            type="password"
+            name="confirmacion-c"
+            placeholder="Confirmar contraseña"
+            id="confirmacion-c"
+            class="drawer"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <div class="checkbox">
+          <label
+            ><input
+              type="checkbox"
+              name="perfil-u"
+              value="comprador"
+              id="comprador"
+              required
+            />
+            Acepto términos y condiciones</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="perfil-u
+              value="vendedor"
+              id="vendedor"
+            />
+            Quiero recibir promociones en mi correo</label
+          >
+        </div>
+        <button type="submit" name="enviar" value="submit" class="registrarse">
+          <a href="/"></a>Registrarse
+        </button>
+      </form>
+    </main>
+  </body>
 </html>
