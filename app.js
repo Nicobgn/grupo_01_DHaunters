@@ -48,7 +48,7 @@ app.get('/registro', (req, res) => {
 app.get('/productDetail', (req, res) => {
   res.sendFile(bRoot + '/views/productDetail.html')
 }); //ProductDetail
-app.get('/misFavoritos', (req, res) => {
+app.get('/favoritos', (req, res) => {
   res.sendFile(bRoot + '/views/myFavourites.html')
 }); //Favourites
 

@@ -222,11 +222,19 @@ footer i{
 /*                  Queries               */
 /* =======================================*/
 @media (min-width: 481px) {
+    /* Header */
     .navBar ul{
         flex-direction: row;
     }
+<<<<<<< HEAD
+=======
+    /* Footer */
+>>>>>>> b88f207d4ab60c843b710f78ab186d9b66640084
 }
 @media (min-width: 769px) {
+    /* Header */
+
+    /* Footer */
     .topFooter{
         flex-direction: row;
         flex-wrap: wrap;
@@ -237,4 +245,10 @@ footer i{
 
 }
 @media (min-width: 1280px) {
+<<<<<<< HEAD
+=======
+    /* Header */
+    
+    /* Footer */
+>>>>>>> b88f207d4ab60c843b710f78ab186d9b66640084
 }

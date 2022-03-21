@@ -6,8 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stylesLogSign.css">
 </head>
 <body>
+    <header>
+        <section class="topHeader f">
+            <figure>
+                <a href="/">
+                    <img src="" alt="DHaunters Logo">
+                </a>
+            </figure>
+            <ul class="row">
+                <li>
+                    <button id="abrirPopUp">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="/carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="toggleNavBar active" id="openNavBar">
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </section>
+        <section class="botHeader" id="botHeader">
+            <nav class="navBar">
+                <ul class="f">
+                    <li>
+                        <a href="/">Inicio</a>
+                    </li>
+                    <a href="/mercado">Mercado</a>
+                    </li>
+                    <li>
+                        <a href="/coleccion">Mi Colección</a>
+                    </li>
+                    <li>
+                        <a href="/favoritos">Mis Favoritos</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="toggleNavBar" id="closeNavBar">
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </section>
+        <section class="overlay col" id="overlayLogOrSign">
+            <article class="popUp" id="popUpLogOrSign">
+                <a href="" class="btnCerrarPopUp" id="closePopUpLogOrSign">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <div class="optionContainer f">
+                    <button class="logIn">
+                        <a href="/iniciarSesion">Iniciar Sesión</a>
+                    </button>
+                    <button class="register">
+                        <a href="/registro">Registrarse</a>
+                    </button>
+                </div>
+            </article>
+        </section>
+    </header>
     
+    <footer>
+        <section class="topFooter">
+            <article class="col">
+                <i class="fa-solid fa-users"></i>
+                <h5>Sobre Nosotros</h5>
+                <p class="footerText">Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros
+                    integrantes son: Barragán, Giraldo, Micha y Torres</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-truck-plane"></i>
+                <h5>Envios Internacionales</h5>
+                <p>Nos encargamos de conseguir el mejor envío costo-beneficio.</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-envelope"></i>
+                <h5>Contacta con nosotros</h5>
+                <ul>
+                    <li>
+                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters">GitHub</a>
+                    </li>
+                </ul>
+            </article>
+            <article class="col">
+                <h5></h5>
+                <p></p>
+            </article>
+        </section>
+        <section class="botFooter f">
+            <h6>Copyright
+                <i class="fa-solid fa-copyright"></i>
+                2022 DigitalHaunters S.R.L.
+            </h6>
+        </section>
+    </footer>
+    <script src="/js/popUps.js"></script>
+    <script src="/js/toggle.js"></script>
 </body>
 </html>
