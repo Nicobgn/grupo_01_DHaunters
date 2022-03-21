@@ -1,43 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHaunters</title>
+    <meta name="viewport" content="width=device-width">
+    <title>Bienvenido a DHaunters</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400&family=Smooch+Sans:wght@300;500;700;900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylesIndex.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <ul class="index">
-                <li><a href="/coleccion">Mi Colección</a></li>
-                <li><a href="/mercado">Mercado</a></li>
+        <section class="topHeader f">
+            <figure>
+                <a href="/">
+                    <img src="" alt="DHaunters Logo">
+                </a>
+            </figure>
+            <ul class="row">
+                <li>
+                    <button id="abrirPopUp">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="/carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
             </ul>
-            <ul class="accounts">
-                <li><a href=""><button><img src="/img/accLogo.svg" alt="Mi Cuenta" class="accNav"></button></a></li>
-                <li><a href="/carrito"><button><img src="/img/cart.svg" alt="Mi Carrito" class="accNav"></button></a></li>
-            </ul>
-        </nav>
+        </section>
+        <section class="toggleNavBar active" id="openNavBar">
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </section>
+        <section class="botHeader" id="botHeader">
+            <nav class="navBar">
+                <ul class="f">
+                    <li>
+                        <a href="/">Inicio</a>
+                    </li>
+                    <a href="/marketplace">Mercado</a>
+                    </li>
+                    <li>
+                        <a href="/myCollection">Mi Colección</a>
+                    </li>
+                    <li>
+                        <a href="/myFavourites">Mis Favoritos</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="toggleNavBar" id="closeNavBar">
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </section>
+        <section class="overlay col" id="overlayLogOrSign">
+            <article class="popUp" id="popUpLogOrSign">
+                <a href="" class="btnCerrarPopUp" id="closePopUpLogOrSign">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <div class="optionContainer f">
+                    <button class="logIn">
+                        <a href="/log-in">Iniciar Sesión</a>
+                    </button>
+                    <button class="register">
+                        <a href="/sign-up">Registrarse</a>
+                    </button>
+                </div>
+            </article>
+        </section>
     </header>
-    <main class="resume">
-        <h1>Bienvenido a DHaunters</h1>
-        <p>Tu sitio preferido para obtener coleccionables digitales exclusivos (al menos según la serial).</p>
+    <main>
+
     </main>
     <footer>
-        <div class="abtUs">
-            <h4>Sobre nosotros</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem praesentium aperiam voluptate nam hic quidem ratione earum impedit soluta est labore ex quia, adipisci corporis sint. Aliquid, facilis sequi!</p>
-        </div>
-        <div class="footer">
-            <h4>Contacta con nosotros</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rem dicta fuga consequuntur incidunt ipsum aperiam odit. Corrupti, minus quos adipisci maxime distinctio, eaque quae voluptates ullam, molestias ea ad.</p>
-        </div>
+        <section class="topFooter">
+            <article class="col">
+                <i class="fa-solid fa-users"></i>
+                <h5>Sobre Nosotros</h5>
+                <p class="footerText">Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros
+                    integrantes son: Barragán, Giraldo, Micha y Torres</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-truck-plane"></i>
+                <h5>Envios Internacionales</h5>
+                <p>Nos encargamos de conseguir el mejor envío costo-beneficio.</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-envelope"></i>
+                <h5>Contacta con nosotros</h5>
+                <ul>
+                    <li>
+                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters">GitHub</a>
+                    </li>
+                </ul>
+            </article>
+            <article class="col">
+                <h5></h5>
+                <p></p>
+            </article>
+        </section>
+        <section class="botFooter f">
+            <h6>Copyright
+                <i class="fa-solid fa-copyright"></i>
+                2022 DigitalHaunters S.R.L.
+            </h6>
+        </section>
     </footer>
+    <script src="/js/popUps.js"></script>
+    <script src="/js/toggle.js"></script>
 </body>
+
 </html>
