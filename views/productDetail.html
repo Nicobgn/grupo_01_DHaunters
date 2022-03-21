@@ -3,46 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHaunters</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400&family=Smooch+Sans:wght@300;500;700;900&display=swap"
-    rel="stylesheet">
-
-    <!-- link de Awesome (iconos) -->
-    <script src="https://kit.fontawesome.com/438a418e01.js" crossorigin="anonymous"></script>
-
-    <!-- link normalice -->
-    <link rel="stylesheet" href="/css/normalize.css">
-
-    <!-- link de los estilos de la pagina de detalles del producto -->
-    <link rel="stylesheet" href="/css/styleProDeta.css">
+    <meta name="viewport" content="width=device-width">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stylesIndex.css">
 </head>
 <body>
     <header>
-        <div class="burger"> <!-- va la hamburgesa para pantallas chicas -->
+        <section class="topHeader f">
+            <figure>
+                <a href="/">
+                    <img src="" alt="DHaunters Logo">
+                </a>
+            </figure>
+            <ul class="row">
+                <li>
+                    <button id="abrirPopUp">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="/carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="toggleNavBar active" id="openNavBar">
             <button>
                 <i class="fa-solid fa-bars"></i>
             </button>
-        </div>
-        <div class="logo"> <!-- aca iria la imagen del logo -->
-            <p>logo</p>
-        </div>
-        <div class="nav"> <!-- aca va el navegador -->
-            <nav>
-                <ul>
-                    <li>Marketplace</li>
-                    <li>My Colection</li>
-                    <li>My Favorite</li>
+        </section>
+        <section class="botHeader" id="botHeader">
+            <nav class="navBar">
+                <ul class="f">
+                    <li>
+                        <a href="/">Inicio</a>
+                    </li>
+                    <a href="/mercado">Mercado</a>
+                    </li>
+                    <li>
+                        <a href="/coleccion">Mi Colección</a>
+                    </li>
+                    <li>
+                        <a href="/favoritos">Mis Favoritos</a>
+                    </li>
                 </ul>
             </nav>
-        </div>
-        <div class="user-buy"> <!-- usuarios y carrito -->
-            <a href="/iniciarSesion"><i class="fa-solid fa-circle-user"></i></a>
-            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+        </section>
+        <section class="toggleNavBar" id="closeNavBar">
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </section>
+        <section class="overlay col" id="overlayLogOrSign">
+            <article class="popUp" id="popUpLogOrSign">
+                <a href="" class="btnCerrarPopUp" id="closePopUpLogOrSign">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <div class="optionContainer f">
+                    <button class="logIn">
+                        <a href="/iniciarSesion">Iniciar Sesión</a>
+                    </button>
+                    <button class="register">
+                        <a href="/registro">Registrarse</a>
+                    </button>
+                </div>
+            </article>
+        </section>
     </header>
 
     <main class="resume">
@@ -68,35 +96,38 @@
     </main>
 
     <footer>
-        <!-- aca pondriamos nuestros linkeling o GitHub como enlaces -->
-        <div>
-            <h4>Anthony Micha</h4>
-            <p>
-                <a href=""><i class="fa-brands fa-github"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </p>
-        </div>
-        <div>
-            <h4>Diego Giraldo</h4>
-            <p>
-                <a href=""><i class="fa-brands fa-github"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </p>
-        </div>
-        <div>
-            <h4>Nicolas Barragan</h4>
-            <p>
-                <a href=""><i class="fa-brands fa-github"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </p>
-        </div>
-        <div>
-            <h4>Matias Torres</h4>
-            <p>
-                <a href=""><i class="fa-brands fa-github"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </p>
-        </div>
+        <section class="topFooter">
+            <article class="col">
+                <i class="fa-solid fa-users"></i>
+                <h5>Sobre Nosotros</h5>
+                <p class="footerText">Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros
+                    integrantes son: Barragán, Giraldo, Micha y Torres</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-truck-plane"></i>
+                <h5>Envios Internacionales</h5>
+                <p>Nos encargamos de conseguir el mejor envío costo-beneficio.</p>
+            </article>
+            <article class="col">
+                <i class="fa-solid fa-envelope"></i>
+                <h5>Contacta con nosotros</h5>
+                <ul>
+                    <li>
+                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters">GitHub</a>
+                    </li>
+                </ul>
+            </article>
+            <article class="col">
+                <h5></h5>
+                <p></p>
+            </article>
+        </section>
+        <section class="botFooter f">
+            <h6>Copyright
+                <i class="fa-solid fa-copyright"></i>
+                2022 DigitalHaunters S.R.L.
+            </h6>
+        </section>
     </footer>
     <script src="/js/popUps.js"></script>
     <script src="/js/toggle.js"></script>
