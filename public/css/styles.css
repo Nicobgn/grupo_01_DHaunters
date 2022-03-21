@@ -222,11 +222,16 @@ footer i{
 /*                  Queries               */
 /* =======================================*/
 @media (min-width: 481px) {
+    /* Header */
     .navBar ul{
         flex-direction: row;
     }
-};
+    /* Footer */
+}
 @media (min-width: 769px) {
+    /* Header */
+
+    /* Footer */
     .topFooter{
         flex-direction: row;
         flex-wrap: wrap;
@@ -235,6 +240,9 @@ footer i{
         width: 30%;
     }
 
-};
+}
 @media (min-width: 1280px) {
-};
+    /* Header */
+    
+    /* Footer */
+}
