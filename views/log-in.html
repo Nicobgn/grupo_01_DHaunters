@@ -1,61 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
     <title>Iniciar Sesión</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/stylesForms.css" />
   </head>
+
   <body>
     <header>
-      <div class="logo"> <a href="/"><h2>LOGO</h2></a></div>
-      <p class="signup"><a href="./registro"> Sign up</a></p>
+      <div class="contenedor">
+        <div class="logo"> <a href="/">
+            <h2>LOGO</h2>
+          </a></div>
+        <p class="signup"><a href="./registro"> Sign up</a></p>
+      </div>
     </header>
     <main>
       <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
+      <form action="" method="get"></form>
       <div>
-        <input
-          type="text"
-          name="dato-ingreso"
-          placeholder="Nombre de usuario o email"
-          id="dato-ingreso"
-          class="drawer"
-          required
-        />
-        <input
-          type="password"
-          name="contraseña" 
-          placeholder="Contraseña"
-          id="contraseña"
-          class="drawer"
-          required
-        />
+
+        <input type="text" name="dato-ingreso" placeholder="Nombre de usuario o email" id="dato-ingreso" class="drawer"
+          required />
+        <input type="password" name="contraseña" placeholder="Contraseña" id="contraseña" class="drawer" required />
       </div>
       <button type="submit" name="enviar" value="submit" class="registrarse">
         <a href="/"></a>Iniciar sesión
       </button>
       <div class="checkbox">
         <label>
-        <input
-          type="checkbox"
-          name="perfil-u"
-          value="comprador"
-          id="comprador"
-          required
-        />
-        Recuerdame
+          <input type="checkbox" name="perfil-u" value="comprador" id="comprador" required />
+          Recuerdame
         </label>
-        <p> <a href="#">¿Has olvidado tu contraseña?</a></p> 
+        <p> <a href="#">¿Has olvidado tu contraseña?</a></p>
+
       </div>
+      </form>
     </main>
   </body>
+
 </html>

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
     <title>Iniciar Sesión</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/stylesForms.css" />
   </head>
 
   <body>
     <header>
-      <div class="logo"> <a href="/"><h2>LOGO</h2></a></div>
-      <p class="login"><a href="./iniciarsesion">Iniciar sesión</a></p>
+      <div class="contenedor">
+        <div class="logo"> <a href="/">
+            <h2>LOGO</h2>
+          </a></div>
+        <p class="login"><a href="./iniciarsesion">Iniciar sesión</a></p>
+      </div>
     </header>
     <main>
       <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
@@ -27,90 +28,26 @@
         <h3>Información del usuario</h3>
 
         <div class="datos-u">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombres"
-            id="nombre"
-            class="drawer"
-            minlength="4"
-            required
-          />
-          <input
-            type="text"
-            name="apellidos"
-            placeholder="Apellidos"
-            id="apellidos"
-            class="drawer"
-            minlength="4"
-            required
-          />
+          <input type="text" name="nombre" placeholder="Nombres" id="nombre" class="drawer" minlength="4" required />
+          <input type="text" name="apellidos" placeholder="Apellidos" id="apellidos" class="drawer" minlength="4"
+            required />
 
-          <input
-            type="text"
-            name="usuario-n"
-            placeholder="Nombre de usuario"
-            id="usuiario-n"
-            class="drawer"
-            minlength="4"
-            required
-          />
-          <input
-            type="text"
-            name="email"
-            placeholder="E-mail"
-            id="email"
-            class="drawer"
-            required
-          />
-          <input
-            type="text"
-            name="direccion"
-            placeholder="Dirección"
-            id="direccion"
-            class="drawer"
-            required
-          />
-          <input
-            type="password"
-            name="contraseña"
-            placeholder="Contraseña"
-            id="contraseña"
-            class="drawer"
-            minlength="8"
-            required
-          />
-          <input
-            type="password"
-            name="confirmacion-c"
-            placeholder="Confirmar contraseña"
-            id="confirmacion-c"
-            class="drawer"
-            minlength="8"
-            required
-          />
+          <input type="text" name="usuario-n" placeholder="Nombre de usuario" id="usuiario-n" class="drawer"
+            minlength="4" required />
+          <input type="text" name="email" placeholder="E-mail" id="email" class="drawer" required />
+          <input type="text" name="direccion" placeholder="Dirección" id="direccion" class="drawer" required />
+          <input type="password" name="contraseña" placeholder="Contraseña" id="contraseña" class="drawer" minlength="8"
+            required />
+          <input type="password" name="confirmacion-c" placeholder="Confirmar contraseña" id="confirmacion-c"
+            class="drawer" minlength="8" required />
         </div>
 
         <div class="checkbox">
-          <label
-            ><input
-              type="checkbox"
-              name="perfil-u"
-              value="comprador"
-              id="comprador"
-              required
-            />
-            Acepto términos y condiciones</label
-          >
-          <label
-            ><input
-              type="checkbox"
-              name="perfil-u
-              value="vendedor"
-              id="vendedor"
-            />
-            Quiero recibir promociones en mi correo</label
-          >
+          <label><input type="checkbox" name="perfil-u" value="comprador" id="comprador" required />
+            Acepto términos y condiciones</label>
+          <label><input type="checkbox" name="perfil-u
+              value=" vendedor" id="vendedor" />
+            Quiero recibir promociones en mi correo</label>
         </div>
         <button type="submit" name="enviar" value="submit" class="registrarse">
           <a href="/"></a>Registrarse
@@ -118,4 +55,5 @@
       </form>
     </main>
   </body>
+
 </html>

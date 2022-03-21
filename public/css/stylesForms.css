@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&family=Smooch+Sans:wght@300;500;700;900&display=swap');
 /* Log-in */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,6 +19,12 @@ body {
   font-size: 12px;
   text-align: center;
   color: whitesmoke;
+  font-family: 'Montserrat';
+}
+
+.contenedor{
+  display: flex;
+  justify-content: space-between;
 }
 
 .icono {
@@ -38,6 +46,7 @@ body {
   text-align: right;
   margin: 0 5px;
   padding-top: 8vh;
+  font-size: 10px ;
 }
 
 .recuperar-c {
@@ -62,6 +71,7 @@ body {
   text-align: right;
   margin: 0 5px;
   padding-top: 8vh;
+  font-size: 10px;
 }
 
 p a {
@@ -112,7 +122,7 @@ p a {
 }
 
 .drawer:hover{
-  box-shadow: 40px 16px teal;
+  box-shadow: 20px 7px teal;
 }
 
 @media (min-width: 1261px) {
@@ -131,7 +141,9 @@ p a {
   }
 
   .login {
-    font-size: 18px;
+    font-size: 16px;
+    padding-top: 7.5vh;
+    padding-right: 1vw;
   }
 
   .registrarse {
@@ -145,7 +157,13 @@ p a {
   }
 
   .signup {
-    font-size: 18px;
+    font-size: 16px;
+    padding-top: 7.5vh;
+    padding-right: 1vw;
+  }
+
+  .drawer:hover{
+    box-shadow: 20px 16px teal;
   }
 
 }
