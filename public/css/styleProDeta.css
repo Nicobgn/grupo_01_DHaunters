@@ -52,7 +52,7 @@ main {
         justify-content: space-around;
     }
     .product-price {
-        border: 1px solid red;
+        
         display: flex;
         flex-direction: column;
         justify-content: space-around;
