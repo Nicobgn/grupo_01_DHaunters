@@ -10,8 +10,8 @@ Barragan, Nicolas Ignacio: Tengo 20 años, de momento solo estoy estudiando en e
 
 Giraldo Gómez, Juan Diego: Actualmente estoy estudiando ingeniería eléctrica este es mi primer acercamiento con la programación para darle un énfasis diferente a mi carrera y porque no terminarme dedicando a esto, tengo 22 años y vivo en Medellín Colombia.
 
-Micha, Anthony: Tengo 26 años Soy de CABA, BsAs Argentina (porteño hecho y derecho). Ansio aprender programacion Web para poder encontrar una profesion que me apasione.
-Hobbies: Producir musica electronica, GYM y testeo de cafes.
+Micha, Anthony: Tengo 26 años y soy de CABA, Argentina. Ansio aprender programacion Web para poder encontrar una profesion que me apasione.
+Hobbies: Musica electronica, GYM y testeo de cafes.
 
 Torres Contreras, Matias: tengo 28 años soy de Buenos Aires Argentina, estoy buscando nuevos horizontes en mi vida laboral y personal, dando mis primeros pasos en la programación.
 
@@ -48,3 +48,7 @@ Para crear este sitio nos inspiramos en diferentes páginas de diferentes rubros
 #### Colores
 
 -[colores utilizados](https://coolors.co/132e35-104c53-196460-8cd01a-d2e669-0f8b8d-02c1ca-19c7cf-f91313)
+
+### Tablero de trabajo 
+
+-[Este es nuestro tablero de trabajo](https://www.notion.so/3c72afee2e6b4f9e9d7e13606f074d2a?v=63424800f9b3457da48f3ca1b687be87)

@@ -1,19 +1,88 @@
-/*     Imports    */
-
-
-/*     General    */
-
-
-/*      Main      */
-
-
-/*     Queries    */
-@media (min-width:481px) {
-    
+form{
+    display: flex;
+    flex-direction: column;
 }
-@media (min-width:769px) {
-    
+button{
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    margin: 30px auto;
+    position: relative;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    font-size: 18px;
+    background: rgba(50, 150, 150, 1);
 }
-@media (min-width:1280px) {
-    
+button:hover,
+button:focus{
+    border: 1px solid #908090;
+    border-radius: 5px;
+}
+.product{
+    min-height: 180px;
+    padding: 10px;
+    display: flex;
+    background: #0F8B8D;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px #000;
+    font-family: 'Smooch Sans', sans-serif;
+}
+.product a{
+    opacity: 1;
+}
+.productDetails{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.info,
+.amounts{
+    font-family: 'Smooch Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 35px;
+}
+.info a,
+.amount i{
+    font-size: 20px;
+}
+.info h6,
+.amounts h6{
+    font-size: 14px;
+}
+.amounts a:nth-last-of-type(1){
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+    text-align: right;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+select{
+    height: 76px;
+}
+button[type=submit]{
+    visibility: visible;
+}
+button[type=submit].toggle{
+    visibility: hidden;
+}
+
+@media (min-width: 481px) {
+    .product{
+        padding: 20px;
+    }
+}
+@media (min-width: 769px) {
+    main{
+        max-width: 800px;
+    }
+    button{
+        width: 140px;
+        max-height: 80px;
+        font-size: 18px;
+    }
 }

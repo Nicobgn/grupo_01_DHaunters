@@ -5,72 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styless.css">
     <link rel="stylesheet" href="/css/stylesMarketplace.css">
 </head>
 <body>
     <header>
-        <section class="topHeader f">
-            <figure>
-                <a href="/">
-                    <img src="" alt="DHaunters Logo">
-                </a>
-            </figure>
-            <ul class="row">
-                <li>
-                    <button id="abrirPopUp">
-                        <i class="fa-solid fa-user"></i>
-                    </button>
-                </li>
-                <li>
-                    <a href="/carrito">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section class="toggleNavBar active" id="openNavBar">
-            <button>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </section>
-        <section class="botHeader" id="botHeader">
-            <nav class="navBar">
-                <ul class="f">
-                    <li>
-                        <a href="/">Inicio</a>
-                    </li>
-                    <a href="/mercado">Mercado</a>
-                    </li>
-                    <li>
-                        <a href="/coleccion">Mi Colección</a>
-                    </li>
-                    <li>
-                        <a href="/favoritos">Mis Favoritos</a>
-                    </li>
+        <nav>
+            <a href="/" class="brand">
+                <i class="fa-brands fa-reddit"></i>
+            </a>
+            <div class="desktopNav">
+                <ul>
+                    <li><a href="/mercado">Mercado</a></li>
+                    <li><a href="/carrito">Carrito</a></li>
+                    <li><a href="/coleccion">Colección</a></li>
+                    <li><a href="/favoritos">Favoritos</a></li>
+                    <li><a href="/productDetail">Product Details</a></li>
                 </ul>
-            </nav>
-        </section>
-        <section class="toggleNavBar" id="closeNavBar">
-            <button>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </section>
-        <section class="overlay col" id="overlayLogOrSign">
-            <article class="popUp" id="popUpLogOrSign">
-                <a href="" class="btnCerrarPopUp" id="closePopUpLogOrSign">
-                    <i class="fa-solid fa-xmark"></i>
-                </a>
-                <div class="optionContainer f">
-                    <button class="logIn">
-                        <a href="/iniciarSesion">Iniciar Sesión</a>
-                    </button>
-                    <button class="register">
-                        <a href="/registro">Registrarse</a>
-                    </button>
-                </div>
-            </article>
-        </section>
+            </div>
+            <div>
+                <a href="" id="choiceLogOrSign"><i class="fa-solid fa-user"></i></a>
+                <a href="" id="burgerMenu"><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <div class="mobileNav">
+                <a href="/mercado">Mercado</a>
+                <a href="/coleccion">Colección</a>
+                <a href="/favoritos">Favoritos</a>
+                <a href="/productDetail">Detalles del Producto</a>
+                <a href="/">DHaunters</a>
+            </div>
+        </nav>
+        <div id="overlay">
+            <div id="popup">
+                <i class="fa-solid fa-xmark" id="closePopup"></i>
+                <a href="/iniciarSesion" id="logIn">Iniciar Sesion</a>
+                <a href="/registro" id="signUp">Registrarse</a>
+            </div>
+        </div>
     </header>
     <aside>
 
@@ -86,39 +57,34 @@
     </main>
     <footer>
         <section class="topFooter">
-            <article class="col">
+            <article>
                 <i class="fa-solid fa-users"></i>
-                <h5>Sobre Nosotros</h5>
-                <p class="footerText">Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros
-                    integrantes son: Barragán, Giraldo, Micha y Torres</p>
+                <h4>Sobre Nosotros</h4>
+                <p>Somos el Grupo 01 de la comisión 02 de Desarrollo Web Fullstack, nuestros integrantes son: Barragán,
+                    Giraldo, Micha y Torres</p>
             </article>
-            <article class="col">
+            <article>
                 <i class="fa-solid fa-truck-plane"></i>
-                <h5>Envios Internacionales</h5>
+                <h4>Envíos Internacionales</h4>
                 <p>Nos encargamos de conseguir el mejor envío costo-beneficio.</p>
             </article>
-            <article class="col">
+            <article>
                 <i class="fa-solid fa-envelope"></i>
-                <h5>Contacta con nosotros</h5>
+                <h4>Contacta con nosotros</h4>
                 <ul>
                     <li>
-                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters">GitHub</a>
+                        <a href="https://github.com/Niicoojk/grupo_01_DHaunters" target="_blank">GitHub</a>
                     </li>
                 </ul>
             </article>
-            <article class="col">
-                <h5></h5>
-                <p></p>
-            </article>
         </section>
-        <section class="botFooter f">
-            <h6>Copyright
-                <i class="fa-solid fa-copyright"></i>
+        <div class="botFooter">
+            <h6>
+                Copyright <i class="fa-solid fa-copyright"></i>
                 2022 DigitalHaunters S.R.L.
             </h6>
-        </section>
+        </div>
     </footer>
-    <script src="/js/popUps.js"></script>
-    <script src="/js/toggle.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
