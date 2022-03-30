@@ -22,6 +22,7 @@ button:focus{
 }
 .product{
     min-height: 180px;
+    min-width: 240px;
     padding: 10px;
     display: flex;
     background: #0F8B8D;
@@ -36,10 +37,10 @@ button:focus{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    font-family: var(--comfortaa)
 }
 .info,
 .amounts{
-    font-family: 'Smooch Sans', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
