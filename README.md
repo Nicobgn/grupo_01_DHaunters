@@ -48,3 +48,7 @@ Para crear este sitio nos inspiramos en diferentes páginas de diferentes rubros
 #### Colores
 
 -[colores utilizados](https://coolors.co/132e35-104c53-196460-8cd01a-d2e669-0f8b8d-02c1ca-19c7cf-f91313)
+
+### Tablero de trabajo 
+
+-[Este es nuestro tablero de trabajo](https://www.notion.so/3c72afee2e6b4f9e9d7e13606f074d2a?v=63424800f9b3457da48f3ca1b687be87)

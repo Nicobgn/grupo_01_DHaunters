@@ -18,12 +18,11 @@
 body{
     background: var(--backgrondC);
 }
-a{
-    color: white;
-}
-button{
-    background: transparent;
-    border: none;
+header{
+    width: 100vw;
+    height: auto;
+    background: var(--externalB);
+    padding: 7px 7px 12px;
 }
 .f{
     display: flex;
@@ -39,16 +38,11 @@ button{
 /* =======================================*/
 /*                  Header                */
 /* =======================================*/
-header{
-    width: 100vw;
-    height: auto;
-    background: var(--externalB);
-    padding: 7px 7px 12px;
-}
 /* Top Header */
 .topHeader{
     justify-content: space-between;
     align-items: center;
+    padding: 5px 5px 0px;
 }
 header figure img{
     width: 25px;
@@ -93,6 +87,8 @@ header ul li i{
 /* Bottom Header */
 .botHeader{
     display: none;
+    transition: 0.5s ease all;
+    padding: 5px 0;
 }
 .botHeader.active{
     display:flex;
@@ -141,11 +137,18 @@ footer i{
     font-weight: 400;
     color: #bebebe;
 }
+a{
+    color: white;
+}
+button{
+    background: transparent;
+    border: none;
+}
 
 /* =======================================*/
 /*                  PopUps                */
 /* =======================================*/
-.overlay{
+/* .overlay{
     background: rgba(31, 31, 31, 0.2);
     position: fixed;
     top: 0;
@@ -155,9 +158,25 @@ footer i{
     align-items: center;
     justify-content: center;
     visibility: hidden;
+    width: 100vw;
+    height: 100vh;
 }
-.overlay .active{
+.overlay.active{
     visibility: visible;
+} */
+
+
+.overlay{
+    display: none;
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 31, 31, 0.6);
+    z-index: 1;
+}
+.overlay.active{
+    display: flex;
+    flex-direction: column;
 }
 .popUp{
     background: #000000;
@@ -167,9 +186,12 @@ footer i{
     padding: 10px;
     text-align: center;
     width: 60%;
-    opacity: 0;
-    transition: .3s ease all;
-    transform: scale(0.7);
+    max-width: 550px;
+    /* opacity: 0; */
+    /* transition: 1s ease all; */
+    /* transform: scale(0.7); */
+    margin: auto;
+    z-index: 5;
 }
 .popUp .btnCerrarPopUp{
     font-size: 16px;
@@ -184,7 +206,7 @@ footer i{
 }
 .popUp .optionContainer button{
     width: 80%;
-    height: 40%;
+    height: 35px;
     margin: 10px 20px;
     text-align: center;
     padding: 5px;
@@ -207,10 +229,6 @@ footer i{
 /* =======================================*/
 /*                Animations              */
 /* =======================================*/
-.popUp.active{
-    opacity: 1;
-    transform: scale(1);
-}
 .popUp .optionContainer button.logIn:hover{
     background: var(--navIconsC);
 }
@@ -229,7 +247,14 @@ footer i{
 }
 @media (min-width: 769px) {
     /* Header */
-
+    .toggleNavBar.active{
+        display: none;
+    }
+    .botHeader,
+    .botHeader.active{
+        display: flex;
+        margin-left: 25px;
+    }
     /* Footer */
     .topFooter{
         flex-direction: row;
