@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,36 @@
     <title>Bienvenido a DHaunters</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/stylesIndex.css">
+    <link rel="stylesheet" href="/css/stylesHome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <section class="topHeader f">
-            <figure>
-                <a href="/">
-                    <img src="" alt="DHaunters Logo">
+            <figure class="logo">
+                <a href="">
+                    <img class="logo" src="/img/ghost-logo.png" alt="_Logoeee">
+
                 </a>
             </figure>
             <ul class="row">
+                <li>
+                    <button id="abrirSearch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </li>
+                <li>
+                    <img class="logo" src="/img/arg-flag.png" alt="_argFlag">
+
+
+                </li>
+                <li class="countryInitals">
+                    AR
+                </li>
                 <li>
                     <button id="abrirPopUp">
                         <i class="fa-solid fa-user"></i>
@@ -27,13 +48,20 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
+                <section class="toggleNavBar active" id="openNavBar">
+                    <button>
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </section>
+
+
             </ul>
         </section>
-        <section class="toggleNavBar active" id="openNavBar">
+        <!-- <section class="toggleNavBar active" id="openNavBar">
             <button>
                 <i class="fa-solid fa-bars"></i>
             </button>
-        </section>
+        </section> -->
         <section class="botHeader" id="botHeader">
             <nav class="navBar">
                 <ul class="f">
@@ -71,8 +99,56 @@
                 </div>
             </article>
         </section>
+        <!-- <div class="hr"> 
+         </div> -->
+        <!-- <hr> -->
+        <!-- <section class="secondHeader-envio">
+            <div class="envio-title">
+                <div class="icon-location" class="envio">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="envio">
+                    <p>Enviar a Capital Federal</p>
+                </div>
+            </div>
+            <div class="envio-go" class="envio">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </section> -->
     </header>
     <main>
+        <section class="add-banner-container">
+            <ul class="add-banner-slider">
+                <li id="add-banner-1">
+                    <img src="/img/add-banner-1.jpeg" alt="">
+                </li>
+                <li id="add-banner-2">
+                    <img src="/img/add-banner-2.jpeg" alt="">
+                </li>
+                <li id="add-banner-3">
+                    <img src="/img/add-banner-3.jpeg" alt="">
+                </li>
+            </ul>
+            <ul class="add-banner-menu">
+                <li>
+                    <a href="#add-banner-1"><i class="fa-regular fa-circle"></i></a>
+                </li>
+                <li>
+                    <a href="#add-banner-2"><i class="fa-regular fa-circle"></i></a>
+                </li>
+                <li>
+                    <a href="#add-banner-3"><i class="fa-regular fa-circle"></i></a>
+                </li>
+            </ul>
+        </section>
+
+
+        <div>A</div>
+        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nesciunt veniam unde reiciendis totam
+            obcaecati distinctio voluptatem, perspiciatis illo iure, fugiat praesentium tempora? Id, amet voluptates!
+            Assumenda, quam! Voluptatum, illo?
+
+        </div>
 
     </main>
     <footer>
@@ -112,4 +188,5 @@
     <script src="/js/popUps.js"></script>
     <script src="/js/toggle.js"></script>
 </body>
+
 </html>
