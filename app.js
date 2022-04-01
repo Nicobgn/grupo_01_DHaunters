@@ -1,62 +1,32 @@
-const path = require('path');
-const express = require('express');
-const bodyParser = require('body-parser')
+const path = require("path");
+const express = require("express");
 const app = express();
-const bRoot = path.resolve(__dirname);
-// const router = require(bRoot+'/routes/index')
+const PORT = process.env.port || 3000;
 
-// Cuando haya que agregar una ruta, acá tienen el comando:
-// app.get("/", (req, res) => {
-//   res.sendFile(bRoot + "/views/");
-// });
+const routesMain = require(path.join(__dirname + "/src/routes/main"));
+const routesUser = require(path.join(__dirname + "/src/routes/user"));
+const routesProducts = require(path.join(__dirname + "/src/routes/products"));
 
-//settings
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname,'/views'))
+//	Settings
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname + "/src/views/"));
+app.use(express.static("public"));
 
-// middlewares
+// 	Routes
+app.use("/", routesMain);
+app.use("/user", routesUser);
+app.use("/store", routesProducts);
 app.use((req,res,next)=>{
-    console.log(`En ${req.url} se utilizó ${req.method}`);
-    next()
+  res.status(404).send("Error 404, page not found")
 });
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
 
-// routes
-// app.use('/', router)
-app.get("/404", (req, res) => {
-  res.send("Error, página no encontrada.");
+// 	Middlewares
+app.use((req, res, next) => {
+  console.log(`En ${req.url} se utilizó ${req.method}`);
+  next();
 });
-app.get('/',(req,res)=>{
-    res.sendFile(bRoot+'/views/index.html')
-}); //Home
-app.get('/carrito', (req, res) => {
-  res.sendFile(bRoot + '/views/cart.html');
-}); //Cart
-app.get("/iniciarSesion", (req, res) => {
-  res.sendFile(bRoot + '/views/log-in.html');
-}); //Log in
-app.get('/mercado',(req,res)=>{
-    res.sendFile(bRoot+'/views/marketplace.html')
-}); //Market
-app.get('/coleccion',(req,res)=>{
-    res.sendFile(bRoot+'/views/myCollection.html')
-}); //Collection
-app.get('/registro', (req, res) => {
-  res.sendFile(bRoot + '/views/sign-up.html');
-}); //Register
-app.get('/productDetail', (req, res) => {
-  res.sendFile(bRoot + '/views/productDetail.html')
-}); //ProductDetail
-app.get('/favoritos', (req, res) => {
-  res.sendFile(bRoot + '/views/myFavourites.html')
-}); //Favourites
 
-
-// statics
-app.use(express.static('public'));
-
-// start server
-app.listen(app.get('port'),()=>{
-    console.log(`Server is running on port ${app.get('port')}`)
+// 	Start Server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

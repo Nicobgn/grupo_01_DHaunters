@@ -1,0 +1,28 @@
+<%- include("../partials/head") %>
+<%- include("../partials/header") %>
+
+<main class="card">
+    <!-- se crea un articule para detallar lo que se compra: foto, nombre, precio y botones -->
+    <article class="product-detail">
+        <div class="imagen">
+            <img src="/img/mewtwo.png" alt="Foto del producto que se escogio">
+        </div>
+        <div class="product-price">
+            <div class="description-card">
+                <h3>Mewtwo</h3>
+                <p class="product-id">N de ID del producto</p>
+                <p class="precio">$5.90</p>
+            </div>
+            <div class="product-button">
+                <button type="submit" class="button">comprar</button>
+                <button type="submit" class="button">agregar a favoritos</button>
+            </div>
+        </div>
+    </article>
+    <!-- se crea un articule para la descripcion del producto -->
+    <article class="product-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero labore dolorem aperiam veritatis possimus quisquam ab enim error maxime assumenda, officia placeat natus minima temporibus. Dolores, accusamus. Ratione, excepturi inventore!</p>
+    </article>
+</main>
+
+<%- include("../partials/footer") %>
