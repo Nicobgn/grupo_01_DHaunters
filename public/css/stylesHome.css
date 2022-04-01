@@ -2,66 +2,15 @@
   font-family: "Comfortaa", cursive;
 }
 
-header {
-  height: 68px;
-  position: fixed;
-  /* z-index: 5; */
-}
-
-header figure img.logo {
-  width: 52px;
-  height: 45px;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
 .logo a {
   font-family: "Shadows Into Light", cursive;
   font-size: 1.8rem;
   color: #02c1ca;
 }
 
-header .topHeader i {
-  font-size: 1.3rem;
-}
-
-header .topHeader section button {
-  border: none;
-  background-color: #104c53;
-  padding-bottom: 107%;
-}
-header .topHeader section button i {
-  color: #02c1ca;
-  font-size: 1.45rem;
-}
-
-header ul.row {
-  align-items: center;
-  width: 55%;
-  height: 55px;
-  justify-content: space-evenly;
-  margin-right: 0px;
-  padding-right: 0px;
-  border-bottom: 1px solid #02c1ca;
-}
-header ul.row img {
-  width: 26px;
-  height: 20px;
-  border-radius: 3px;
-}
-header ul.row li.countryInitals {
-  color: #02c1ca;
-  font-weight: bold;
-  margin-left: -10px;
-}
 
 /*      MAIN  - MAIN -  MAIN      */
 
-main div {
-  height: 500px;
-  width: 40px;
-  background-color: rgb(0, 0, 0);
-}
 /* main section.add-banner-container {
   display: flex;
   justify-content: center;
@@ -91,9 +40,6 @@ ul.add-banner-menu {
 
 ul.add-banner-slider li {
   /* ul.add-banner-menu li */
-  position: absolute;
-  left: 0px;
-  top: 75px;
   opacity: 0;
   width: inherit;
   height: inherit;
@@ -136,29 +82,3 @@ ul.add-banner-slider li:target {
 }
 
 /*      FOOTER  --  FOOTER  -- FOOTER     */
-
-footer {
-  width: 78%;
-  height: 10%;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: flex-end; */
-  align-items: center;
-  align-content: center;
-  background-color: #132e35;
-}
-footer h5 {
-  font-size: 1.1rem;
-}
-footer p {
-  font-size: 0.8rem;
-}
-footer .topFooter {
-  /* justify-content: center; */
-  width: 70%;
-  margin-bottom: 10px;
-}
-footer .topFooter article {
-  align-content: center;
-  margin-bottom: 14px;
-}

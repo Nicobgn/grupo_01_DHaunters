@@ -1,0 +1,40 @@
+<%- include("../partials/head") %>
+<%- include("../partials/header") %>
+
+<main>
+    <section>
+        <form action="" class="cart">
+            <div class="productList">
+                <div class="product">
+                    <figure>
+                        <a href="">
+                            <img src="/img/mewtwo.png" alt="Mewtwo">
+                        </a>
+                    </figure>
+                    <div class="productDetails">
+                        <div class="info">
+                            <a href="">Mewtwo</a>
+                            <h6>#000001</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="amounts">
+                            <a href="">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                            <h6>$40</h6>
+                            <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="checkoutButton">Comprar</button>
+        </form>
+    </section>
+</main>
+
+<%- include("../partials/footer") %>
