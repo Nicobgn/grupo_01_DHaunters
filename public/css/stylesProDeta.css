@@ -1,0 +1,145 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  display: flex;
+  background: #0f8b8d;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #000;
+  font-family: "Smooch Sans", sans-serif;
+  text-align: center;
+}
+.product figure {
+  width: 100%;
+}
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: space-between;
+}
+.producDetails {
+  font-family: "Smooch Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 35px;
+}
+.producDetails a {
+  text-align: left;
+}
+.producDetails h6 {
+  text-align: left;
+  opacity: 0.8;
+}
+.producDetails p {
+  text-align: center;
+  margin: 10% 0;
+  font-size: 12px;
+}
+
+.productDetails form {
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+.buy {
+  padding: 20px;
+}
+
+.buy-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buy-option h5 {
+  font-size: 1.2rem;
+}
+
+.buy-option select {
+  background-color: #0f8b8d;
+  opacity: 0.9;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  background: rgba(50, 150, 150, 1);
+  padding: 5%;
+  border-radius: 10px;
+  font-weight: bolder;
+  bottom: 0;
+  margin: 2% 2%;
+}
+
+button:hover,
+button:focus {
+  border: 1px solid #d2e669;
+  border-radius: 5px;
+}
+
+.description {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
+
+.description p {
+  padding-top: 10px;
+}
+
+@media (min-width: 481px) {
+  .card-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product {
+    max-width: 500px;
+  }
+  .buy {
+    width: 100%;
+  }
+  .buy-option {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .buy-option h5 {
+    padding-right: 30px;
+  }
+  .buy-option select {
+    margin-left: 0 10px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    background: rgba(50, 150, 150, 1);
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bolder;
+    bottom: 0;
+    margin: 2% 2%;
+  }
+}
+
+@media (min-width: 769px) {
+  .card-1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .product {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+  }
+}

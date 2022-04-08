@@ -3,7 +3,7 @@ const views = path.join(__dirname + "/../views");
 const productController = {
   details: (req, res) => {
     res.render(views + "/products/productDetail.ejs", {
-      css: "ProDelta",
+      css: "ProDeta",
       title: "Detalles del Producto - DHaunters",
     });
   },
