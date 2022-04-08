@@ -3,38 +3,51 @@
 
 <main>
     <section>
-        <form action="" class="cart">
-            <div class="productList">
-                <div class="product">
+        <article class="cartHeader">
+            <span>Productos</span>
+            <span id="cleanCart" class="remove">Vaciar Carrito</span>
+        </article>
+        <hr>
+        <article class="cartItems">
+            <% product.forEach(product => { %>
+             <div class="cartItem">
+                <a href="/products/product/<%= product.id %>">
                     <figure>
-                        <a href="">
-                            <img src="/img/mewtwo.png" alt="Mewtwo">
-                        </a>
+                        <img src="/img/<%= product.img %> " alt="<%= product.title %> ">
                     </figure>
-                    <div class="productDetails">
-                        <div class="info">
-                            <a href="">Mewtwo</a>
-                            <h6>#000001</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="amounts">
-                            <a href="">
-                                <i class="fa-solid fa-xmark"></i>
-                            </a>
-                            <h6>$40</h6>
-                            <select name="quantity" id="quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
+                </a>
+                <div class="itemDesc">
+                    <div class="detailLeft">
+                        <a href="/products/product/<%= product.id %>">
+                            <h3> <%= product.title %> </h3>
+                            <h5> <%= product.serial %> </h5>
+                        </a>
+                    </div>
+                    <div class="counter">
+                        <span class="btn">-</span>
+                        <span class="counter">2</span>
+                        <span class="btn">+</span>
+                    </div>
+                    <div class="detailRight">
+                        <h4> USD <%= product.price %> </h4>
+                        <p class="later">Comprar más tarde</p>
+                        <p class="remove">Quitar del carrito</p>
                     </div>
                 </div>
+             </div>
+            <% }) %>
+        </article>
+        <hr>
+        <article class="checkout">
+            <div class="total">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <h6>Items <%= lenght %></h6>
+                </div>
+                <h4>USD 155</h4>
+                <button type="submit">Comprar</button>
             </div>
-            <button type="submit" id="checkoutButton">Comprar</button>
-        </form>
+        </article>
     </section>
 </main>
-
 <%- include("../partials/footer") %>

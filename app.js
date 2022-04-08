@@ -16,8 +16,8 @@ app.use(express.static("public"));
 app.use("/", routesMain);
 app.use("/user", routesUser);
 app.use("/store", routesProducts);
-app.use((req,res,next)=>{
-  res.status(404).send("Error 404, page not found")
+app.use((req, res, next) => {
+  res.status(404).send("Error 404, page not found");
 });
 
 // 	Middlewares
