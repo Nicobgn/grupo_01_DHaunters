@@ -5,7 +5,7 @@
     <section>
         <article class="cartHeader">
             <span>Productos</span>
-            <span id="headerRemove">Vaciar Carrito</span>
+            <span id="cleanCart" class="remove">Vaciar Carrito</span>
         </article>
         <hr>
         <article class="cartItems">
@@ -19,7 +19,7 @@
                 <div class="itemDesc">
                     <div class="detailLeft">
                         <a href="/products/product/<%= product.id %>">
-                            <h4> <%= product.title %> </h4>
+                            <h3> <%= product.title %> </h3>
                             <h5> <%= product.serial %> </h5>
                         </a>
                     </div>
@@ -29,9 +29,9 @@
                         <span class="btn">+</span>
                     </div>
                     <div class="detailRight">
-                        <h6> USD <%= product.price %> </h6>
+                        <h4> USD <%= product.price %> </h4>
                         <p class="later">Comprar más tarde</p>
-                        <p class="productRemove">Quitar del carrito</p>
+                        <p class="remove">Quitar del carrito</p>
                     </div>
                 </div>
              </div>
@@ -44,7 +44,7 @@
                     <p>Subtotal</p>
                     <h6>Items <%= lenght %></h6>
                 </div>
-                <p class="totalAmount">USD 155</p>
+                <h4>USD 155</h4>
                 <button type="submit">Comprar</button>
             </div>
         </article>
