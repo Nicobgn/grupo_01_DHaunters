@@ -9,7 +9,6 @@ const routesProducts = require(path.join(__dirname + "/src/routes/products"));
 
 //	Settings
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname + "/src/views/"));
 app.use(express.static("public"));
 
 // 	Routes

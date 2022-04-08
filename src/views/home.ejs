@@ -1,6 +1,76 @@
 <%- include("partials/head") %>
-<%- include("partials/header") %>
-<main>
+  <%- include("partials/header") %>
 
-</main>
-<%- include("partials/footer") %>
+    <main>
+      <!-- <section class="add-banner-container">
+            <ul class="add-banner-slider">
+                <li id="add-banner-1">
+                    <img src="/img/add-banner-1.jpeg" alt="">
+                </li>
+                <li id="add-banner-2">
+                    <img src="/img/add-banner-2.jpeg" alt="">
+                </li>
+                <li id="add-banner-3">
+                    <img src="/img/add-banner-3.jpeg" alt="">
+                </li>
+            </ul>
+            <ul class="add-banner-menu">
+                <li>
+                    <a href="#add-banner-1"><i class="fa-regular fa-circle"></i></a>
+                </li>
+                <li>
+                    <a href="#add-banner-2"><i class="fa-regular fa-circle"></i></a>
+                </li>
+                <li>
+                    <a href="#add-banner-3"><i class="fa-regular fa-circle"></i></a>
+                </li>
+            </ul>
+        </section> -->
+      <!-- <section id="bannerSlider">
+            <article id="bannerContainer">
+                <div class="bannerImg" id="banner-1"><img src="/img/add-banner-1.jpeg" alt=""></div>
+                <div class="bannerImg" id="banner-2"><img src="/img/add-banner-2.jpeg" alt=""></div>
+                <div class="bannerImg" id="banner-3"><img src="/img/add-banner-3.jpeg" alt=""></div>
+            </article>
+            <article id="bannerSliderChoice">
+
+            </article>
+            <article id="bannerArrows"></article> 
+        </section> -->
+
+    
+
+      <section class="product-list">
+        <div class="product-section-title">
+          <h2>New on sale</h2>
+        </div>
+        <% for (let producto of newOnSale) {%>
+          <div class="containerProduct">
+            <article class="product">
+              <figure>
+                <img src="/img/<%=producto.img%>" alt="" />
+              </figure>
+              <div class="productDetail">
+                <h3>
+                  <%= producto.name %>
+                </h3>
+                <p class="producto-description">
+                  <%= producto.description %>
+                </p>
+                <h4 class="price">
+                  <%= producto.price %>
+                </h4>
+              </div>
+            </article>
+          </div>
+          <% } %>
+      </section>
+      <a href="/grupo_01_DHaunters/views/marketplace.html">
+        <div class="fullCatalogue-icon">
+          <h3>~ full catalogue ~</h3>
+          <i class="fa-regular fa-newspaper"></i>
+        </div>
+      </a>
+    </main>
+
+    <%- include("partials/footer") %>

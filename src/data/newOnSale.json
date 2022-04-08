@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "name": "Mewtwo",
+    "description": "Super Mario Bros Universe",
+    "price": "$ 49.99",
+    "img": "mewtwo.png"
+  },
+  {
+    "id": 1,
+    "name": "B.E.W Dragon",
+    "description": "Yu-Gi-Oh !",
+    "price": "34.99",
+    "img": "blue-eyes-white-dragon.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Majin-Buu",
+    "description": "Dragon Ball Z Super Saiyan",
+    "price": "$ 14.33",
+    "img": "majin-buu.jpeg"
+  }
+]
