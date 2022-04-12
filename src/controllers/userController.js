@@ -1,6 +1,9 @@
+const fs = require("fs");
 const path = require("path");
 const views = path.join(__dirname + "/../views");
-const product = require("../models/data");
+
+const productPath = path.join(__dirname + "/../models/newOnSale.json");
+const product = JSON.parse(fs.readFileSync(productPath, "utf-8"));
 
 const userController = {
 	login: (req, res) => {
@@ -16,7 +19,7 @@ const userController = {
 		});
 	},
 	cart: (req, res) => {
-		let productLength = product.length;
+		let productLength = Object.keys(product).length;
 
 		res.render(views + "/users/cart.ejs", {
 			css: "Cart",
