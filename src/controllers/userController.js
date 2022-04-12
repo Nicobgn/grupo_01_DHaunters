@@ -1,6 +1,10 @@
+const fs = require("fs");
 const path = require("path");
+
 const views = path.join(__dirname + "/../views");
-const product = require("../models/data");
+const productsPath = path.join(__dirname, "../models/products.json");
+
+const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
 
 const userController = {
 	login: (req, res) => {
