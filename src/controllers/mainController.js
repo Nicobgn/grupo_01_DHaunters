@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 const views = path.join(__dirname + "/../views");
 
 const newOnSalePath = path.join(__dirname, "../data/newOnSale.json");
