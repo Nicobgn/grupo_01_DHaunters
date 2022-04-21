@@ -17,9 +17,6 @@ header {
   justify-content: space-between;
 }
 
-header.active{
-  opacity: 1;
-}
 
 .logo{
   padding-left: 0px;
@@ -27,24 +24,19 @@ header.active{
   padding-left: 10px;
 }
 
+
 .logo img{
   width: 100%;
   height: 100%;
 
 }
 
-.signup {
+.signup,
+.login {
   text-align: right;
   padding-top: 8vh;
   font-size: 10px;  
 }
-
-.login {
-  text-align: right;
-  padding-top: 8vh;
-  font-size: 10px 
-}
-
 
 
 body {
@@ -60,6 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: 100%;
+  padding-right: 10px;
 }
 
 .icono {
