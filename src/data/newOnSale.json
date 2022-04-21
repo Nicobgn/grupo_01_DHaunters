@@ -1,23 +1,56 @@
 [
   {
-    "id": 0,
-    "name": "Mewtwo",
-    "description": "Super Mario Bros Universe",
-    "price": "$ 49.99",
-    "img": "mewtwo.png"
-  },
-  {
-    "id": 1,
-    "name": "B.E.W Dragon",
-    "description": "Yu-Gi-Oh !",
-    "price": "34.99",
-    "img": "blue-eyes-white-dragon.jpeg"
-  },
-  {
-    "id": 2,
-    "name": "Majin-Buu",
-    "description": "Dragon Ball Z Super Saiyan",
-    "price": "$ 14.33",
-    "img": "majin-buu.jpeg"
-  }
+		"id": 1,
+		"title": "Mewtwo",
+		"serial": "#000001",
+		"shortDesc": "",
+		"longDesc": "",
+		"price": "$50",
+		"img": "mewtwo.png"
+	},
+	{
+		"id": 2,
+		"title": "Ghost",
+		"serial": "#000002",
+		"shortDesc": "",
+		"longDesc": "",
+		"price": "$30",
+		"img": "ghost-logo.png"
+	},
+	{
+		"id": 3,
+		"title": "Ghost 2",
+		"serial": "#000003",
+		"shortDesc": "",
+		"longDesc": "",
+		"price": "$50",
+		"img": "ghost-logo-2.png"
+	},
+	{
+		"id": 4,
+		"title": "Ghost 3",
+		"serial": "#000004",
+		"shortDesc": "",
+		"longDesc": "",
+		"price": "$25",
+		"img": "ghost-logo-3.png"
+	},
+	{
+		"id": 5,
+		"title": "B.E.W Dragon",
+    	"serial":"#000005",
+		"shortDesc": "Yu-Gi-Oh !",
+    	"longDesc":"",
+		"price": "$34.99",
+		"img": "blue-eyes-white-dragon.jpeg"
+	},
+	{
+		"id": 6,
+		"title": "Majin-Buu",
+    	"serial":"#000006",
+		"shortDesc": "Dragon Ball Z Super Saiyan",
+    	"longDesc":"",
+		"price": "$14.33",
+		"img": "majin-buu.jpeg"
+	}
 ]

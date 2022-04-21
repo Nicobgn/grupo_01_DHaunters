@@ -1,42 +1,71 @@
-<%- include("partials/head") %>
-  <%- include("partials/header") %>
+<%- include("partials/head") %> 
+<%- include("partials/header") %>
+<% 
+	let prev=(a)=>{a--}
+	let next=(a)=>{a++}
+%> 
 
-    <main>
+<main>
+	<section class="banner">
+		<ul class="bannerSlider">
+			<% banner.forEach(banner => { %>
+				<li id="bannerSlider<%= banner.id %>">
+					<img src="<%= banner.img %>" alt="<%= banner.title %>">
+					<!-- <div class="btnHolder">
+						<div class="btn">
+							<a href="#bannerSlider<%= prev(banner.id) %> "><i class="fa-solid fa-chevron-left"></i></a>
+						</div>
+						<div class="btn right">
+							<a href="#bannerSlider<%= next(banner.id) %> "><i class="fa-solid fa-chevron-right"></i></a>
+						</div> 
+					</div> -->
+				</li>
+			<% }) %>
+		</ul>
+		<ul class="bannerMenu">
+			<% banner.forEach(banner => { %>
+				<li class="bannerItem">
+					<a href="#bannerSlider<%= banner.id %>"> 
+						<!-- <i class="fa-solid fa-circle-notch"></i> -->
+					</a>
+			</li>
+			<% }) %>
+		</ul>
+	</section>
 
 
-    
 
-      <section class="product-list">
-        <div class="product-section-title">
-          <h2>New on sale</h2>
-        </div>
-        <% for (let producto of newOnSale) {%>
-          <div class="containerProduct">
-            <article class="product">
-              <figure>
-                <img src="/img/<%=producto.img%>" alt="" />
-              </figure>
-              <div class="productDetail">
-                <h3>
-                  <%= producto.name %>
-                </h3>
-                <p class="producto-description">
-                  <%= producto.description %>
-                </p>
-                <h4 class="price">
-                  <%= producto.price %>
-                </h4>
-              </div>
-            </article>
-          </div>
-          <% } %>
-      </section>      
-      <a href="/grupo_01_DHaunters/views/marketplace.html">
-        <div class="fullCatalogue-icon">
-          <h3>~ full catalogue ~</h3>
-          <i class="fa-regular fa-newspaper"></i>
-        </div>
-      </a>
-    </main>
+	<section class="product-list">
+	<div class="product-section-title">
+			<h2>New on sale</h2>
+	</div>
+	<% for (let producto of products) {%>
+		<div class="containerProduct">
+		<article class="product">
+				<figure>
+				<img src="/img/<%=producto.img%>" alt="" />
+				</figure>
+				<div class="productDetail">
+				<h3>
+						<%= producto.name %>
+				</h3>
+				<p class="producto-description">
+						<%= producto.description %>
+				</p>
+				<h4 class="price">
+						<%= producto.price %>
+				</h4>
+				</div>
+		</article>
+		</div>
+		<% } %>
+	</section>
+	<a href="/grupo_01_DHaunters/views/marketplace.html">
+	<div class="fullCatalogue-icon">
+			<h3>~ full catalogue ~</h3>
+			<i class="fa-regular fa-newspaper"></i>
+	</div>
+	</a>
+</main>
 
-    <%- include("partials/footer") %>
+<%- include("partials/footer") %>

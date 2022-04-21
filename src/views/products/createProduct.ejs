@@ -1,0 +1,58 @@
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+<main>
+  <div>
+    <form action="" method="post">
+      <h3>Formulario de creacion de producto</h3>
+
+      <div class="formulario">
+        <div class="description">
+          <label for="title">Nombre del producto</label>
+          <input type="text" name="title" id="title" class="drawer" required />
+        </div>
+        <div class="description">
+          <label for="precio">Precio del producto</label>
+          <input
+            type="number"
+            name="precio"
+            id="precio"
+            class="drawer"
+            required
+          />
+        </div>
+        <div class="description">
+          <label for="img">Ingrese la foto de su producto</label>
+          <input type="file" name="img" id="img" class="drawer" required />
+        </div>
+        <div class="description">
+          <label for="shortDesc"
+            >Haga una breve desdripcion del personaje</label
+          >
+          <input
+            type="text"
+            name="shortDesc"
+            id="shortDesc"
+            class="drawer"
+            required
+            rows="10"
+            cols="50"
+          />
+        </div>
+        <div class="description">
+          <label for="longDesc">Haga una descripcion del producto</label>
+          <input
+            type="text"
+            name="longDesc"
+            id="longDesc"
+            rows="10"
+            cols="50"
+            class="drawer"
+          />
+        </div>
+        <div>
+          <button type="submit">Subir</button>
+          <button type="reset">Borrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

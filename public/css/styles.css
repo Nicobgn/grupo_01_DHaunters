@@ -10,11 +10,10 @@
     padding: 0;
     margin: 0;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
 }
 body{
     background: #132E35;
+    font-family: 'Montserrat', sans-serif;
 }
 nav{
     display: flex;
@@ -23,7 +22,14 @@ nav{
     background: #104C53;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+}
+nav .brand{
+    width: 80px;
+    height: 80px;
+}
+nav .brand img{
+    width: 100%;
+    height: 100%;
 }
 nav div{
     display: flex;
@@ -34,12 +40,17 @@ nav a{
     font-size: 30px;
     line-height: 1.5em;
 }
+
 main{
-    padding: 110px 28px 10px;
+    padding: 10px 28px 10px;
     width: 95%;
     margin: auto;
     height: auto;
 }
+main a {
+    opacity: 1;
+}
+
 footer{
     position: relative;
     bottom: 0px;
@@ -195,10 +206,6 @@ option{
 
 @media (min-width:481px) {}
 @media (min-width:769px) {
-    nav{
-        position: absolute;
-        top: 0;
-    }
     a{
         opacity: 0.6;
     }
