@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const PORT = process.env.port || 3000;
+const methodOverride = require("method-override");
 
 const routesMain = require(path.join(__dirname + "/src/routes/main"));
 const routesUser = require(path.join(__dirname + "/src/routes/user"));
@@ -10,6 +11,7 @@ const routesProducts = require(path.join(__dirname + "/src/routes/products"));
 //	Settings
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 
 // 	Routes
 app.use("/", routesMain);

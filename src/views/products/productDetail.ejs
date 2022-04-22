@@ -4,22 +4,18 @@
   <section class="card-1">
     <div class="product">
       <figure>
-        <img src="/img/mewtwo.png" alt="Mewtwo" />
+        <img src="/img/<%=produc.img%>" alt="Mewtwo" />
       </figure>
       <div class="producDetails">
-        <a href="">Mewtwo</a>
+        <a href=""><%= produc.title %> </a>
         <h6>#000001</h6>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-          commodi repudiandae illo quasi accusantium facilis amet sunt beatae
-          temporibus doloremque!
-        </p>
+        <p><%= produc.shortDesc %></p>
       </div>
     </div>
     <div class="buy">
       <form action="">
         <div class="buy-option">
-          <h5>$99.99</h5>
+          <h5><%= produc.price %></h5>
           <select name="" id="">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -30,31 +26,18 @@
         </div>
         <div class="button">
           <button>Comprar</button>
-          <button>Agrgar al carrito</button>
+          <a href="store/editProduct/<%= produc.id %> ">
+            <!-- ver porque no me redirecciona a la pagina que quiero -->
+            <button>Editar</button>
+          </a>
+          <button>Eliminar</button>
         </div>
       </form>
     </div>
   </section>
   <section>
     <div class="description">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-        commodi repudiandae illo quasi accusantium facilis amet sunt beatae
-        temporibus doloremque! Animi molestias doloribus maiores voluptatum
-        dignissimos dicta praesentium autem ea
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-        commodi repudiandae illo quasi accusantium facilis amet sunt beatae
-        temporibus doloremque! Animi molestias doloribus maiores voluptatum
-        dignissimos dicta praesentium autem ea
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-        commodi repudiandae illo quasi accusantium facilis amet sunt beatae
-        temporibus doloremque! Animi molestias doloribus maiores voluptatum
-        dignissimos dicta praesentium autem ea
-      </p>
+      <p><%= produc.longtDesc %></p>
     </div>
   </section>
 </main>
