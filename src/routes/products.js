@@ -15,7 +15,7 @@ router.get("/editProduct/:id", productController.edit); //para ver el detalle de
 router.put("/editProduct/:id", productController.updeat); //para editar el detalle de un producto determinado
 
 /* ruta para eliminar un producto */
-//router.delete("/productDetails/:id") para eliminar el detalle de un producto determinado
+router.delete("/:id", productController.delete); //para eliminar el detalle de un producto determinado
 
 /* rutas para crear un producto y que se guarde en el json */
 router.get("/createProduct", productController.createProduct);

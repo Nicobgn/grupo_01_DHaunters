@@ -30,7 +30,9 @@
             <!-- ver porque no me redirecciona a la pagina que quiero -->
             <button>Editar</button>
           </a>
-          <button>Eliminar</button>
+          <form action="/<%= produc.id %>/?_method=DELETE " method="post">
+            <button>Eliminar</button>
+          </form>
         </div>
       </form>
     </div>

@@ -49,6 +49,8 @@ const productController = {
     res.redirect("/");
   },
 
+  delete: () => {},
+
   createProduct: (req, res) => {
     res.render(views + "/products/createProduct.ejs", {
       css: "CreateProduct",
