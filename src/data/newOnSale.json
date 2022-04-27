@@ -1,56 +1,122 @@
 [
   {
 		"id": 1,
-		"title": "Mewtwo",
+		"name": "Mewtwo",
 		"serial": "#000001",
-		"shortDesc": "",
-		"longDesc": "",
+		"universe": "Pokemon",
+		"description": "",
 		"price": "$50",
-		"img": "mewtwo.png"
+		"img": "mewtwo.png",
+		"category":"Epic"
 	},
 	{
 		"id": 2,
-		"title": "Ghost",
+		"name": "Ghost",
 		"serial": "#000002",
-		"shortDesc": "",
-		"longDesc": "",
+		"universe": "Ghost's world",
+		"description": "",
 		"price": "$30",
-		"img": "ghost-logo.png"
+		"img": "ghost-logo.png",
+		"category":"Common"
 	},
 	{
 		"id": 3,
-		"title": "Ghost 2",
+		"name": "Ghost 2",
 		"serial": "#000003",
-		"shortDesc": "",
-		"longDesc": "",
+		"universe": "Ghost's world",
+		"description": "",
 		"price": "$50",
-		"img": "ghost-logo-2.png"
+		"img": "ghost-logo-2.png",
+		"category":"Common"
 	},
 	{
 		"id": 4,
-		"title": "Ghost 3",
+		"name": "Haunter",
 		"serial": "#000004",
-		"shortDesc": "",
-		"longDesc": "",
+		"universe": "Pokemon",
+		"description": "",
 		"price": "$25",
-		"img": "ghost-logo-3.png"
+		"img": "ghost-logo-3.png",
+		"category":"Rare"
 	},
 	{
 		"id": 5,
-		"title": "B.E.W Dragon",
+		"name": "B.E.W Dragon",
     	"serial":"#000005",
-		"shortDesc": "Yu-Gi-Oh !",
-    	"longDesc":"",
+		"universe": "Yu-Gi-Oh !",
+    	"description":"",
 		"price": "$34.99",
-		"img": "blue-eyes-white-dragon.jpeg"
+		"img": "blue-eyes-white-dragon.jpeg",
+		"category":"Very rare"
 	},
 	{
 		"id": 6,
-		"title": "Majin-Buu",
+		"name": "Majin-Buu",
     	"serial":"#000006",
-		"shortDesc": "Dragon Ball Z Super Saiyan",
-    	"longDesc":"",
+		"universe": "Dragon Ball Z",
+    	"description":"",
 		"price": "$14.33",
-		"img": "majin-buu.jpeg"
+		"img": "majin-buu.jpeg",
+		"category":"Rare"
+	},
+	{
+		"id": 7,
+		"name": "Ace",
+    	"serial":"#000006",
+		"universe": "Dragon Ball Z",
+    	"description":"",
+		"price": "$3.21",
+		"img": "Ace.png",
+		"category":"Very rare"
+	},
+	{
+		"id": 8,
+		"name": "Agumon",
+    	"serial":"#000006",
+		"universe": "Digimon",
+    	"description":"",
+		"price": "$14.33",
+		"img": "agumon.png",
+		"category":"Rare"
+	},
+	{
+		"id": 9,
+		"name": "Arcanine",
+    	"serial":"#000006",
+		"universe": "Pokemon",
+    	"description":"",
+		"price": "$14.33",
+		"img": "arcanine.png",
+		"category":"Epic"
+	},
+	{
+		"id": 10,
+		"name": "Avengers",
+    	"serial":"#000006",
+		"universe": "Marvel",
+    	"description":"",
+		"price": "$14.33",
+		"img": "avengers.png",
+		"category":"Common"
+	},	{
+		"id": 11,
+		"name": "Sanji",
+    	"serial":"#000006",
+		"universe": "One piece",
+    	"description":"",
+		"price": "$14.33",
+		"img": "sanji.png",
+		"category":"Epic"
+	},
+	{
+		"id": 12,
+		"name": "Dark magician",
+    	"serial":"#000006",
+		"universe": "Dragon Ball Z",
+    	"description":"",
+		"price": "$14.33",
+		"img": "dark-magician.png",
+		"category":"Very rare"
 	}
+
 ]

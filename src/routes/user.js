@@ -8,12 +8,18 @@ const {
   cart,
   collection,
   favourites,
+  createUser,
 } = require("../controllers/userController");
 const router = express.Router();
 
+
+// Routs for forms
 router.get("/login", login);
-router.get("/cart", cart);
 router.get("/register", register);
+router.post("/register", createUser)
+
+
+router.get("/cart", cart);
 router.get("/collection", collection);
 router.get("/favourites", favourites);
 

@@ -11,32 +11,32 @@
     </header>
     <main>
       <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
-      <form action="#" method="get">
+      <form action="/user/register" method="POST">
         <h3>Información del usuario</h3>
 
         <div class="datos-u">
-          <input type="text" name="nombre" placeholder="Nombres" id="nombre" class="drawer" minlength="4" required />
-          <input type="text" name="apellidos" placeholder="Apellidos" id="apellidos" class="drawer" minlength="4"
+          <input type="text" name="first_name" placeholder="Nombres" id="first_name" class="drawer" minlength="4" required />
+          <input type="text" name="last_name" placeholder="Apellidos" id="last_name" class="drawer" minlength="4"
             required />
 
-          <input type="text" name="usuario-n" placeholder="Nombre de usuario" id="usuiario-n" class="drawer"
+          <input type="text" name="user_name" placeholder="Nombre de usuario" id="user_name" class="drawer"
             minlength="4" required />
           <input type="text" name="email" placeholder="E-mail" id="email" class="drawer" required />
-          <input type="text" name="direccion" placeholder="Dirección" id="direccion" class="drawer" required />
-          <input type="password" name="contraseña" placeholder="Contraseña" id="contraseña" class="drawer" minlength="8"
+          <input type="text" name="adress" placeholder="Dirección" id="adress" class="drawer" required />
+          <input type="password" name="password" placeholder="Contraseña" id="password" class="drawer" minlength="8"
             required />
-          <input type="password" name="confirmacion-c" placeholder="Confirmar contraseña" id="confirmacion-c"
+          <input type="password"  placeholder="Confirmar contraseña" 
             class="drawer" minlength="8" required />
         </div>
 
         <div class="checkbox">
-          <label><input type="checkbox" name="perfil-u" value="comprador" id="comprador" required />
+          <label><input type="checkbox" value="comprador"  required />
             Acepto términos y condiciones</label>
-          <label><input type="checkbox" name="perfil-u
-              value=" vendedor" id="vendedor" />
+          <label><input type="checkbox" 
+              value=" vendedor"  />
             Quiero recibir promociones en mi correo</label>
         </div>
-        <button type="submit" name="enviar" value="submit" class="registrarse">
+        <button type="submit"  value="submit" class="registrarse">
           <a href="/"></a>Registrarse
         </button>
       </form>
