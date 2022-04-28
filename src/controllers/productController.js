@@ -38,24 +38,75 @@ const productController = {
 
   updeat: (req, res) => {
     let id = req.params.id;
-    let produc = product.filter((producto) => producto.id != id);
-    let productoEditado = {
+    let producToEdit = product.filter((producto) => producto.id == id);
+    let producToUpdeat = product.filter((producto) => producto.id == id);
+
+    let img = "";
+    if (req.file) {
+      let pathToUpdeat = path.join(
+        __dirname,
+        "../../public/img/" + productToDelete.img
+      );
+      fs.unlinkSync(pathToUpdeat);
+      img = req.file.filename;
+    }
+    producToEdit = {
       id: id,
       ...req.body,
+      img,
     };
 
-    produc.push(productoEditado);
-    fs.writeFileSync(productPath, JSON.stringify(produc));
+    let updatedProducts = product.map((p) => {
+      if (p.id == producToEdit.id) {
+        return (p = { ...producToEdit });
+      }
+      return p;
+    });
+
+    fs.writeFileSync(productPath, JSON.stringify(updatedProducts), "utf-8");
     res.redirect("/");
   },
 
-  delete: () => {},
+  delete: (req, res) => {
+    let id = req.params.id;
+    let finalDelete = product.filter((p) => p.id != id);
+
+    let productToDelete = product.filter((p) => p.id == id);
+    let pathToDelete = path.join(
+      __dirname,
+      "../../public/img/" + productToDelete.img
+    );
+    fs.unlinkSync(pathToDelete);
+
+    fs.writeFileSync(productPath, JSON.stringify(finalDelete), "utf-8");
+    res.render("/");
+  },
 
   createProduct: (req, res) => {
     res.render(views + "/products/createProduct.ejs", {
       css: "CreateProduct",
       title: "Formulario de creacion de producto",
     });
+  },
+
+  create: (req, res) => {
+    let id = product[product.lenght - 1].id + 1;
+    let img = "";
+
+    if (req.file) {
+      img = req.file.filename;
+    }
+
+    let newProduct = {
+      id,
+      ...req.body,
+      img,
+    };
+
+    product.push(newProduct);
+    fs.writeFileSync(productPath, JSON.stringify(product), "utf-8");
+
+    res.redirect("marketplace");
   },
 };
 
