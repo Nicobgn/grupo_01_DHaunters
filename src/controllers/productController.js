@@ -9,7 +9,7 @@ const product = JSON.parse(fs.readFileSync(productPath, "utf-8"));
 const productController = {
   details: (req, res) => {
     let id = req.params.id;
-    console.log(id);
+    // console.log(id);
     let produc = product.find((product) => product.id == id);
     res.render(views + "/products/productDetail.ejs", {
       css: "ProDeta",
