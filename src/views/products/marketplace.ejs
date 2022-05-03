@@ -1,22 +1,39 @@
-<%- include("../partials/head") %> <%- include("../partials/header") %>
+<%- include("../partials/head") %> 
+<%- include("../partials/header") %>
 
 <main class="marketplace">
-  <article class="productGrid">
-    <% for (let producto of product) {%>
-    <div class="containerProduct">
-      <article class="product">
-        <figure>
-          <img src="/img/<%=producto.img%>" alt="" />
-        </figure>
-        <div class="productDetail">
-          <h3><%= producto.name %></h3>
-          <p class="producto-description"><%= producto.description %></p>
-          <h4 class="price"><%= producto.price %></h4>
-        </div>
-      </article>
+  <section class="product-list">
+    <div class="product-section-title">
+      <h2>Lista de productos</h2>
     </div>
-    <% } %>
-  </article>
+    <% for (let product of products) {%>
+
+      
+      <div class="containerProduct">
+        <a href="/store/productDetails/<%=product.id%>">
+
+        <article class="product">
+          <figure>
+            <img src="/img/<%=product.img%>" alt="" />
+          </figure>
+          <div class="productDetail">
+            <h3>
+              <%= product.name %>
+            </h3>
+            <p class="product-description">
+              <%= product.universe %>
+            </p>
+            <h4 class="price">
+              <%= product.price %>
+            </h4>
+          </div>
+        </article>
+        </a>
+      </div>
+    
+      <% } %>
+  </section>
+
 </main>
 
 <%- include("../partials/footer") %>

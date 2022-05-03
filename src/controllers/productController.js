@@ -18,10 +18,11 @@ const productController = {
     });
   },
   store: (req, res) => {
+    let products = product;
     res.render(views + "/products/marketplace.ejs", {
       css: "Home",
       title: "Store - DHaunters",
-      product,
+      products,
     });
   },
 
