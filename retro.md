@@ -4,3 +4,11 @@ En la anterior entrega tuvimos cosas buenas como cosas malas, ya que apenas nos 
 
 Como comentarios para esta entrega podría decir que nos falta mejorar como equipo, pero estamos en ese proceso y siento que en cada entrega hemos mejorado un poco como equipo.
 
+# Retrospectiva 4to Sprint 
+
+En esta entrega nos falto un poco mas de comunicacion al principio pues el equipo estaba un poco disperso por la semana santa, pero luego logramos agruparnos y comunicarnos bien para trabajr en la entrega, siento que hemos ido perfeccionando algunos puntos que quedaron de las otras entregas y cada vez vamos teniendo un a pagina mejor. 
+
+algo que deberiamos empezar a hacer serian las dailys para asi mejorar la comunicacion del equipo aunque de cierta manera hacemos reuniones semanales y estamos en contacto por whatsapp casi todo el tiempo.
+
+algo bueno y que va desde la primera entrega es la comunicacion acertiva y las ideas que cada uno tiene para trabajar en el proyecto pues se conectan muy bien. 
+
