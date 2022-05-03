@@ -38,32 +38,154 @@
 					<div class="product-section-title">
 						<h2>New on sale</h2>
 					</div>
+
 					<% for (let product of products) {%>
 
-						
-						<div class="containerProduct">
-							<a href="/store/productDetails/<%=product.id%>">
 
-							<article class="product">
-								<figure>
-									<img src="/img/<%=product.img%>" alt="" />
-								</figure>
-								<div class="productDetail">
-									<h3>
-										<%= product.name %>
-									</h3>
-									<p class="product-description">
-										<%= product.universe %>
-									</p>
-									<h4 class="price">
-										<%= product.price %>
-									</h4>
-								</div>
-							</article>
-							</a>
-						</div>
-					
-						<% } %>
+						<% if(product.category=="Epic" ){%>
+
+
+
+
+							<div class="containerProduct">
+								<a href="/store/productDetails/<%=product.id%>">
+
+									<article class="product">
+										<figure>
+											<img src="/img/<%=product.img%>" alt="" />
+										</figure>
+										<div class="productDetail">
+											<h3>
+												<%= product.name %>
+											</h3>
+											<p class="product-description">
+												<%= product.universe %>
+											</p>
+											<h4 class="price">
+												<%= product.price %>
+											</h4>
+										</div>
+									</article>
+								</a>
+							</div>
+							<% } %>
+
+							<% } %>
+				</section>
+
+				<section class="product-list">
+					<div class="product-section-title">
+						<h2>Productos de categoria comun</h2>
+					</div>
+
+					<% for (let product of products) {%>
+
+
+						<% if(product.category=="Common" ){%>
+
+
+
+
+							<div class="containerProduct">
+								<a href="/store/productDetails/<%=product.id%>">
+
+									<article class="product">
+										<figure>
+											<img src="/img/<%=product.img%>" alt="" />
+										</figure>
+										<div class="productDetail">
+											<h3>
+												<%= product.name %>
+											</h3>
+											<p class="product-description">
+												<%= product.universe %>
+											</p>
+											<h4 class="price">
+												<%= product.price %>
+											</h4>
+										</div>
+									</article>
+								</a>
+							</div>
+							<% } %>
+
+							<% } %>
+				</section>
+				<section class="product-list">
+					<div class="product-section-title">
+						<h2>Productos de categoria rara</h2>
+					</div>
+
+					<% for (let product of products) {%>
+
+
+						<% if(product.category=="Rare" ){%>
+
+
+
+
+							<div class="containerProduct">
+								<a href="/store/productDetails/<%=product.id%>">
+
+									<article class="product">
+										<figure>
+											<img src="/img/<%=product.img%>" alt="" />
+										</figure>
+										<div class="productDetail">
+											<h3>
+												<%= product.name %>
+											</h3>
+											<p class="product-description">
+												<%= product.universe %>
+											</p>
+											<h4 class="price">
+												<%= product.price %>
+											</h4>
+										</div>
+									</article>
+								</a>
+							</div>
+							<% } %>
+
+							<% } %>
+				</section>
+				<section class="product-list">
+					<div class="product-section-title">
+						<h2>Productos de categoria muy rara</h2>
+					</div>
+
+					<% for (let product of products) {%>
+
+
+						<% if(product.category=="Very rare" ){%>
+
+
+
+
+							<div class="containerProduct">
+								<a href="/store/productDetails/<%=product.id%>">
+
+									<article class="product">
+										<figure>
+											<img src="/img/<%=product.img%>" alt="" />
+										</figure>
+										<div class="productDetail">
+											<h3>
+												<%= product.name %>
+											</h3>
+											<p class="product-description">
+												<%= product.universe %>
+											</p>
+											<h4 class="price">
+												<%= product.price %>
+											</h4>
+										</div>
+									</article>
+								</a>
+							</div>
+							<% } %>
+
+							<% } %>
 				</section>
 				<a href="/store/">
 					<div class="fullCatalogue-icon">
