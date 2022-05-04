@@ -9,17 +9,14 @@ const bannerPath = path.join(__dirname, "../data/banner.json");
 const banner = JSON.parse(fs.readFileSync(bannerPath, "utf-8"));
 
 const mainController = {
-	home: (req, res) => {
-		res.render(views + "/home.ejs", {
-			css: "Home",
-			title: "Bienvenido a DHaunters",
-			banner,
-			products,
-		});
-	},
-	error404: (req, res) => {
-		res.render("Página no encontrada");
-	},
+  home: (req, res) => {
+    res.render(views + "/home.ejs", {
+      css: "Home",
+      title: "Bienvenido a DHaunters",
+      banner,
+      products,
+    });
+  },
 };
 
 module.exports = mainController;

@@ -174,5 +174,16 @@
     "password": "arqwerqwer",
     "category": "user",
     "image": "deafaul.jpg"
+  },
+  {
+    "id": 17,
+    "first_name": "papa",
+    "last_name": "tata",
+    "user_name": "dsaksdsa",
+    "email": "mds@gmail.com",
+    "adress": "clase1",
+    "password": "ds'aldsadsa",
+    "category": "user",
+    "image": "deafaul.jpg"
   }
 ]

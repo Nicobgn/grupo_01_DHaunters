@@ -37,18 +37,14 @@ const productController = {
     });
   },
 
-  updeat: (req, res) => {
+  update: (req, res) => {
     let id = req.params.id;
-    let producToEdit = product.filter((producto) => producto.id == id);
-    let producToUpdeat = product.filter((producto) => producto.id == id);
+    let producToEdit = product.find((produccto) => produccto.id == id);
 
-    let img = "";
+    let img = producToEdit.img;
     if (req.file) {
-      let pathToUpdeat = path.join(
-        __dirname,
-        "../../public/img/" + productToDelete.img
-      );
-      fs.unlinkSync(pathToUpdeat);
+      let pathToUpdate = path.join(__dirname, "/../../public/img/" + img);
+      fs.unlinkSync(pathToUpdate);
       img = req.file.filename;
     }
     producToEdit = {
@@ -80,7 +76,7 @@ const productController = {
     fs.unlinkSync(pathToDelete);
 
     fs.writeFileSync(productPath, JSON.stringify(finalDelete), "utf-8");
-    res.render("/");
+    res.redirect("/");
   },
 
   createProduct: (req, res) => {
@@ -91,7 +87,7 @@ const productController = {
   },
 
   create: (req, res) => {
-    let id = product[product.lenght - 1].id + 1;
+    let id = product[product.length - 1].id + 1;
     let img = "";
 
     if (req.file) {
@@ -107,7 +103,7 @@ const productController = {
     product.push(newProduct);
     fs.writeFileSync(productPath, JSON.stringify(product), "utf-8");
 
-    res.redirect("marketplace");
+    res.redirect("/store");
   },
 };
 

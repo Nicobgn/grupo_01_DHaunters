@@ -1,20 +1,20 @@
 <%- include('../partials/head') %> <%- include('../partials/header') %>
 <main>
   <div>
-    <form action="" method="post">
+    <form action="createProduct" method="post" enctype="multipart/form-data">
       <h3>Formulario de creacion de producto</h3>
 
       <div class="formulario">
         <div class="description">
-          <label for="title">Nombre del producto</label>
-          <input type="text" name="title" id="title" class="drawer" required />
+          <label for="name">Nombre del producto</label>
+          <input type="text" name="name" id="name" class="drawer" required />
         </div>
         <div class="description">
-          <label for="precio">Precio del producto</label>
+          <label for="price">Precio del producto</label>
           <input
             type="number"
-            name="precio"
-            id="precio"
+            name="price"
+            id="price"
             class="drawer"
             required
           />
@@ -47,6 +47,18 @@
             cols="50"
             class="drawer"
           />
+        </div>
+        <div class="description">
+          <label for="universe">Universo</label
+          ><input type="text" name="universe" id="universe" class="drawer" />
+        </div>
+        <div class="description">
+          <select name="category" id="category">
+            <option value="Common">Comun</option>
+            <option value="Rare">Rara</option>
+            <option value="Very rare">Muy Rara</option>
+            <option value="Epic">Epica</option>
+          </select>
         </div>
         <div>
           <button type="submit">Subir</button>

@@ -8,7 +8,7 @@
       </figure>
       <div class="producDetails">
         <a href=""><%= produc.name %> </a>
-        <h6>#000001</h6>
+        <p><%= produc.shortDesc %></p>
         <p><%= produc.universe %></p>
       </div>
     </div>
@@ -26,12 +26,12 @@
         </div>
         <div class="button">
           <button>Comprar</button>
-          <a href="store/editProduct/<%= produc.id %> ">
-            <!-- ver porque no me redirecciona a la pagina que quiero -->
-            <button>Editar</button>
-          </a>
-          <form action="/<%= produc.id %>/?_method=DELETE " method="post">
-            <button>Eliminar</button>
+          <a href="/store/editProduct/<%= produc.id %> "> Editar </a>
+          <form
+            action="/store/productDetails/delete/<%= produc.id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">Eliminar</button>
           </form>
         </div>
       </form>
@@ -39,7 +39,7 @@
   </section>
   <section>
     <div class="description">
-      <p><%= produc.longtDesc %></p>
+      <p><%= produc.longDesc %></p>
     </div>
   </section>
 </main>

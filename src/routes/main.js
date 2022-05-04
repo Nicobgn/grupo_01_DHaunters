@@ -1,9 +1,8 @@
 const path = require("path");
 const express = require("express");
-const views = path.join(__dirname + "/../views");
-const { home, error404 } = require("../controllers/mainController");
+const mainController = require("../controllers/mainController");
 const router = express.Router();
 
-router.get("/", home);
+router.get("/", mainController.home);
 
 module.exports = router;
