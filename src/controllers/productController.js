@@ -43,7 +43,7 @@ const productController = {
 
     let img = producToEdit.img;
     if (req.file) {
-      let pathToUpdate = path.join(__dirname, "/../../public/img/" + img);
+      let pathToUpdate = path.join(__dirname, "/../../public/img/products" + img);
       fs.unlinkSync(pathToUpdate);
       img = req.file.filename;
     }
@@ -71,7 +71,7 @@ const productController = {
     let productToDelete = product.filter((p) => p.id == id);
     let pathToDelete = path.join(
       __dirname,
-      "../../public/img/" + productToDelete.img
+      "../../public/img/products" + productToDelete.img
     );
     fs.unlinkSync(pathToDelete);
 
