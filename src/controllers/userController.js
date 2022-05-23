@@ -98,7 +98,7 @@ const userController = {
       };
 
       users.push(newUser);
-      let newListJSON = JSON.stringify(users);
+      let newListJSON = JSON.stringify(users, null, ' ');
       fs.writeFileSync(usersPath, newListJSON, "utf-8");
 
       res.redirect("/user/login");
