@@ -11,6 +11,11 @@ const usersPath = path.join(__dirname + "/../data/users.json");
 const product = JSON.parse(fs.readFileSync(productPath, "utf-8"));
 const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 
+//Middlewares
+const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const { fileURLToPath } = require("url");
+
 const userController = {
   login: (req, res) => {
     res.render(views + "/users/log-in.ejs", {
@@ -48,21 +53,63 @@ const userController = {
   },
 
   createUser: (req, res) => {
-    let id = users[users.length - 1].id + 1;
-    console.log(req.body);
+    //proceso de validacion de errores
+    let errors = validationResult(req);
 
-    let newUser = {
-      id,
-      ...req.body,
-      category: "user",
-      image: "deafaul.jpg",
-    };
+    if (errors.isEmpty()) {
+      //proceso de creacion de usuario
+      let id = users[users.length - 1].id + 1;
+      console.log(req.body);
+      let {
+        first_name,
+        last_name,
+        user_name,
+        email,
+        adress,
+        password,
+        tyc,
+        accept_send,
+      } = req.body;
 
-    users.push(newUser);
-    let newListJSON = JSON.stringify(users);
-    fs.writeFileSync(usersPath, newListJSON, "utf-8");
+      //Encriptacion de la contraseña
+      password = bcrypt.hashSync(req.body.password, 10);
 
-    res.redirect("/");
+      //Nombre del archivo multer
+
+      let image = "";
+      if (req.file) {
+        image= req.file.filename
+      }else{
+        image = "user_default.jpg";
+      }
+
+      let newUser = {
+        id,
+        first_name,
+        last_name,
+        user_name,
+        email,
+        adress,
+        password,
+        tyc,
+        category: "user",
+        accept_send,
+        image,
+      };
+
+      users.push(newUser);
+      let newListJSON = JSON.stringify(users);
+      fs.writeFileSync(usersPath, newListJSON, "utf-8");
+
+      res.redirect("/user/login");
+    } else {
+      res.render(views + "/users/sign-up.ejs", {
+        css: "Forms",
+        title: "Registrate - DHaunters",
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
   },
 };
 

@@ -8,7 +8,9 @@
     "adress": "90117 Erie Place",
     "password": "F3aTbLjAXK",
     "category": "user",
-    "image": "user_1.jpg"
+    "image": "user_1.jpg",
+    "tyc": "1",
+    "acept_send": "0"
   },
   {
     "id": 2,
@@ -19,7 +21,9 @@
     "adress": "4 Westport Pass",
     "password": "B1spbQgKl",
     "category": "user",
-    "image": "user_2.jpg"
+    "image": "user_2.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 3,
@@ -30,7 +34,9 @@
     "adress": "06 Canary Road",
     "password": "6P8lunZCl9aX",
     "category": "user",
-    "image": "user_3.jpg"
+    "image": "user_3.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 4,
@@ -41,7 +47,9 @@
     "adress": "40 David Point",
     "password": "gO6XJK",
     "category": "user",
-    "image": "user_4.jpg"
+    "image": "user_4.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 5,
@@ -52,7 +60,9 @@
     "adress": "15 Pond Circle",
     "password": "DHtPxU5",
     "category": "user",
-    "image": "user_5.jpg"
+    "image": "user_5.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 6,
@@ -63,7 +73,9 @@
     "adress": "2 Morrow Point",
     "password": "zUiuOpTmGaJ0",
     "category": "user",
-    "image": "user_6.jpg"
+    "image": "user_6.jpg",
+    "tyc": "1",
+    "acept_send": "0"
   },
   {
     "id": 7,
@@ -74,7 +86,9 @@
     "adress": "03420 Transport Hill",
     "password": "wcmLXT",
     "category": "user",
-    "image": "user_7.jpg"
+    "image": "user_7.jpg",
+    "tyc": "1",
+    "acept_send": "0"
   },
   {
     "id": 8,
@@ -85,7 +99,9 @@
     "adress": "1715 Heath Point",
     "password": "wtnfFEzHHW",
     "category": "user",
-    "image": "user_8.jpg"
+    "image": "user_8.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 9,
@@ -96,7 +112,9 @@
     "adress": "128 Esch Point",
     "password": "AGrxF0Tv",
     "category": "user",
-    "image": "user_9.jpg"
+    "image": "user_9.jpg",
+    "tyc": "1",
+    "acept_send": "0"
   },
   {
     "id": 10,
@@ -107,7 +125,9 @@
     "adress": "6 Waubesa Drive",
     "password": "60MQ3jTiOk",
     "category": "user",
-    "image": "user_10.jpg"
+    "image": "user_10.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 11,
@@ -118,7 +138,9 @@
     "adress": "7 Judy Point",
     "password": "7U1z9o2W",
     "category": "user",
-    "image": "user_11.jpg"
+    "image": "user_11.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 12,
@@ -129,7 +151,9 @@
     "adress": "719 Reinke Way",
     "password": "LcvJW8PDU0LS",
     "category": "user",
-    "image": "user_12.jpg"
+    "image": "user_12.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 13,
@@ -140,7 +164,9 @@
     "adress": "735 Arapahoe Point",
     "password": "53lZdWYMMxU",
     "category": "user",
-    "image": "user_13.jpg"
+    "image": "user_13.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 14,
@@ -151,7 +177,9 @@
     "adress": "2 Lien Place",
     "password": "dOymAt20",
     "category": "user",
-    "image": "user_14.jpg"
+    "image": "user_14.jpg",
+    "tyc": "1",
+    "acept_send": "0"
   },
   {
     "id": 15,
@@ -162,28 +190,20 @@
     "adress": "3 Dennis Way",
     "password": "eI5yk4UsEM8",
     "category": "user",
-    "image": "user_15.jpg"
-  },
-  {
-    "id": 16,
-    "first_name": "carlos",
-    "last_name": "perez",
-    "user_name": "cp123",
-    "email": "asdfasdf",
-    "adress": "cra2323",
-    "password": "arqwerqwer",
-    "category": "user",
-    "image": "deafaul.jpg"
+    "image": "user_15.jpg",
+    "tyc": "1",
+    "acept_send": "1"
   },
   {
     "id": 17,
-    "first_name": "papa",
-    "last_name": "tata",
-    "user_name": "dsaksdsa",
-    "email": "mds@gmail.com",
-    "adress": "clase1",
-    "password": "ds'aldsadsa",
+    "first_name": "juan diego",
+    "last_name": "giraldo gomez",
+    "user_name": "hawkdieg",
+    "email": "giraldit99@gmail.com",
+    "adress": "CARRER 83b # 29a-48",
+    "password": "$2a$10$ZR5fDENoKqvTg8EQXy7ueeoFE8q1l9DavHz6.KqowxWjH8NDCFMMS",
+    "tyc": "1",
     "category": "user",
-    "image": "deafaul.jpg"
+    "image": "user_default.jpg"
   }
 ]
