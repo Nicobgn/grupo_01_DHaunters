@@ -43,7 +43,10 @@ const productController = {
 
     let img = producToEdit.img;
     if (req.file) {
-      let pathToUpdate = path.join(__dirname, "/../../public/img/products" + img);
+      let pathToUpdate = path.join(
+        __dirname,
+        "/../../public/img/products" + img
+      );
       fs.unlinkSync(pathToUpdate);
       img = req.file.filename;
     }
@@ -69,10 +72,12 @@ const productController = {
     let finalDelete = product.filter((p) => p.id != id);
 
     let productToDelete = product.filter((p) => p.id == id);
+
     let pathToDelete = path.join(
       __dirname,
-      "../../public/img/products" + productToDelete.img
+      "/../../public/img/products/" + productToDelete[0].img
     );
+
     fs.unlinkSync(pathToDelete);
 
     fs.writeFileSync(productPath, JSON.stringify(finalDelete), "utf-8");

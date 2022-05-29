@@ -7,7 +7,7 @@ const router = express.Router();
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, path.join(__dirname, "/../../public/img"));
+    cb(null, path.join(__dirname, "/../../public/img/products"));
   },
   filename: (req, file, cb) => {
     let newName = `${Date.now()}-${file.originalname}`;
@@ -29,7 +29,7 @@ router.get("/editProduct/:id", productController.edit); //para ver el detalle de
 router.put("/editProduct/:id", upload.single("img"), productController.update); //para editar el detalle de un producto determinado
 
 /* ruta para eliminar un producto */
-router.delete("/productDetails/:id", productController.delete); //para eliminar el detalle de un producto determinado
+router.delete("/productDetails/:id/delete", productController.delete); //para eliminar el detalle de un producto determinado
 
 /* rutas para crear un producto y que se guarde en el json */
 router.get("/createProduct", productController.createProduct);
