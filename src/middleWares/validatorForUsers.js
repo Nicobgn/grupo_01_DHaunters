@@ -89,7 +89,7 @@ const toEvaluate = [
 
   body("image").custom((value, { req }) => {
     if (req.file) {
-      let extName = path.extname(file.originalname);
+      let extName = path.extname(req.file.originalname);
       if (extName != ".jpg" && extName != ".png" && extName) {
         throw new Error("Debes seleccionar una imagen de formato valido");
       }
