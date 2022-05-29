@@ -74,6 +74,9 @@ const userController = {
       //Encriptacion de la contraseña
       password = bcrypt.hashSync(req.body.password, 10);
 
+      //accept_send true or false 
+
+
       //Nombre del archivo multer
 
       let image = "";
