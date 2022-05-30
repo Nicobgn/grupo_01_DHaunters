@@ -12,3 +12,10 @@ algo que deberiamos empezar a hacer serian las dailys para asi mejorar la comuni
 
 algo bueno y que va desde la primera entrega es la comunicacion acertiva y las ideas que cada uno tiene para trabajar en el proyecto pues se conectan muy bien. 
 
+# Retrospectiva 5to Sprint
+
+Para esta entrega tuvimos algunos problemas de tiempo, puesto que algunos tuvimos compromisos que obstruyeron el progreso del sprint, sin embargo, a principios del sprint 6 logramos des atrasarnos de muchas de las cosas que venían de atrás.
+
+Algo bueno de esta entrega fue que tuvimos mejor comunicación, a pesar de los inconvenientes logramos comunicarnos más y llegar a más acuerdos.
+
+Algo que deberíamos empezar a hacer es un "demo" cada semana con los avances de cada integrante y ver que se puede mejorar y como funciona cada cosa.
