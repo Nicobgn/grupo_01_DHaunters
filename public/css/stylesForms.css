@@ -177,7 +177,7 @@ p a {
   width: 45%;
 }
 
-@media (min-width: 1261px) {
+@media (min-width: 1260px) {
   .drawer,
   .drawer-red {
     font-size: 25px;

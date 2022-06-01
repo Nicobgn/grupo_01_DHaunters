@@ -31,7 +31,7 @@ const productController = {
     let producto = product.find((produccto) => produccto.id == id);
     res.render(views + "/products/editProduct.ejs", {
       producto,
-      css: "Home",
+      css: "CreateProduct",
       title: "Edicion del producto",
       producto,
     });

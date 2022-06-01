@@ -1,71 +1,64 @@
-<%- include('../partials/head') %> <%- include('../partials/header') %>
+<%- include('../partials/head') %>
+  <%- include('../partials/header') %>
 
-<main>
-  <div>
-    <form action="/store/editProduct/<%= producto.id %>?_method=PUT"" method="post" enctype="multipart/form-data">
-      <h3>Formulario de edicion del producto <%= producto.name %></h3>
+    <main>
 
-      <div class="formulario">
-        <div class="description">
-          <label for="name">Nombre del producto</label>
-          <input type="text" name="name" id="name" class="drawer" required />
+      <form action="/store/editProduct/<%= producto.id %>?_method=PUT"" method=" post" enctype="multipart/form-data">
+
+
+        <div class="formulario">
+          <h3>Formulario de edicion del producto <%= producto.name %>
+          </h3>
+          <div class="description">
+            <input type="text" name="name" id="name" class="drawer" required placeholder="Nombre del producto" />
+          </div>
+          <div class="description">
+            <label for="price"></label>
+            <input type="number" name="price" id="price" class="drawer" placeholder="Precio del producto" required />
+          </div>
+          <div class="description">
+            <!-- <label for="img">Ingrese la foto de su producto</label>
+          <input type="file" name="img" id="img" class="drawer" required /> -->
+            <label for="img" class="drawer">
+              <span id="info">Ingrese la foto de su producto</span>
+            </label>
+            <input id="img" name="img" onchange='cambiar()' type="file" style='display: none;' />
+          </div>
+          <div class="description">
+            <label for="shortDesc"></label>
+            <input type="text" name="shortDesc" id="shortDesc" class="drawer" required rows="10" cols="50"
+              placeholder="Haga una breve desdripcion del personaje" />
+          </div>
+          <div class="description">
+
+            <input type="text" name="longDesc" id="longDesc" rows="10" cols="50" class="drawer"
+              placeholder="Haga una descripcion del producto" />
+          </div>
+          <div class="description">
+
+            <input type="text" name="universe" id="universe" class="drawer" placeholder="Universo" />
+          </div>
+          <div class="description">
+            <select name="category" id="category" class="drawer">
+              <option value="Common">Comun</option>
+              <option value="Rare">Rara</option>
+              <option value="Very rare">Muy Rara</option>
+              <option value="Epic">Epica</option>
+            </select>
+          </div>
         </div>
-        <div class="description">
-          <label for="price">Precio del producto</label>
-          <input
-            type="number"
-            name="price"
-            id="price"
-            class="drawer"
-            required
-          />
-        </div>
-        <div class="description">
-          <label for="img">Ingrese la foto de su producto</label>
-          <input type="file" name="img" id="img" class="drawer" required />
-        </div>
-        <div class="description">
-          <label for="shortDesc"
-            >Haga una breve desdripcion del personaje</label
-          >
-          <input
-            type="text"
-            name="shortDesc"
-            id="shortDesc"
-            class="drawer"
-            required
-            rows="10"
-            cols="50"
-          />
-        </div>
-        <div class="description">
-          <label for="longDesc">Haga una descripcion del producto</label>
-          <input
-            type="text"
-            name="longDesc"
-            id="longDesc"
-            rows="10"
-            cols="50"
-            class="drawer"
-          />
-        </div>
-        <div class="description">
-          <label for="universe">Universo</label
-          ><input type="text" name="universe" id="universe" class="drawer" />
-        </div>
-        <div class="description">
-          <select name="category" id="category">
-            <option value="Common">Comun</option>
-            <option value="Rare">Rara</option>
-            <option value="Very rare">Muy Rara</option>
-            <option value="Epic">Epica</option>
-          </select>
-        </div>
-        <div>
+        <div class="buttoms">
           <button type="submit">Subir</button>
           <button type="reset">Borrar</button>
         </div>
-      </div>
-    </form>
-  </div>
-</main>
+
+      </form>
+
+    </main>
+    </body>
+    <script>
+      function cambiar() {
+        var pdrs = document.getElementById('img').files[0].name;
+        document.getElementById('info').innerHTML = pdrs;
+      }
+    </script>
