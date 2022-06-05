@@ -18,6 +18,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* ------------------------------------- */
+
+/* --------- MiddleWares----------- */
+const validation = require('../middleWares/validationForProduct')
+
 /* solo tengo que ver todos los productos listados */
 router.get("/", productController.store);
 
@@ -33,6 +37,6 @@ router.delete("/productDetails/:id/delete", productController.delete); //para el
 
 /* rutas para crear un producto y que se guarde en el json */
 router.get("/createProduct", productController.createProduct);
-router.post("/createProduct", upload.single("img"), productController.create); //para crear un producto metodo post
+router.post("/createProduct", upload.single("img"), validation ,productController.create); //para crear un producto metodo post
 
 module.exports = router;

@@ -7,10 +7,38 @@
 
           <div class="formulario">
             <div class="description">
-              <input type="text" name="name" id="name" class="drawer" required placeholder="Nombre del producto" />
+              <input type="text" 
+                name="name" 
+                id="name" 
+                class="drawer"  
+                placeholder="Nombre del producto"
+                class="<%= locals.errors && errors.name ? 'drawer-red':'drawer' %> "
+                <% if (locals.oldDate && oldDate.name) { %>
+                  value=' <%= oldDate.name %>  ' 
+                <% } %> 
+              />
+              <% if (locals.errors && errors.name) { %>
+                <%= errors.name.msg %> 
+              <% } %> 
+
             </div>
+
             <div class="description">
-              <input type="number" name="price" id="price" class="drawer" required placeholder="Precio del producto" />
+              <input type="number"
+                name="price" 
+                id="price" 
+                class="drawer" 
+                placeholder="Precio del producto" 
+                class=" <%= locals.errors && errors.price ? 'drawer-red' : 'drawer' %>  "
+                <% if (locals.oldDate && oldDate.price) { %> 
+                  value=' <%= oldDate.price %>  '
+                <% } %> 
+              />
+
+                <% if (locals.errors && errors.price) { %>
+                  <%= errors.price.msg %> 
+                <% } %> 
+
             </div>
             <div class="description">
               <!-- <label for="img">Ingrese la foto de su producto</label>
@@ -19,27 +47,70 @@
                 <span id="info">Ingrese la foto de su producto</span>
               </label>
               <input id="img" name="img" onchange='cambiar()' type="file" style='display: none;' />
+              
+              <% if (locals.errors && errors.img) { %>
+                <%= errors.img.msg %> 
+              <% } %> 
+
             </div>
+
             <div class="description">
-              <input type="text" name="shortDesc" id="shortDesc" class="drawer" required rows="10" cols="50"
-                placeholder="Haga una breve desdripcion del personaje" />
+              <input type="text" name="shortDesc" id="shortDesc" class="drawer" 
+                placeholder="Haga una breve desdripcion del personaje" 
+                class=" <%= locals.errors && errors.shortDesc ? 'drawer-red' : 'drawer' %>  "
+                <% if (locals.oldDate && oldDate.shortDesc) { %> 
+                  value=' <%= oldDate.price %>  '
+                <% } %> 
+              />
+
+                <% if (locals.errors && errors.shortDesc) { %>
+                  <%= errors.shortDesc.msg %> 
+                <% } %> 
+
             </div>
+
             <div class="description">
-              <input type="text" name="longDesc" id="longDesc" rows="10" cols="50" class="drawer"
-                placeholder="Haga una descripcion del producto" />
+              <input type="text" 
+              name="longDesc" 
+              id="longDesc" 
+              class="drawer"
+              placeholder="Haga una descripcion del producto" 
+              class=" <%= locals.errors && errors.longDesc ? 'drawer-red' : 'drawer' %>  "
+              <% if(locals.oldDate && oldDate.longDesc){  %>
+                value=" <%= oldDate.longDesc %>  "
+              <% } %> 
+              />
+
+                <% if (locals.errors && errors.longDesc) { %>
+                  <%= errors.longDesc.msg %> 
+                <% } %> 
+
             </div>
 
             <div class="description">
               <select name="category" id="category" class="drawer">
                 <option>Categoria</option>
-                <option value="Common">Comun</option>
-                <option value="Rare">Rara</option>
-                <option value="Very rare">Muy Rara</option>
-                <option value="Epic">Epica</option>
+
+                <% let categorias=['Common', 'Rare', 'Very rare', 'Epic' ] %>
+                <% for (const categoria of categorias) {  %>
+                  <option value=" <%= categoria %>  "
+                  <%=  locals.oldDate && (categoria == oldDate.category) ? 'selected' :nul %> 
+                  > <%= categoria %> </option>
+                <% } %> 
               </select>
+
+              <% if (locals.errors && errors.category) { %>
+                <%= errors.category.msg %> 
+              <% } %> 
+
             </div>
             <div class="description">
               <input type="text" name="universe" id="universe" class="drawer" placeholder="Universo" />
+
+              <% if (locals.errors && errors.universe) { %>
+                <%= errors.universe.msg %> 
+              <% } %> 
+
             </div>
             </div>
             <div class="buttoms">

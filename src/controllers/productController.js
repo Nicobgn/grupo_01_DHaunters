@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { title } = require("process");
 const views = path.join(__dirname + "/../views");
+const { validationResult }  = require('express-validator')
 
 const productPath = path.join(__dirname + "/../data/newOnSale.json");
 const product = JSON.parse(fs.readFileSync(productPath, "utf-8"));
@@ -92,8 +93,18 @@ const productController = {
   },
 
   create: (req, res) => {
+    let validation = validationResult(req)
     let id = product[product.length - 1].id + 1;
     let img = "";
+
+    if(validation.errors.length > 0) {
+      res.render(views + "/products/createProduct.ejs", {
+        css: "CreateProduct",
+        title: "Formulario de creacion de producto",
+        errors: validation.mapped(),
+        oldDate : req.body
+      })
+    }
 
     if (req.file) {
       img = req.file.filename;

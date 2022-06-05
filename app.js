@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 // Estas 2 lineas son para settear los forms y que se vuelvan objetos literales
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // 	Routes

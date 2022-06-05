@@ -10,11 +10,11 @@
         <div class="formulario">
 
           <div class="description">
-            <input type="text" name="name" id="name" class="drawer" required placeholder="Nombre del producto" />
+            <input type="text" name="name" id="name" class="drawer" required placeholder="Nombre del producto" value="<%= producto.name %> "/>
           </div>
           <div class="description">
             <label for="price"></label>
-            <input type="number" name="price" id="price" class="drawer" placeholder="Precio del producto" required />
+            <input type="number" name="price" id="price" class="drawer" placeholder="Precio del producto" required value="<%= producto.price %> "/>
           </div>
           <div class="description">
             <!-- <label for="img">Ingrese la foto de su producto</label>
@@ -27,23 +27,21 @@
           <div class="description">
             <label for="shortDesc"></label>
             <input type="text" name="shortDesc" id="shortDesc" class="drawer" required rows="10" cols="50"
-              placeholder="Haga una breve desdripcion del personaje" />
+              value="<%= producto.shortDesc %> " />
           </div>
           <div class="description">
 
             <input type="text" name="longDesc" id="longDesc" rows="10" cols="50" class="drawer"
-              placeholder="Haga una descripcion del producto" />
+              pvalue="<%= producto.longDesc %> " />
           </div>
           <div class="description">
 
-            <input type="text" name="universe" id="universe" class="drawer" placeholder="Universo" />
+            <input type="text" name="universe" id="universe" class="drawer" value="<%= producto.universe %> " />
           </div>
           <div class="description">
             <select name="category" id="category" class="drawer">
-              <option value="Common">Comun</option>
-              <option value="Rare">Rara</option>
-              <option value="Very rare">Muy Rara</option>
-              <option value="Epic">Epica</option>
+              <option value="<%= producto.category %> " /></option>
+
             </select>
           </div>
         </div>
