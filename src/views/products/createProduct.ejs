@@ -94,7 +94,7 @@
                 <% let categorias=['Common', 'Rare', 'Very rare', 'Epic' ] %>
                 <% for (const categoria of categorias) {  %>
                   <option value=" <%= categoria %>  "
-                  <%=  locals.oldDate && (categoria == oldDate.category) ? 'selected' :nul %> 
+                  <%=  locals.oldDate && (categoria == oldDate.category) ? 'selected' : null %> 
                   > <%= categoria %> </option>
                 <% } %> 
               </select>

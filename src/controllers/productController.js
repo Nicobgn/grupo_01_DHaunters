@@ -93,34 +93,37 @@ const productController = {
   },
 
   create: (req, res) => {
-    let validation = validationResult(req)
-    let id = product[product.length - 1].id + 1;
-    let img = "";
+    let errors = validationResult(req);
 
-    if(validation.errors.length > 0) {
+    if (errors.isEmpty()) {
+      let id = product[product.length - 1].id + 1;
+      let { name, price, shortDesc, LongDesc, category, universe } = req.body;
+
+      let img = "";
+      if (req.file) {
+        img = req.file.filename;
+      }
+
+      let newProduct = {
+        id,
+        ...req.body,
+        img,
+      };
+
+      product.push(newProduct);
+      fs.writeFileSync(productPath, JSON.stringify(product), "utf-8");
+
+      res.redirect("/store");
+    }
+    {
       res.render(views + "/products/createProduct.ejs", {
         css: "CreateProduct",
         title: "Formulario de creacion de producto",
-        errors: validation.mapped(),
-        oldDate : req.body
-      })
+        errors: errors.mapped(),
+        oldDate: req.body,
+      });
     }
-
-    if (req.file) {
-      img = req.file.filename;
-    }
-
-    let newProduct = {
-      id,
-      ...req.body,
-      img,
-    };
-
-    product.push(newProduct);
-    fs.writeFileSync(productPath, JSON.stringify(product), "utf-8");
-
-    res.redirect("/store");
-  },
+  } 
 };
 
 module.exports = productController;
