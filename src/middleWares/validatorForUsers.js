@@ -1,11 +1,12 @@
 const { body } = require("express-validator");
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
 
 const usersPath = path.join(__dirname + "/../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 
-const toEvaluate = [
+const registerValidator = [
   body("first_name")
     .notEmpty()
     .withMessage("Debes completar este campo")
@@ -97,5 +98,35 @@ const toEvaluate = [
     return true;
   }),
 ];
+const loginValidator = [
+  body("dato_ingreso")
+    .notEmpty()
+    .withMessage("Debes completar este campo")
+    .bail()
+    .custom((value, { req }) => {
+      let datoIngreso = req.body.dato_ingreso;
+      let user = users.find(
+        (user) => user.email == datoIngreso || user.name == datoIngreso
+      );
 
-module.exports = toEvaluate;
+      if (!user) {
+        throw new Error("Este usuario no se encuentra registrado");
+      }
+      return true;
+    }),
+  body("password").custom((value, { req }) => {
+    let datoIngreso = req.body.dato_ingreso;
+    let user = users.find(
+      (user) => user.email == datoIngreso || user.name == datoIngreso
+    );
+
+    if (user) {
+      let check = bcrypt.compareSync(req.body.password, user.password);
+      if (!check) {
+        throw new Error("Contraseña incorrecta");
+      }
+    }
+    return true
+  }),
+];
+module.exports = { registerValidator, loginValidator };

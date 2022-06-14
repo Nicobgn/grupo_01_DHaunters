@@ -15,16 +15,18 @@ const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { fileURLToPath } = require("url");
+const console = require("console");
+
 
 const userController = {
   login: (req, res) => {
-    res.render(views + "/users/log-in.ejs", {
+    res.render(views + "/users/login.ejs", {
       css: "Forms",
       title: "Inicia tu Sesión - DHaunters",
     });
   },
   register: (req, res) => {
-    res.render(views + "/users/sign-up.ejs", {
+    res.render(views + "/users/signUp.ejs", {
       css: "Forms",
       title: "Registrate - DHaunters",
     });
@@ -74,15 +76,14 @@ const userController = {
       //Encriptacion de la contraseña
       password = bcrypt.hashSync(req.body.password, 10);
 
-      //accept_send true or false 
-
+      //accept_send true or false
 
       //Nombre del archivo multer
 
       let image = "";
       if (req.file) {
-        image= req.file.filename
-      }else{
+        image = req.file.filename;
+      } else {
         image = "user_default.jpg";
       }
 
@@ -101,12 +102,12 @@ const userController = {
       };
 
       users.push(newUser);
-      let newListJSON = JSON.stringify(users, null, ' ');
+      let newListJSON = JSON.stringify(users, null, " ");
       fs.writeFileSync(usersPath, newListJSON, "utf-8");
 
       res.redirect("/user/login");
     } else {
-      res.render(views + "/users/sign-up.ejs", {
+      res.render(views + "/users/signUp.ejs", {
         css: "Forms",
         title: "Registrate - DHaunters",
         errors: errors.mapped(),
@@ -114,6 +115,41 @@ const userController = {
       });
     }
   },
+
+  processLogin: (req, res) => {
+    let errors = validationResult(req);
+
+    let userToLogin = users.find(
+      (user) =>
+        user.email == req.body.dato_ingreso ||
+        user.name == req.body.dato_ingreso
+    );
+
+    if (errors.isEmpty()) {
+      //Usario logeado
+      delete userToLogin.password;
+      req.session.userLogged = userToLogin;
+      
+
+      res.redirect("/user/profile");
+    } else {
+      res.render(views + "/users/login", {
+        css: "Forms",
+        title: "Inicia tu Sesión - DHaunters",
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
+  },
+
+  userProfile: (req, res)=> {
+    let user = req.session.userLogged
+    res.render(views + "/users/userProfile",{
+      css: "Home",
+      title: "Bienvenido "+ user.user_name,
+      user
+    });
+  }
 };
 
 module.exports = userController;
