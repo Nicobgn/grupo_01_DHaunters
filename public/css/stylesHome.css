@@ -7,41 +7,40 @@ main {
   width: 100%;
 }
 
-
-.banner{
+.banner {
   position: relative;
   width: 100%;
   height: 330px;
   overflow: hidden;
   margin: 0px auto 10px;
 }
-.bannerSlider{
+.bannerSlider {
   position: absolute;
   top: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
 }
-.bannerSlider :first-child{
+.bannerSlider :first-child {
   opacity: 1;
 }
-.bannerSlider li{
-  width:100%;
-  height:100%;
+.bannerSlider li {
+  width: 100%;
+  height: 100%;
   display: block;
   opacity: 0;
   transition: opacity ease 350ms;
   position: absolute;
 }
-.bannerSlider li:target{
+.bannerSlider li:target {
   opacity: 1;
 }
-.bannerSlider img{
+.bannerSlider img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.bannerSlider .btnHolder{
+.bannerSlider .btnHolder {
   height: 100%;
   width: 100%;
   top: 0;
@@ -53,39 +52,36 @@ main {
   opacity: 0;
   transition: 300ms ease all;
 }
-.bannerSlider:hover .btnHolder{
+.bannerSlider:hover .btnHolder {
   opacity: 1;
 }
-.bannerSlider .btn{
+.bannerSlider .btn {
   z-index: 2;
   margin-inline: 15px;
   cursor: pointer;
-
 }
 
-.bannerMenu{
+.bannerMenu {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 5px;
 }
-.bannerMenu li{
+.bannerMenu li {
   z-index: 2;
   margin-bottom: 7px;
   cursor: pointer;
 }
-.bannerMenu li a{
+.bannerMenu li a {
   line-height: 0;
   padding: 0px 10px;
   border: 1px solid #1c5b8f;
   border-radius: 100%;
 }
-.bannerMenu li a:active{
+.bannerMenu li a:active {
   background-color: #1c5b8f;
 }
-
-
 
 /* section.productList {
    background-color: rgba(0, 0, 0, 0.2);
@@ -139,7 +135,6 @@ section div.product-section-title h2 {
   border: 5px solid;
   border-color: rgb(255, 249, 249, 0.6);
   border-radius: 1px 20px 2px 22px;
-
 }
 
 div.productDetail {
@@ -227,7 +222,34 @@ footer div.botFooter {
 
 /* modificaciones Diego */
 
-@media (min-width: 1280px) {
+/* Modificaciones user profile */
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.userAvatar {
+  border: 5px solid rgba(255, 255, 255, 0.55);
+  width: 50%;
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 250px;
+  min-height: 250px;
+}
+
+.avatar .userAvatar img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+h2{
+  text-align: center;
+}
+
+@media (min-width: 1260px) {
   main .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -241,6 +263,12 @@ footer div.botFooter {
     align-items: center;
     margin: 40px;
     width: 20vw;
+  }
+  .userAvatar {
+    max-width: 350px;
+    min-width: 350px;
+    max-height: 350px;
+    min-height: 350px;
   }
 }
 
@@ -261,5 +289,5 @@ footer div.botFooter {
 
 .carousel-control-next,
 .carousel-control-prev /*, .carousel-indicators */ {
-    filter: invert(100%);
+  filter: invert(100%);
 }

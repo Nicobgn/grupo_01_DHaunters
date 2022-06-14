@@ -216,18 +216,17 @@ p a {
   }
 
   .error-msg,
-  .error-tyc{
+  .error-tyc {
     font-size: 15px;
   }
 
-  .error-tyc{
+  .error-tyc {
     width: 74%;
   }
 }
 /* -------------------------modificacion input file--------------------  */
 
 label.drawer,
-label.drawer-red{
+label.drawer-red {
   text-align: left;
 }
-
