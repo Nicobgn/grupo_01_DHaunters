@@ -12,33 +12,40 @@
   <main>
     <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
     <form action="/user/login" method="POST">
-    <div>
-      <input type="text" name="dato_ingreso" placeholder="Nombre de usuario o email" id="dato_ingreso" class="drawer" />
-      <% if (locals.errors && errors.dato_ingreso) { %>
-         <div class="error-msg">
-           <%= errors.dato_ingreso.msg %>           
-        </div> 
-        <% } %>
-      <input type="password" name="password" placeholder="Contraseña" id="password" class="drawer"  />
-            <% if (locals.errors && errors.password) { %>
-         <div class="error-msg">
-           <%= errors.password.msg %>           
-        </div> 
-        <% } %>
-    </div>
-    <button type="submit" name="send" value="submit" id="send" class="registrarse">
-     Iniciar sesión
-    </button>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" name="perfil_u" value="comprador" id="comprador" />
-        Recuerdame
-      </label>
-      <p> <a href="#">¿Has olvidado tu contraseña?</a></p>
+      <div>
+        <input type="text" name="dato_ingreso" placeholder="Nombre de usuario o email" id="dato_ingreso" class="drawer" />
 
-    </div>
+        <% if (locals.errors && errors.dato_ingreso) { %>
+          <div class="error-msg">
+            <%= errors.dato_ingreso.msg %>           
+          </div> 
+          <% } %>
+        <input type="password" name="password" placeholder="Contraseña" id="password" class="drawer"  />
+              <% if (locals.errors && errors.password) { %>
+          <div class="error-msg">
+            <%= errors.password.msg %>           
+          </div> 
+          <% } %>
+          
+      </div>
+
+      <ul class="error-msg"></ul> 
+      
+      <button type="submit" name="send" value="submit" id="send" class="registrarse">
+      Iniciar sesión
+      </button>
+      
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="perfil_u" value="comprador" id="comprador" />
+          Recuerdame
+        </label>
+        <p> <a href="#">¿Has olvidado tu contraseña?</a></p>
+      </div> 
     </form>
+   
   </main>
+  <script src="/js/loginValidation.js"></script>
   </body>
 
   </html>

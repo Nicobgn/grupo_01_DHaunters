@@ -5,7 +5,9 @@
         <form action="createProduct" method="post" enctype="multipart/form-data">
           <h3>Formulario de creacion de producto</h3>
 
+        
           <div class="formulario">
+              <ul class="error-msg"></ul>
             <div class="description">
               <input type="text" 
                 name="name" 
@@ -128,3 +130,4 @@
         document.getElementById('info').innerHTML = pdrs;
       }
     </script>
+    <script src="/js/createProductValidation.js"></script>

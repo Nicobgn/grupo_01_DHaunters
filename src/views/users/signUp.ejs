@@ -13,8 +13,11 @@
     <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
     <form action="/user/register" method="POST" enctype="multipart/form-data">
       <h3>Información del usuario</h3>
-      <div class="datos-u">     
+      <div class="datos-u">   
+        <div>
+          <ul class="error-msg"></ul>
 
+        </div>  
 
       <label for="image" 
       class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %> ">       
@@ -190,4 +193,5 @@
 }
   </script>
 
+  <script src="/js/signUpValidation.js"></script>
   </html>
