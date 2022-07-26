@@ -13,10 +13,11 @@
     <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
     <form action="/user/login" method="POST">
       <div>
-        <input type="text" name="dato_ingreso" placeholder="Nombre de usuario o email" id="dato_ingreso" class="drawer" />
-
+        <input type="text" name="dato_ingreso" placeholder="Nombre de usuario o email" id="dato_ingreso" class="drawer"/>
+        <div class="error-msg oculto dato_ingreso">El usuario o correo no es valido </div>
+        
         <% if (locals.errors && errors.dato_ingreso) { %>
-          <div class="error-msg">
+          <div class="error-msg" id="error-user">
             <%= errors.dato_ingreso.msg %>           
           </div> 
           <% } %>
@@ -28,9 +29,8 @@
           <% } %>
           
       </div>
+       <div class="error-msg oculto" id="error-msg">Debes completar todos los campos</div>    
 
-      <ul class="error-msg"></ul> 
-      
       <button type="submit" name="send" value="submit" id="send" class="registrarse">
       Iniciar sesión
       </button>
@@ -43,6 +43,7 @@
         <p> <a href="#">¿Has olvidado tu contraseña?</a></p>
       </div> 
     </form>
+   
    
   </main>
   <script src="/js/loginValidation.js"></script>

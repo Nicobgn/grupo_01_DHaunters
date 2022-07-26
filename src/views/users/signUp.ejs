@@ -20,7 +20,7 @@
         </div>  
 
       <label for="image" 
-      class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %> ">       
+      class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %> ">   
       <span id="info">Selecciona una foto de perfil</span>
       </label>
       <input id="image" 
@@ -41,6 +41,8 @@
         placeholder="Nombres *" 
         id="first_name" 
         class="<%= locals.errors && errors.first_name ? "drawer-red":"drawer" %> "  
+        
+        
        
         <% if (locals.old && old.first_name ) { %>
          value="<%= old.first_name  %>" 
@@ -48,6 +50,11 @@
         >
   <!--el if de locals.old es para rescatar los datos validos del form -->
         
+  
+  <!--if con donde vienen los mensajes de error de parte del front -->
+  <div class="error-msg oculto first_name">El nombre no es valido </div>
+
+
   <!--if con donde vienen los mensajes de error -->
 
         <% if (locals.errors && errors.first_name) { %>
@@ -66,6 +73,9 @@
          <% } %> 
          />
   <!--el if de locals.old es para rescatar los datos validos del form -->
+
+  <!--div donde vienen los mensajes de error de parte del front -->
+  <div class="error-msg oculto last_name">El apellido no es valido </div>
         
   <!--if con donde vienen los mensajes de error -->
         <% if (locals.errors && errors.last_name) { %>
@@ -84,7 +94,8 @@
          <% } %>
          />
     <!--el if de locals.old es para rescatar los datos validos del form -->
-        
+    <!--div donde vienen los mensajes de error de parte del front -->
+    <div class="error-msg oculto user_name">El nombre de usuario no es valido </div>    
     <!--if con donde vienen los mensajes de error -->
           <% if (locals.errors && errors.user_name) { %>
             <div class="error-msg">
@@ -102,6 +113,8 @@
          <% } %>
          />
     <!--el if de locals.old es para rescatar los datos validos del form -->
+    <!--div donde vienen los mensajes de error de parte del front -->
+    <div class="error-msg oculto email">El email no es valido </div>
         
     <!--if con donde vienen los mensajes de error -->
         <% if (locals.errors && errors.email) { %>
@@ -120,7 +133,8 @@
          <% } %> 
         />
     <!--el if de locals.old es para rescatar los datos validos del form -->
-        
+    <!--div donde vienen los mensajes de error de parte del front -->
+    <div class="error-msg oculto adress">La direccion no es valida </div>
     <!--if con donde vienen los mensajes de error -->
         <% if (locals.errors && errors.adress) { %>
           <div class="error-msg">
@@ -132,8 +146,9 @@
         name="password" 
         placeholder="Contraseña *" 
         id="password" 
-        class="<%= locals.errors && errors.password ? "drawer-red":"drawer" %> "  
+        class="<%= locals.errors && errors.password ? "drawer-red":"drawer" %>"  
         />
+      <div class="error-msg oculto password">La contraseña no es valida</div>
         
       <!--if con donde vienen los mensajes de error -->
 
@@ -146,9 +161,9 @@
         name="checkPassword" 
         id="checkPassword" 
         placeholder="Confirmar contraseña *" 
-        class="<%= locals.errors && errors.checkPassword ? "drawer-red":"drawer" %> " 
+        class="<%= locals.errors && errors.checkPassword ? "drawer-red":"drawer" %>" 
           />
-        
+      <div class="error-msg oculto checkPassword">Las contraseñas no coinciden</div>
       <!--if con donde vienen los mensajes de error -->
           <% if (locals.errors && errors.checkPassword) { %>
             <div class="error-msg">
@@ -156,6 +171,8 @@
            </div> 
            <% } %>
      </div>
+
+      <div class="error-msg oculto" id="error-msg">Debes completar todos los campos con *</div>
 
       <div class="checkbox">
         <label for="tyc"><input type="checkbox" 
