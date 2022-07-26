@@ -230,3 +230,10 @@ label.drawer,
 label.drawer-red {
   text-align: left;
 }
+
+
+.oculto {
+  
+  display: none;
+
+}
