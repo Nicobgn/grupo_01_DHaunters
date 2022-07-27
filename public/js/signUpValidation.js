@@ -3,7 +3,7 @@ const inputs = document.querySelectorAll("form input");
 
 const expresiones = {
   usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+  nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
   password: /^.{8,16}$/, // 4 a 12 digitos.
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   telefono: /^\d{7,14}$/, // 7 a 14 numeros.
@@ -17,6 +17,7 @@ let campos = {
   email: false,
   adress: false,
   password: false,
+  image: false,
 };
 
 const validarFormulario = (e) => {
@@ -78,6 +79,23 @@ const validarPassword2 = () => {
     campos.password = true;
   }
 };
+
+document.querySelector("#image").addEventListener("change", () => {
+  let valorImg = document.querySelector("#image").files[0].name;
+  let extImg = valorImg.split(".").pop().toLowerCase();
+  let extensiones = [".jpg", ".jpeg", ".npg", "png", "gif"];
+  if (extensiones.includes(extImg)) {
+    document.querySelector("label").classList.remove("drawer-red");
+    document.querySelector("label").classList.add("drawer");
+    document.querySelector(`form div .image`).classList.add("oculto");
+    campos.image = true;
+  } else {
+    document.querySelector("label").classList.remove("drawer");
+    document.querySelector("label").classList.add("drawer-red");
+    document.querySelector(`form div .image`).classList.remove("oculto");
+    campos.image = false;
+  }
+});
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);

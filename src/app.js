@@ -80,7 +80,7 @@ app.use((req, res, next) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.clear();
+app.listen(PORT, (err) => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(err);
 });

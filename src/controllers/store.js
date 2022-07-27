@@ -16,8 +16,12 @@ const consoleLogError = require("../middlewares/other/consoleLogError");
 const controller = {
   store: async (req, res) => {
     try {
-      let products = await Product.findAll();
-      res.render("products/store.ejs", {
+      let products = await Product.findAll({
+        where: {
+          deleted: 0,
+        },
+      });
+      res.render("store/store.ejs", {
         css: "stylesHome",
         title: "Store",
         products,
@@ -34,7 +38,7 @@ const controller = {
     let universes = await Universe.findAll({
       order: [["universe", "ASC"]],
     });
-    res.render("products/productCreate.ejs", {
+    res.render("store/productCreate.ejs", {
       title: "Crea un nuevo producto",
       css: "stylesCreateProduct",
       tiers,
@@ -51,7 +55,7 @@ const controller = {
     });
     try {
       if (validationResults.errors.length > 0) {
-        return res.render("products/createProduct.ejs", {
+        return res.render("store/createProduct.ejs", {
           errors: validationResults.mapped(),
           title: "Crea un nuevo producto",
           css: "stylesCreateProduct",
@@ -93,7 +97,7 @@ const controller = {
       }
     } catch (error) {
       consoleLogError(error);
-      res.render("products/createProduct.ejs", {
+      res.render("store/createProduct.ejs", {
         errors: validationResults.mapped(),
         title: "Crea un nuevo producto",
         css: "stylesCreateProduct",
@@ -250,7 +254,7 @@ const controller = {
 
       let products = await Product.query();
 
-      res.render("products/store", {
+      res.render("store/store", {
         title: `Resultados para ${search}`,
         products: products,
       });
@@ -266,7 +270,7 @@ const controller = {
     let status = res.statusCode;
     try {
       if (validationResults.errors.length > 0) {
-        return res.render("", {
+        return res.render("store/store.ejs", {
           errors: validationResults.mapped(),
           css: "",
           title: "",
