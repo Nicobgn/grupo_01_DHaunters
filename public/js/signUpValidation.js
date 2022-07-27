@@ -17,6 +17,7 @@ let campos = {
   email: false,
   adress: false,
   password: false,
+  image: false,
 };
 
 const validarFormulario = (e) => {
@@ -78,6 +79,23 @@ const validarPassword2 = () => {
     campos.password = true;
   }
 };
+
+document.querySelector("#image").addEventListener("change", () => {
+  let valorImg = document.querySelector("#image").files[0].name;
+  let extImg = valorImg.split(".").pop().toLowerCase();
+  let extensiones = [".jpg", ".jpeg", ".npg", "png", "gif"];
+  if (extensiones.includes(extImg)) {
+    document.querySelector("label").classList.remove("drawer-red");
+    document.querySelector("label").classList.add("drawer");
+    document.querySelector(`form div .image`).classList.add("oculto");
+    campos.image = true;
+  } else {
+    document.querySelector("label").classList.remove("drawer");
+    document.querySelector("label").classList.add("drawer-red");
+    document.querySelector(`form div .image`).classList.remove("oculto");
+    campos.image = false;
+  }
+});
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);

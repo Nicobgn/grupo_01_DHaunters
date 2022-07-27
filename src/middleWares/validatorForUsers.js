@@ -88,11 +88,18 @@ const registerValidator = [
 
   body("tyc").notEmpty().withMessage("Debes completar este campo"),
 
-  body("image").custom((value, { req }) => {
-    if (req.file) {
-      let extName = path.extname(req.file.originalname);
-      if (extName != ".jpg" && extName != ".png" && extName) {
-        throw new Error("Debes seleccionar una imagen de formato valido");
+  body("img").custom((value, { req }) => {
+    let file = req.file;
+    let extencionesPermitidas = [".jpg", ".jpeg", ".npg", "png", "GIF"];
+
+    if (!file) {
+      throw new Error(
+        "Tienes que subir una imagen en formato jpg, jpeg, npg png o GIF"
+      );
+    } else {
+      let extencionDelArchivo = path.extname(file.originalname).toLowerCase();
+      if (extencionesPermitidas.includes(extencionDelArchivo)) {
+        throw new Error("Las extenciones permitidas son .jpg .jpeg .npg .png o GIF");
       }
     }
     return true;

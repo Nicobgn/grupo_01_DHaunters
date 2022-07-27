@@ -13,12 +13,8 @@
     <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
     <form action="/user/register" method="POST" enctype="multipart/form-data">
       <h3>Información del usuario</h3>
+
       <div class="datos-u">   
-        <div>
-          <ul class="error-msg"></ul>
-
-        </div>  
-
       <label for="image" 
       class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %> ">   
       <span id="info">Selecciona una foto de perfil</span>
@@ -29,7 +25,8 @@
        type="file"  
        style='display: none;'
       /> 
-      
+      <div class="error-msg oculto image">El archivo no es valido </div>
+
         <% if (locals.errors && errors.image) { %>
          <div class="error-msg">
            <%= errors.image.msg %>           
@@ -38,7 +35,7 @@
 
         <input type="text" 
         name="first_name" 
-        placeholder="Nombres *" 
+        placeholder="Nombres" 
         id="first_name" 
         class="<%= locals.errors && errors.first_name ? "drawer-red":"drawer" %> "  
         
@@ -65,7 +62,7 @@
 
         <input type="text" 
         name="last_name" 
-        placeholder="Apellidos *" 
+        placeholder="Apellidos" 
         id="last_name" 
         class="<%= locals.errors && errors.last_name ? "drawer-red":"drawer" %>"  
         <% if (locals.old && old.last_name ) { %>
@@ -86,7 +83,7 @@
 
         <input type="text" 
         name="user_name" 
-        placeholder="Nombre de usuario *" 
+        placeholder="Nombre de usuario" 
         id="user_name" 
         class="<%= locals.errors && errors.user_name ? "drawer-red":"drawer"%>" 
         <% if (locals.old && old.user_name ) { %>
@@ -105,7 +102,7 @@
 
         <input type="text" 
         name="email" 
-        placeholder="E-mail *" 
+        placeholder="E-mail" 
         id="email" 
         class="<%= locals.errors && errors.email ? "drawer-red":"drawer" %>" 
         <% if (locals.old && old.email) { %>
@@ -125,7 +122,7 @@
 
         <input type="text" 
         name="adress" 
-        placeholder="Dirección *" 
+        placeholder="Dirección" 
         id="adress" 
         class="<%= locals.errors && errors.adress? "drawer-red":"drawer" %> " 
         <% if (locals.old && old.adress ) { %>
@@ -144,7 +141,7 @@
 
         <input type="password" 
         name="password" 
-        placeholder="Contraseña *" 
+        placeholder="Contraseña" 
         id="password" 
         class="<%= locals.errors && errors.password ? "drawer-red":"drawer" %>"  
         />
@@ -160,7 +157,7 @@
         <input type="password" 
         name="checkPassword" 
         id="checkPassword" 
-        placeholder="Confirmar contraseña *" 
+        placeholder="Confirmar contraseña" 
         class="<%= locals.errors && errors.checkPassword ? "drawer-red":"drawer" %>" 
           />
       <div class="error-msg oculto checkPassword">Las contraseñas no coinciden</div>
@@ -172,7 +169,7 @@
            <% } %>
      </div>
 
-      <div class="error-msg oculto" id="error-msg">Debes completar todos los campos con * y aceptar terminos y condiciones</div>
+      <div class="error-msg oculto" id="error-msg">Debes completar todos los campos y aceptar terminos y condiciones</div>
 
       <div class="checkbox">
         <label for="tyc"><input type="checkbox" 
