@@ -21,9 +21,7 @@ const routesStore = require("./routes/store");
 const routesUser = require("./routes/user");
 
 // Requiring Api Routes
-// const routesApiAddress = require("./routes/api/address");
-const routesApiStore = require("./routes/api/store");
-const routesApiUser = require("./routes/api/user");
+const routesApiMain = require("./routes/api/main");
 
 // Settings
 app.set("view engine", "ejs");
@@ -58,10 +56,7 @@ app.use(cookieLogged);
 app.use(isAdmin);
 
 // Routes
-// app.use("/api/address", routesApiAddress);
-app.use("/api/store", routesApiStore);
-app.use("/api/user", routesApiUser);
-// app.use("/address", routesAddress);
+app.use("/api", routesApiMain);
 app.use("/store", routesStore);
 app.use("/user", routesUser);
 app.use("/", routesMain);
