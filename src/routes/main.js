@@ -1,8 +1,12 @@
-const path = require("path");
+// Requiring Libraries
 const express = require("express");
-const mainController = require("../controllers/mainController");
+
+// Requiring Controller, Middlewares & Scripts
+const controller = require("../controllers/main");
+
+// Router
 const router = express.Router();
 
-router.get("/", mainController.home);
+router.get("/", controller.home);
 
 module.exports = router;

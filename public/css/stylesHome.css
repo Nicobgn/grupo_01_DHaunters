@@ -7,80 +7,22 @@ main {
   width: 100%;
 }
 
-.banner {
-  position: relative;
-  width: 100%;
-  height: 330px;
+.container--slider {
+  width: 80%;
+  height: 400px;
+  margin: 0 auto 10px;
   overflow: hidden;
-  margin: 0px auto 10px;
+  position: relative;
 }
-.bannerSlider {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+.slider {
+  display: flex;
+  height: 400px;
 }
-.bannerSlider :first-child {
-  opacity: 1;
-}
-.bannerSlider li {
-  width: 100%;
-  height: 100%;
+.slider__img {
   display: block;
-  opacity: 0;
-  transition: opacity ease 350ms;
-  position: absolute;
-}
-.bannerSlider li:target {
-  opacity: 1;
-}
-.bannerSlider img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.bannerSlider .btnHolder {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 0;
-  opacity: 0;
-  transition: 300ms ease all;
-}
-.bannerSlider:hover .btnHolder {
-  opacity: 1;
-}
-.bannerSlider .btn {
-  z-index: 2;
-  margin-inline: 15px;
-  cursor: pointer;
-}
-
-.bannerMenu {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 5px;
-}
-.bannerMenu li {
-  z-index: 2;
-  margin-bottom: 7px;
-  cursor: pointer;
-}
-.bannerMenu li a {
-  line-height: 0;
-  padding: 0px 10px;
-  border: 1px solid #1c5b8f;
-  border-radius: 100%;
-}
-.bannerMenu li a:active {
-  background-color: #1c5b8f;
 }
 
 /* section.productList {
@@ -245,7 +187,7 @@ footer div.botFooter {
   width: 100%;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 

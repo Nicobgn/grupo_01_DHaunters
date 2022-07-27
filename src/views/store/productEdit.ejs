@@ -1,0 +1,88 @@
+<%- include('../partials/head') %>
+  <%- include('../partials/header') %>
+
+    <main>
+
+      <form action="/store/<%= product.name %>/edit method="POST" enctype="multipart/form-data">
+
+        <h3>Formulario de edicion del producto <%= product.name %>
+        </h3>
+        <div class="formulario">
+
+          <div class="description">
+            <input type="text" name="name" id="name" class="drawer" required placeholder="Nombre del producto" value="<%= product.name %> "/>
+          </div>
+          <div class="description">
+            <label for="price"></label>
+            <input type="number" name="price" id="price" class="drawer" placeholder="Precio del producto" required value="<%= product.price %> "/>
+          </div>
+          <div class="description">
+            <!-- <label for="img">Ingrese la foto de su producto</label>
+          <input type="file" name="img" id="img" class="drawer" required /> -->
+            <label for="image" class="drawer">
+              <span id="info">Ingrese la foto de su producto</span>
+            </label>
+            <input id="image" name="image" onchange='cambiar()' type="file" style='display: none;' />
+          </div>
+          <div class="description">
+            <label for="shortDesc"></label>
+            <input type="text" name="shortDesc" id="shortDesc" class="drawer" required rows="10" cols="50"
+              value="<%= product.shortDesc %> " />
+          </div>
+          <div class="description">
+
+            <input type="text" name="longDesc" id="longDesc" rows="10" cols="50" class="drawer"
+              pvalue="<%= product.longDesc %> " />
+          </div>
+          <div class="description">
+            <select name="universe" id="universe" class="drawer">
+              <option>Tier</option>
+
+            <% for (let tier of tiers) {%>
+              <option 
+              value="<%= tier.tier_id %>"
+              <% locals.oldData && tier === oldData.tier ? 'selected' : null %>
+              >
+                <%= tier.value %>
+              </option>
+            <% } %> 
+            </select>
+
+            <% if (locals.errors && errors.tier) { %>
+              <%= errors.tier.msg %> 
+            <% } %> 
+          </div>
+          <div class="description">
+            <select name="tier" id="tier" class="drawer">
+              <option>Tier</option>
+
+            <% for (let universe of universes) {%>
+              <option 
+              value="<%= universe.universe_id %>"
+              <% locals.oldData && universe === oldData.universe ? 'selected' : null %>
+              >
+                <%= universe.universe %>
+              </option>
+            <% } %> 
+            </select>
+            
+            <% if (locals.errors && errors.universe) { %>
+            <%= errors.universe.msg %> 
+            <% } %> 
+          </div>
+        </div>
+        <div class="buttoms">
+          <button type="submit">Subir</button>
+          <button type="reset">Borrar</button>
+        </div>
+
+      </form>
+
+    </main>
+    <script>
+      function cambiar() {
+        var pdrs = document.getElementById('img').files[0].name;
+        document.getElementById('info').innerHTML = pdrs;
+      }
+    </script>
+    </body>

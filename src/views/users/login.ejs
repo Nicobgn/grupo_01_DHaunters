@@ -13,12 +13,12 @@
     <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
     <form action="/user/login" method="POST">
       <div>
-        <input type="text" name="dato_ingreso" placeholder="Nombre de usuario o email" id="dato_ingreso" class="drawer"/>
-        <div class="error-msg oculto dato_ingreso">El usuario o correo no es valido </div>
+        <input type="text" name="login_key" placeholder="Nombre de usuario o email" id="login_key" class="drawer"/>
+        <div class="error-msg oculto login_key">El usuario o correo no es valido </div>
         
-        <% if (locals.errors && errors.dato_ingreso) { %>
+        <% if (locals.errors && errors.login_key) { %>
           <div class="error-msg" id="error-user">
-            <%= errors.dato_ingreso.msg %>           
+            <%= errors.login_key.msg %>           
           </div> 
           <% } %>
         <input type="password" name="password" placeholder="Contraseña" id="password" class="drawer"  />
@@ -37,7 +37,7 @@
       
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="perfil_u" value="comprador" id="comprador" />
+          <input type="checkbox" name="rememberMe" id="rememberMe" />
           Recuerdame
         </label>
         <p> <a href="#">¿Has olvidado tu contraseña?</a></p>

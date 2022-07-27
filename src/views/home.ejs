@@ -1,198 +1,183 @@
 <%- include("partials/head") %>
-	<%- include("partials/header") %>
-		<% let prev=(a)=>{a--}
-			let next=(a)=>{a++}
-			%>
-
-			<main>
-				<section class="banner">
-					<ul class="bannerSlider">
-						<% banner.forEach(banner=> { %>
-							<li id="bannerSlider<%= banner.id %>">
-								<img src="<%= banner.img %>" alt="<%= banner.title %>">
-								<!-- <div class="btnHolder">
-						<div class="btn">
-							<a href="#bannerSlider<%= prev(banner.id) %> "><i class="fa-solid fa-chevron-left"></i></a>
-						</div>
-						<div class="btn right">
-							<a href="#bannerSlider<%= next(banner.id) %> "><i class="fa-solid fa-chevron-right"></i></a>
-						</div> 
-					</div> -->
-							</li>
-							<% }) %>
-					</ul>
-					<ul class="bannerMenu">
-						<% banner.forEach(banner=> { %>
-							<li class="bannerItem">
-								<a href="#bannerSlider<%= banner.id %>">
-									<!-- <i class="fa-solid fa-circle-notch"></i> -->
-								</a>
-							</li>
-							<% }) %>
-					</ul>
-				</section>
+<%- include("partials/header") %>
 
 
-
-				<section class="product-list">
-					<div class="product-section-title">
-						<h2>New on sale</h2>
+<main>
+	<section class="container--slider">
+		<% if (banners) { %>
+			<article class="slider" style="width:<%= bannersLength * 100 %>%">
+				<% for (const banner of banners) { %>
+					<div class="slider__section">
+						<img 
+						src="<%= banner.image %>" 
+						alt="<%= banner.title %>"
+						id="bannerImg<%= banner.banner_id %>" 
+						class="slider__img"
+						style="width: ;">
 					</div>
+				<% } %> 
+				</article>
+				<article class="slider__btn" id="sliderBtnLeft"></article>
+				<article class="slider__btn" id="sliderBtnRight"></article>
+			</article>
+			<ul class="slider__dots">
+			<% for (let banner of banners) { %>
+				<li></li>
+			<% } %>  
+			</ul>
+		<% } else { %>
+		<p>¡Próximamente habrá promociones!</p>
+		<% } %> 
+	</section>
 
-					<% for (let product of products) {%>
 
 
-						<% if(product.category=="Epic" ){%>
+	<section class="product-list">
+		<div class="product-section-title">
+			<h2>New on sale</h2>
+		</div>
+
+		<% for (let product of products) {%>
+
+
+			<% if(product.category=="Epic" ){%>
 
 
 
 
-							<div class="containerProduct">
-								<a href="/store/productDetails/<%=product.id%>">
+				<div class="containerProduct">
+					<a href="/store/productDetails/<%=product.id%>">
 
-									<article class="product">
-										<figure>
-											<img src="/img/products/<%=product.img%>" alt="" />
-										</figure>
-										<div class="productDetail">
-											<h3>
-												<%= product.name %>
-											</h3>
-											<p class="product-description">
-												<%= product.universe %>
-											</p>
-											<h4 class="price">
-												<%= product.price %>
-											</h4>
-										</div>
-									</article>
-								</a>
+						<article class="product">
+							<figure>
+								<img src="/img/products/<%=product.img%>" alt="" />
+							</figure>
+							<div class="productDetail">
+								<h3>
+									<%= product.name %>
+								</h3>
+								<p class="product-description">
+									<%= product.universe %>
+								</p>
+								<h4 class="price">
+									<%= product.price %>
+								</h4>
 							</div>
-							<% } %>
+						</article>
+					</a>
+				</div>
+				<% } %>
 
-							<% } %>
-				</section>
+				<% } %>
+	</section>
 
-				<section class="product-list">
-					<div class="product-section-title">
-						<h2>Productos de categoria comun</h2>
+	<section class="product-list">
+		<div class="product-section-title">
+			<h2>Productos de categoria comun</h2>
+		</div>
+
+	<% for (let product of products) {%>
+
+		<% if(product.category=="Common" ){%>
+
+		<div class="containerProduct">
+			<a href="/store/productDetails/<%=product.id%>">
+
+				<article class="product">
+					<figure>
+						<img src="/img/products/<%=product.img%>" alt="" />
+					</figure>
+					<div class="productDetail">
+						<h3>
+							<%= product.name %>
+						</h3>
+						<p class="product-description">
+							<%= product.universe %>
+						</p>
+						<h4 class="price">
+							<%= product.price %>
+						</h4>
 					</div>
+				</article>
+			</a>
+		</div>
+		<% } %>
 
-					<% for (let product of products) {%>
+		<% } %>
+	</section>
+	<section class="product-list">
+		<div class="product-section-title">
+			<h2>Productos de categoria rara</h2>
+		</div>
 
+		<% for (let product of products) {%>
 
-						<% if(product.category=="Common" ){%>
+			<% if(product.category=="Rare" ){%>
 
+				<div class="containerProduct">
+					<a href="/store/productDetails/<%=product.id%>">
 
-
-
-							<div class="containerProduct">
-								<a href="/store/productDetails/<%=product.id%>">
-
-									<article class="product">
-										<figure>
-											<img src="/img/products/<%=product.img%>" alt="" />
-										</figure>
-										<div class="productDetail">
-											<h3>
-												<%= product.name %>
-											</h3>
-											<p class="product-description">
-												<%= product.universe %>
-											</p>
-											<h4 class="price">
-												<%= product.price %>
-											</h4>
-										</div>
-									</article>
-								</a>
+						<article class="product">
+							<figure>
+								<img src="/img/products/<%=product.img%>"" alt="" />
+							</figure>
+							<div class="productDetail">
+								<h3>
+									<%= product.name %>
+								</h3>
+								<p class="product-description">
+									<%= product.universe %>
+								</p>
+								<h4 class="price">
+									<%= product.price %>
+								</h4>
 							</div>
-							<% } %>
+						</article>
+					</a>
+				</div>
+				<% } %>
 
-							<% } %>
-				</section>
-				<section class="product-list">
-					<div class="product-section-title">
-						<h2>Productos de categoria rara</h2>
-					</div>
+				<% } %>
+	</section>
+	<section class="product-list">
+		<div class="product-section-title">
+			<h2>Productos de categoria muy rara</h2>
+		</div>
+		<% for (let product of products) {%>
 
-					<% for (let product of products) {%>
+			<% if(product.category=="Very rare" ){%>
 
+				<div class="containerProduct">
+					<a href="/store/productDetails/<%=product.id%>">
 
-						<% if(product.category=="Rare" ){%>
-
-
-
-
-							<div class="containerProduct">
-								<a href="/store/productDetails/<%=product.id%>">
-
-									<article class="product">
-										<figure>
-											<img src="/img/products/<%=product.img%>"" alt="" />
-										</figure>
-										<div class="productDetail">
-											<h3>
-												<%= product.name %>
-											</h3>
-											<p class="product-description">
-												<%= product.universe %>
-											</p>
-											<h4 class="price">
-												<%= product.price %>
-											</h4>
-										</div>
-									</article>
-								</a>
+						<article class="product">
+							<figure>
+								<img src="/img/products/<%=product.img%>"" alt="" />
+							</figure>
+							<div class="productDetail">
+								<h3>
+									<%= product.name %>
+								</h3>
+								<p class="product-description">
+									<%= product.universe %>
+								</p>
+								<h4 class="price">
+									<%= product.price %>
+								</h4>
 							</div>
-							<% } %>
+						</article>
+					</a>
+				</div>
+				<% } %>
 
-							<% } %>
-				</section>
-				<section class="product-list">
-					<div class="product-section-title">
-						<h2>Productos de categoria muy rara</h2>
-					</div>
+				<% } %>
+	</section>
+	<a href="/store/">
+		<div class="fullCatalogue-icon">
+			<h3>~ full catalogue ~</h3>
+			<i class="fa-regular fa-newspaper"></i>
+		</div>
+	</a>
+</main>
 
-					<% for (let product of products) {%>
-
-
-						<% if(product.category=="Very rare" ){%>
-
-
-
-
-							<div class="containerProduct">
-								<a href="/store/productDetails/<%=product.id%>">
-
-									<article class="product">
-										<figure>
-											<img src="/img/products/<%=product.img%>"" alt="" />
-										</figure>
-										<div class="productDetail">
-											<h3>
-												<%= product.name %>
-											</h3>
-											<p class="product-description">
-												<%= product.universe %>
-											</p>
-											<h4 class="price">
-												<%= product.price %>
-											</h4>
-										</div>
-									</article>
-								</a>
-							</div>
-							<% } %>
-
-							<% } %>
-				</section>
-				<a href="/store/">
-					<div class="fullCatalogue-icon">
-						<h3>~ full catalogue ~</h3>
-						<i class="fa-regular fa-newspaper"></i>
-					</div>
-				</a>
-			</main>
-
-			<%- include("partials/footer") %>
+<%- include("partials/footer") %>

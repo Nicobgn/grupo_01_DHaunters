@@ -1,35 +1,59 @@
-const path = require("path");
+// Requiring Libraries
 const express = require("express");
-const controller = require("../controllers/userController");
-const {
-  login,
-  register,
-  cart,
-  collection,
-  favourites,
-  createUser,
-  processLogin,
-  userProfile,
-} = require("../controllers/userController");
+const multer = require("multer");
+const path = require("path");
+
+// Requiring Controller && Middlewares
+const controller = require("../controllers/user");
+const validationLogIn = require("../middlewares/validations/user/logIn");
+const validationRegister = require("../middlewares/validations/user/register");
+
+const guestHandler = require("../middlewares/handlers/guestHandler");
+const loggedHandler = require("../middlewares/handlers/loggedHandler");
+
+// Setting Multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "/../../public/images/avatars"));
+  },
+  filename: (req, file, cb) => {
+    const multerFileName = `${formattedDate}_${file.originalname}`;
+
+    cb(null, multerFileName);
+  },
+});
+const uploadFile = multer({ storage });
+
+// Router
 const router = express.Router();
 
-//Middlewares
-const {registerValidator, loginValidator} = require('../middleWares/validatorForUsers');
+// User Main Routes
+router.get("/login", guestHandler, controller.signIn);
+router.post("/login", validationLogIn, controller.login);
+router.get(
+  "/register",
+  uploadFile.single("image"),
+  guestHandler,
+  controller.signUp
+);
+router.post("/register", validationRegister, controller.register);
+router.get("/", loggedHandler, controller.profile);
+router.get("/logout", loggedHandler, controller.logout);
 
-const multer = require('../middleWares/multer-singup');
+// Update & Delete User Routes
+router.get("/update", loggedHandler, controller.userUpdate);
+router.post("/update", uploadFile.single("image"), controller.userUpdated);
+router.get("/delete", loggedHandler, controller.userDelete);
+router.post("/delete", controller.userDeleted);
 
-// Routs for login
-router.get("/login", login);
-router.post("/login", loginValidator, processLogin)
-router.get("/profile", userProfile)
+// Favourites
+router.get("/:id/favourites", controller.favouritesList);
+router.post("/:id/favouriteAdd", controller.favouritesAdd);
+router.post("/:id/favouriteDelete", controller.favouritesDelete);
 
-// Routs for sign-up
-router.get("/register", register);
-router.post("/register", multer, registerValidator, createUser);
-
-//Other routs 
-router.get("/cart", cart);
-router.get("/collection", collection);
-router.get("/favourites", favourites);
+// User Collection
+router.get("/:id/collection", controller.collectionList);
+router.post("/:id/collectionAdd", controller.collectionAdd);
+router.post("/:id/collectionDelete", controller.collectionDelete);
 
 module.exports = router;

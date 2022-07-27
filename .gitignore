@@ -1,2 +1,7 @@
 node_modules
-.sequelizerc
+
+test.js
+
+src/logs/console.txt
+
+src/database/config/config.js

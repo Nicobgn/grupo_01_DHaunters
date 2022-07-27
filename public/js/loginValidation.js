@@ -10,26 +10,26 @@ const expresiones = {
 };
 
 var campos = {
-  dato_ingreso: false,
+  login_key: false,
   password: false,
 };
 
 const validarFormulario = (e) => {
   switch (e.target.name) {
-    case "dato_ingreso":
+    case "login_key":
       if (
         expresiones.usuario.test(e.target.value) ||
         expresiones.correo.test(e.target.value)
       ) {
-        document.querySelector("#dato_ingreso").classList.remove("drawer-red");
-        document.querySelector("#dato_ingreso").classList.add("drawer");
+        document.querySelector("#login_key").classList.remove("drawer-red");
+        document.querySelector("#login_key").classList.add("drawer");
         document.querySelector(".error-msg").classList.add("oculto");
-        campos.dato_ingreso = true;
+        campos.login_key = true;
       } else {
-        document.querySelector("#dato_ingreso").classList.remove("drawer");
-        document.querySelector("#dato_ingreso").classList.add("drawer-red");
+        document.querySelector("#login_key").classList.remove("drawer");
+        document.querySelector("#login_key").classList.add("drawer-red");
         document.querySelector(".error-msg").classList.remove("oculto");
-        campos.dato_ingreso = false;
+        campos.login_key = false;
       }
       break;
     case "password":
@@ -48,11 +48,10 @@ inputs.forEach((input) => {
 
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (campos.dato_ingreso && campos.password) {
+  if (campos.login_key && campos.password) {
     document.querySelector("#error-msg").classList.add("oculto");
     formulario.submit();
   } else {
     document.querySelector("#error-msg").classList.remove("oculto");
   }
 });
-

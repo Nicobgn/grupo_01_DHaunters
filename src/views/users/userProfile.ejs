@@ -1,9 +1,11 @@
 <%- include("../partials/head") %>
 <%- include("../partials/header") %>
 <main>
-    <h2>Bienvenido <%= user.first_name.toUpperCase() %> </h2>
+    <h2>Bienvenido <%= user.user_name %> </h2>
 <div class="avatar"><figure class="userAvatar"><img src="/img/avatars/<%= user.image %>"></figure> </div>
 
 
 
 </main>
+
+<%- include("../partials/close") %> 

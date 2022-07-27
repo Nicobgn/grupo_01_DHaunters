@@ -1,0 +1,8 @@
+<% if (locals.scripts && locals.scripts.length > 0) { %>
+  <% for (let script in scripts) { %>
+    <script src="/js/<%= script %>"></script>
+  <% } %> 
+<% } %>
+
+</body>
+</html>

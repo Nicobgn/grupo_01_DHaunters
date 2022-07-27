@@ -1,18 +1,20 @@
 <header>
   <nav>
     <a href="/" class="brand">
-      <img src="/img/ghost-logo.svg" alt="" />
+      <img src="/img/brand/ghost-logo.svg" alt="DHaunters" />
     </a>
     <div class="desktopNav">
       <ul>
         <li><a href="/store/">Mercado</a></li>
         <li><a href="/user/cart">Carrito</a></li>
-        <li><a href="/user/collection">Colección</a></li>
-        <li><a href="/user/favourites">Favoritos</a></li>
-        <li>
-          <a href="/store/createProduct">Creacion de Productos</a>
-        </li>
       </ul>
+      <% if (locals.admin && locals.admin === true) { %>
+        <ul>
+          <li>
+            <a href="/store/createProduct">Creacion de Productos</a>
+          </li>
+        </ul>
+      <% } %>
     </div>
     <div>
       <a href="" id="choiceLogOrSign"><i class="fa-solid fa-user"></i></a>
@@ -20,8 +22,6 @@
     </div>
     <div class="mobileNav">
       <a href="/product/">Mercado</a>
-      <a href="/user/collection">Colección</a>
-      <a href="/user/favourites">Favoritos</a>
       <a href="/user/cart">Carrito</a>
       <a href="/">DHaunters</a>
     </div>
@@ -34,3 +34,4 @@
     </div>
   </div>
 </header>
+
