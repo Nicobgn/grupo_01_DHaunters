@@ -4,6 +4,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
+const cors = require("cors");
 
 // Requiring Middlewares
 const cookieLogged = require("./middlewares/other/cookieLogged");
@@ -31,6 +32,7 @@ app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors())
 
 // Express Session && Cookies
 let ss = 1000;
