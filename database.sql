@@ -141,11 +141,11 @@ VALUES ('1','5','Pikachu Gorra','Un fiel compañero Pokemon de tipo eléctrico.'
 ('3', '3','Spider-man Peter Parker', 'El hombre araña en su versión animada', 'Peter Parker, en este momento estudiante de secundaria, es un héroe que posee poderes que obtuvo de la mordedura de una araña radioactiva, ganando la habilidad de utilizar algunas de las características de las arañas.', '34.99', '3/spiderman.png', '2022/05/10 15:57:30','2022/05/10 15:57:30');
 
 INSERT INTO `users` ( `admin`, `first_name`, `last_name`, `user_name`, `email`, `password`, `image`, `terms_conditions`, `email_send`, `deleted`) 
-VALUES ( '1', 'Admin', 'Istrator', 'Administrator', 'administrator@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'),
- ('1', 'Nicolás', 'Barragán', 'NicoB', 'nicobarragan@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'),
-('1', 'Diego', 'Giraldo', 'DiegoG', 'diegogiraldo@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'), 
-('1', 'Matias', 'Torres Contreras', 'MatiTC', 'matiastc@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'), 
-('0', 'Jose', 'Alvarado', 'JoseAl', 'josealva@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'),
-('0', 'Julio', 'Roca', 'Argentino', 'julioaroca@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0'),
-('0', 'Martin', 'Palermo', 'optimista', 'mpalermo@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.png', '1', '0', '0');
+VALUES ( '1', 'Admin', 'Istrator', 'Administrator', 'administrator@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'),
+ ('1', 'Nicolás', 'Barragán', 'NicoB', 'nicobarragan@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'),
+('1', 'Diego', 'Giraldo', 'DiegoG', 'diegogiraldo@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'), 
+('1', 'Matias', 'Torres Contreras', 'MatiTC', 'matiastc@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'), 
+('0', 'Jose', 'Alvarado', 'JoseAl', 'josealva@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'),
+('0', 'Julio', 'Roca', 'Argentino', 'julioaroca@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0'),
+('0', 'Martin', 'Palermo', 'optimista', 'mpalermo@dhaunters.com', '$2a$10$3pAuaxxTA3YwBFlXQbY2wu/AipIDN5u7u9nr2p0gnBzJEIe2rXw6i', 'default.jpg', '1', '0', '0');
 -- La contraseña de los usuarios por defecto es hola1234
