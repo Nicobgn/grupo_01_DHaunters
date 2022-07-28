@@ -56,23 +56,22 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
-
-  document.querySelector("#img").addEventListener("change", () => {
-    let valorImg = document.querySelector("#img").files[0].name;
-    let extImg = valorImg.split(".").pop().toLowerCase();
-    let extensiones = [".jpg", ".jpeg", ".npg", "png", "gif"];
-    if (extensiones.includes(extImg)) {
-      document.querySelector("label").classList.remove("drawer-red");
-      document.querySelector("label").classList.add("drawer");
-      document.querySelector(`form div .img`).classList.add("oculto");
-      campos.img = true;
-    } else {
-      document.querySelector("label").classList.remove("drawer");
-      document.querySelector("label").classList.add("drawer-red");
-      document.querySelector(`form div .img`).classList.remove("oculto");
-      campos.img = false;
-    }
-  });
+document.querySelector("#img").addEventListener("change", () => {
+  let valorImg = document.querySelector("#img").files[0].name;
+  let extImg = valorImg.split(".").pop().toLowerCase();
+  let extensiones = [".jpg", ".jpeg", ".npg", "png", "gif"];
+  if (extensiones.includes(extImg)) {
+    document.querySelector("label").classList.remove("drawer-red");
+    document.querySelector("label").classList.add("drawer");
+    document.querySelector(`form div .img`).classList.add("oculto");
+    campos.img = true;
+  } else {
+    document.querySelector("label").classList.remove("drawer");
+    document.querySelector("label").classList.add("drawer-red");
+    document.querySelector(`form div .img`).classList.remove("oculto");
+    campos.img = false;
+  }
+});
 
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -81,7 +80,7 @@ formulario.addEventListener("submit", (e) => {
     campos.name &&
     campos.price &&
     campos.shortDesc &&
-    campos.longDesc &&  
+    campos.longDesc &&
     campos.img
   ) {
     document.querySelector("#error-msg").classList.add("oculto");
