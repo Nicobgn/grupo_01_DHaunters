@@ -1,9 +1,5 @@
 const PORT = process.env.PORT || 3030;
 
-const { exists } = require("fs");
-const fs = require("fs/promises");
-const path = require("path");
-
 module.exports = async (req, res, next) => {
   let dateNow = new Date();
   let hh = dateNow.getHours();
@@ -19,10 +15,6 @@ module.exports = async (req, res, next) => {
 
   let time = "[" + hh + ":" + mn + ":" + ss + "." + ms + "]";
 
-  await fs.appendFile(
-    path.join(__dirname, "/../../logs/console.txt"),
-    `${time} In ${req.socket.remoteAddress}:${PORT}${req.url} used ${req.method}\n`
-  );
   console.log(
     `\n${time} In ${req.socket.remoteAddress}:${PORT}${req.url} used ${req.method}`
   );
