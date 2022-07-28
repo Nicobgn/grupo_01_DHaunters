@@ -1,0 +1,17 @@
+hr {
+  height: 2px;
+  background-color: darkorange;
+  border: none;
+}
+
+.cart {
+  margin: 20px auto;
+}
+
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_header .remove {
+  padding: 6px 10px;
+}

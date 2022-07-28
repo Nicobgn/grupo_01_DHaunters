@@ -2,7 +2,7 @@
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-const {Sequelize, QueryTypes} = require('sequelize');
+const { Sequelize, QueryTypes } = require("sequelize");
 
 // Placing Abbreviations of Models
 const Product = db.Product;
@@ -16,7 +16,7 @@ const consoleLogError = require("../middlewares/other/consoleLogError");
 // Defining Controller
 const controller = {
   store: async (req, res) => {
-    let scripts = ["util/cart"];
+    let scripts = ["util/cartManager"];
     console.log("El carrito actual es " + req.session.cart);
     try {
       let products = await Product.findAll({
@@ -122,22 +122,22 @@ const controller = {
       }
       console.log(name);
       let product = await Product.findOne({
-      where: {
-        name: name
-      }
-    })
-    let universe = await Universe.findOne({
-      where: {
-        universe_id: product.universe_id
-      }
-    })
+        where: {
+          name: name,
+        },
+      });
+      let universe = await Universe.findOne({
+        where: {
+          universe_id: product.universe_id,
+        },
+      });
       console.log(`El producto es ${product}`);
-      await console.log(`El universo es` +universe);
+      await console.log(`El universo es` + universe);
       res.render("store/productDetail", {
         css: "stylesProDeta",
         title: `${product.name}`,
         product,
-        universe
+        universe,
       });
     } catch (error) {
       consoleLogError(error);
