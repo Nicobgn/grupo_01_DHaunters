@@ -3,11 +3,11 @@
 
 <main>
 	<section>
+		<article class="cartHeader">
+				<span>Productos</span>
+				<span id="cleanCart" class="remove">Vaciar Carrito</span>
+		</article>
 		<% if (locals.products) { %>
-			<article class="cartHeader">
-					<span>Productos</span>
-					<span id="cleanCart" class="remove">Vaciar Carrito</span>
-			</article>
 			<hr>
 			<article class="cartItems">
 					<% product.forEach(product => { %>
@@ -39,6 +39,8 @@
 					<% }) %>
 			</article>
 			<hr>
+			<% } else { %>
+				
 			<article class="checkout">
 					<div class="total">
 							<div class="subtotal">
@@ -49,10 +51,6 @@
 							<button type="submit">Comprar</button>
 					</div>
 			</article>
-		<% } else { %>
-		<p>
-			No hay elementos en tu carrito, <a href="/store">¡Vamos a añadir algunos!</a>
-		</p>
 		<% } %> 
 	</section>
 </main>
