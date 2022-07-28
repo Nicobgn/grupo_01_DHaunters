@@ -150,7 +150,7 @@ const controller = {
     let validationResults = validationResult(req);
     try {
       if (validationResults.errors.length > 0) {
-        return res.render("user/register.ejs", {
+        return res.render("users/register.ejs", {
           errors: validationResults.mapped(),
           css: "stylesForms",
           title: "Registrarse - !",

@@ -7,6 +7,7 @@ const path = require("path");
 const controller = require("../controllers/user");
 const validationLogIn = require("../middlewares/validations/user/logIn");
 const validationRegister = require("../middlewares/validations/user/register");
+const formattedDate = require("../middlewares/other/formattedDate");
 
 const guestHandler = require("../middlewares/handlers/guestHandler");
 const loggedHandler = require("../middlewares/handlers/loggedHandler");
@@ -30,12 +31,13 @@ const router = express.Router();
 // User Main Routes
 router.get("/login", guestHandler, controller.signIn);
 router.post("/login", validationLogIn, controller.login);
-router.get(
+router.get("/register", guestHandler, controller.signUp);
+router.post(
   "/register",
-  guestHandler,
-  controller.signUp
+  uploadFile.single("image"),
+  validationRegister,
+  controller.register
 );
-router.post("/register",uploadFile.single("image"),validationRegister, controller.register);
 router.get("/", loggedHandler, controller.profile);
 router.get("/logout", loggedHandler, controller.logout);
 
