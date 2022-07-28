@@ -5,6 +5,7 @@ const express = require("express");
 
 // Requiring Controller && Middlewares
 const controller = require("../controllers/store");
+const validationProductCreate = require("../middlewares/validations/store/validationsProduct");
 
 const adminHandler = require("../middlewares/handlers/adminHandler");
 
@@ -31,6 +32,12 @@ router.post("/product/create", upload, controller.productCreated);
 // router.get("/search", controller.productSearch);
 router.get("/:name/", controller.productDetail);
 router.post("/:name/delete", adminHandler, controller.productDelete);
-router.get("/:name/edit");
+router.get("/:name/edit", controller.productEdit);
+router.post(
+  "/:id/edit",
+  upload,
+  validationProductCreate,
+  controller.productEdited
+);
 
 module.exports = router;

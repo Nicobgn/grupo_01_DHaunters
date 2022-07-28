@@ -14,23 +14,23 @@
     </div>
     <div class="buy">
       
-        <div class="buy-option">
-          <h5><%= product.price %></h5>
-          <select name="" id="">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div class="button">
-          <button>Comprar</button>
-          <% if (locals.admin && locals.admin === true) { %>
-            <a href="/store/<%= product.name %>/edit"> Editar </a>
-            <a href="/store/<%= product.name %>/delete"> Eliminar </a>
-          <% } %>
-        </div>
+      <div class="buy-option">
+        <h5><%= product.price %></h5>
+        <select name="" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="button">
+        <button>Comprar</button>
+        <% if (locals.admin && locals.admin === true) { %>
+          <a href="/store/<%= product.name %>/edit"> Editar </a>
+          <a href="/store/<%= product.name %>/delete"> Eliminar </a>
+        <% } %>
+      </div>
       
     </div>
   </section>

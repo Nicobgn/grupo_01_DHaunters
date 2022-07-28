@@ -15,6 +15,7 @@ const consoleLogError = require("../middlewares/other/consoleLogError");
 // Defining Controller
 const controller = {
   store: async (req, res) => {
+    let scripts = ["util/cart"];
     try {
       let products = await Product.findAll({
         where: {
@@ -25,6 +26,7 @@ const controller = {
         css: "stylesHome",
         title: "Store",
         products,
+        scripts,
       });
     } catch (error) {
       consoleLogError(error);
@@ -55,7 +57,7 @@ const controller = {
     });
     try {
       if (validationResults.errors.length > 0) {
-        return res.render("store/createProduct.ejs", {
+        return res.render("store/productCreate.ejs", {
           errors: validationResults.mapped(),
           title: "Crea un nuevo producto",
           css: "stylesCreateProduct",
@@ -69,10 +71,8 @@ const controller = {
         let { name, price, shortDesc, longDesc, tier, universe } = req.body;
 
         // Setting fields that doesn't came directly form the form
-        let image = "default.png";
-        if (req.file) {
-          return (image = tier + "/" + req.file.filename);
-        }
+        let image;
+        req.file ? (image = req.file.filename) : (image = "default.png");
 
         let created_at = formattedDateDb;
         let updated_at = formattedDateDb;
@@ -92,12 +92,14 @@ const controller = {
           deleted: deleted,
         });
 
+        console.log(newProduct);
+
         // Sending Response
         res.redirect("/store");
       }
     } catch (error) {
       consoleLogError(error);
-      res.render("store/createProduct.ejs", {
+      res.render("store/productCreate.ejs", {
         errors: validationResults.mapped(),
         title: "Crea un nuevo producto",
         css: "stylesCreateProduct",
@@ -109,57 +111,81 @@ const controller = {
     }
   },
   productDetail: async (req, res) => {
-    let { name } = req.params;
-    let product = Product.findOne({
-      where: {
-        product_id: name,
-      },
-    });
-    res.render("store/productDetail", {
-      css: "stylesProDelta",
-      title: `${product.name}`,
-      product
-    });
+    try {
+      let name = req.params.name.split("%20").join("");
+      console.log(name);
+      let product = await Product.findOne({
+        where: {
+          name: name,
+        },
+      });
+      console.log(`El producto es ${product}`);
+      res.render("store/productDetail", {
+        css: "stylesProDelta",
+        title: `${product.name}`,
+        product,
+      });
+    } catch (error) {
+      consoleLogError(error);
+      res.redirect("/");
+    }
   },
   productDelete: async (req, res) => {
-    let { name } = req.params;
+    let { id } = req.params;
+    let product = await Product.findOne({
+      where: { product_id: id },
+    });
     try {
-      Product.update(
+      await Product.update(
         {
           updated_at: formattedDateDb,
           deleted: 1,
         },
         {
-          where: { name: name },
+          where: { product_id: id },
         }
       );
       res.redirect("/store");
     } catch (error) {
       console.log(error);
-      res.redirect(`/store/${name}`);
+      res.redirect(`/store/${product.name}`);
     }
   },
   productEdit: async (req, res) => {
-    let { name } = req.params.name;
-    let tiers = await Tier.findAll({
-      order: [["tier_id", "ASC"]],
-    });
-    let universes = await Universe.findAll({
-      order: [["universe", "ASC"]],
-    });
-    let product = await Product.findOne({ where: { name: name } });
-    res.render("store/productEdit", {
-      title: `Edita ${name}`,
-      css: "stylesCreateProduct",
-      tiers,
-      universes,
-      product,
-    });
+    let scripts = ["validations/createProductValidation"];
+    try {
+      let name = req.params.name.split("%20").join("");
+      let tiers = await Tier.findAll({
+        order: [["tier_id", "ASC"]],
+      });
+      let universes = await Universe.findAll({
+        order: [["universe", "ASC"]],
+      });
+      let product = await Product.findOne({ where: { name: name } });
+      console.log(`El producto es ${product}`);
+      res.render("store/productEdit", {
+        title: `Edita ${product.name}`,
+        css: "stylesCreateProduct",
+        tiers,
+        universes,
+        product,
+        scripts,
+      });
+    } catch (error) {
+      consoleLogError(error);
+      res.render("store/productEdit", {
+        title: `Edita ${req.params.name}`,
+        css: "stylesCreateProduct",
+      });
+    }
   },
   productEdited: async (req, res) => {
     let validations = validationResult(req);
-    let { name } = req.params.name;
-    let product = await Product.findOne({ where: { name: name } });
+    let scripts = ["validations/createProductValidation"];
+
+    let paramsId = req.params.id;
+
+    let product = await Product.findOne({ where: { product_id: paramsId } });
     let tiers = await Tier.findAll({
       order: [["tier_id", "ASC"]],
     });
@@ -167,17 +193,20 @@ const controller = {
       order: [["universe", "ASC"]],
     });
     let oldData = req.body;
+
+    console.log(oldData);
     try {
       // Verify if has errors
       if (validations.length > 0) {
         res.render("store/productEdit", {
-          title: `${name} - !`,
+          title: `${product.name} - !`,
           css: "stylesCreateProduct",
           tiers,
           universes,
           product,
           oldData,
           errors: validations.mapped(),
+          scripts,
         });
       } else {
         // Fields to update
@@ -198,25 +227,25 @@ const controller = {
           req.body.shortDesc != "" &&
           req.body.shortDesc != " "
             ? req.body.shortDesc
-            : product.shortDesc;
+            : product.short_desc;
         let longDesc =
           req.body.longDesc != undefined &&
           req.body.longDesc != "" &&
           req.body.longDesc != " "
             ? req.body.longDesc
-            : product.longDesc;
+            : product.long_desc;
         let universe =
           req.body.universe != undefined &&
           req.body.universe != "" &&
           req.body.universe != " "
             ? req.body.universe
-            : product.universe;
+            : product.universe_id;
         let tier =
           req.body.tier != undefined &&
           req.body.tier != "" &&
           req.body.tier != " "
             ? req.body.tier
-            : product.tier;
+            : product.tier_id;
         let image;
         req.file ? (image = req.file.filename) : product.image;
 
@@ -229,23 +258,30 @@ const controller = {
             long_desc: longDesc,
             universe_id: universe,
             tier_id: tier,
+            image: image,
             updated_at: formattedDateDb,
           },
-          { where: { name: name } }
+          { where: { product_id: paramsId } }
         );
         console.log(updatedProduct);
         res.redirect(`/store/${name}`);
       }
     } catch (error) {
       consoleLogError(error);
-      res.render("store/productEdit", {
-        title: `${name} - !`,
-        css: "stylesCreateProduct",
-        tiers,
-        universes,
-        product,
-        oldData,
-        errors: validations.mapped(),
+      // res.render("store/productEdit", {
+      //   title: `${name} - !`,
+      //   css: "stylesCreateProduct",
+      //   tiers,
+      //   universes,
+      //   product,
+      //   oldData,
+      //   errors: validations.mapped(),
+      // });
+      res.json({
+        errors: {
+          "express-validator": validations.mapped(),
+          other: error,
+        },
       });
     }
   },

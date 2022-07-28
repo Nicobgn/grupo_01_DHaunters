@@ -18,7 +18,21 @@ const UserAddress = db.UserAddress;
 const validations = [
   body("name")
     .notEmpty()
-    .withMessage("Debes ingresar un nombre para el producto"),
+    .withMessage("Debes ingresar un nombre para el producto")
+    .bail()
+    .custom(async (value, { req }) => {
+      let alreadyExist = await Product.findOne({
+        where: {
+          name: value,
+        },
+      });
+
+      if (alreadyExist) {
+        throw new Error("Este nombre de usuario está en uso.");
+      } else {
+        return true;
+      }
+    }),
   body("price")
     .notEmpty()
     .withMessage("Debes ingresar el precio del producto")
@@ -50,12 +64,3 @@ const validations = [
 ];
 
 module.exports = validations;
-
-
-
-
-
-
-
-
-

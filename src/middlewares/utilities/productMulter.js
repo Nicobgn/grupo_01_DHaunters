@@ -4,14 +4,10 @@ const formattedDate = require("../other/formattedDate");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    console.log(req.body);
-    cb(
-      null,
-      path.join(__dirname, `/../../../public/img/products/${req.body.tier}/`)
-    );
+    cb(null, path.join(__dirname, `/../../../public/img/products/`));
   },
   filename: (req, file, cb) => {
-    const multerFileName = `${formattedDate}-${file.originalname}`;
+    const multerFileName = `${req.body.tier}/${formattedDate}-${file.originalname}`;
 
     cb(null, multerFileName);
   },
