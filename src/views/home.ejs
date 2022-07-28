@@ -3,32 +3,60 @@
 
 
 <main>
-	<section class="container--slider">
-		<% if (banners) { %>
-			<article class="slider" style="width:<%= bannersLength * 100 %>%">
-				<% for (const banner of banners) { %>
-					<div class="slider__section">
-						<img 
-						src="<%= banner.image %>" 
-						alt="<%= banner.title %>"
-						id="bannerImg<%= banner.banner_id %>" 
-						class="slider__img"
-						style="width: ;">
-					</div>
-				<% } %> 
-				</article>
-				<article class="slider__btn" id="sliderBtnLeft"></article>
-				<article class="slider__btn" id="sliderBtnRight"></article>
-			</article>
-			<ul class="slider__dots">
-			<% for (let banner of banners) { %>
-				<li></li>
-			<% } %>  
-			</ul>
-		<% } else { %>
-		<p>¡Próximamente habrá promociones!</p>
-		<% } %> 
-	</section>
+	<section class="carousel-container">
+  <% if (locals.banners && banners.length > 0) { %>
+    <article class="carousel__slide">
+      <img 
+      src="<%= banners[bannersLength - 1].image %>" 
+      alt="<%= banners[bannersLength - 1].title %>"
+      class="carousel__slide_image"
+      id="carousel__slide_image-last-clone">
+    <% for (let banner of banners) { %>
+      <img 
+      src="<%= banner.image %>" 
+      alt="<%= banner.title %>"
+      class="carousel__slide_image"
+      id="carousel__slide_image-<%= banner.id %>"
+      >
+    <% } %>  
+      <img 
+      src="<%= banners[0].image %>" 
+      alt="<%= banners[0].title %>"
+      class="carousel__slide_image"
+      id="carousel__slide_image-first-clone">
+    </article>
+    <article class="button_holder">
+      <div 
+      class="carousel__button carousel__button_left" 
+      id="carousel__button_prev">
+        &lt;
+      </div>
+    
+      <div 
+      class="carousel__button carousel__button_right" 
+      id="carousel__button_next">
+        &gt;
+      </div>
+    </article>
+    <ul class="carousel__controls" >
+    <% for (let i = 0; i < banners.length; i++) {
+      %>
+      <li
+      name="carousel__dots" 
+      class="carousel__dot"
+      id="carousel__dot-<%= banners[i].id %>"
+      value="<%= banners[i].id %>"
+      index = "<%= i %>"
+      <%= (banners[i].id === banners[0].id) ? 'checked' : null %> 
+      />
+  <% } %>
+   </ul>
+  <% } else { %>
+    <p>
+      You came too early, we will have promotions later!
+    </p>
+  <% } %> 
+  </section>
 
 
 
