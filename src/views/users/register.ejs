@@ -3,7 +3,7 @@
     <div class="contenedor">
       <div class="logo">
         <a href="/">
-          <img src="/img/ghost-logo.png" alt="logo">
+          <img src="/img/brand/ghost-logo.svg" alt="logo">
         </a>
       </div>
       <p class="login"><a href="/user/login">Iniciar sesión</a></p>
@@ -16,7 +16,7 @@
 
       <div class="datos-u">   
       <label for="image" 
-      class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %> ">   
+      class="<%= locals.errors && errors.image ? "drawer-red":"drawer" %>">   
       <span id="info">Selecciona una foto de perfil</span>
       </label>
       <input id="image" 
@@ -120,25 +120,6 @@
          </div> 
          <% } %>
 
-        <input type="text" 
-        name="adress" 
-        placeholder="Dirección" 
-        id="adress" 
-        class="<%= locals.errors && errors.adress? "drawer-red":"drawer" %> " 
-        <% if (locals.old && old.adress ) { %>
-          value="<%= old.adress  %>" 
-         <% } %> 
-        />
-    <!--el if de locals.old es para rescatar los datos validos del form -->
-    <!--div donde vienen los mensajes de error de parte del front -->
-    <div class="error-msg oculto adress">La direccion no es valida </div>
-    <!--if con donde vienen los mensajes de error -->
-        <% if (locals.errors && errors.adress) { %>
-          <div class="error-msg">
-            <%= errors.adress.msg %>           
-         </div> 
-         <% } %>
-
         <input type="password" 
         name="password" 
         placeholder="Contraseña" 
@@ -155,16 +136,16 @@
          </div> 
          <% } %>
         <input type="password" 
-        name="checkPassword" 
-        id="checkPassword" 
+        name="repeatedPassword" 
+        id="repeatedPassword"
         placeholder="Confirmar contraseña" 
-        class="<%= locals.errors && errors.checkPassword ? "drawer-red":"drawer" %>" 
+        class="<%= locals.errors && errors.repeatedPassword ? "drawer-red":"drawer" %>" 
           />
-      <div class="error-msg oculto checkPassword">Las contraseñas no coinciden</div>
+      <div class="error-msg oculto repeatedPassword">Las contraseñas no coinciden</div>
       <!--if con donde vienen los mensajes de error -->
-          <% if (locals.errors && errors.checkPassword) { %>
+          <% if (locals.errors && errors.repeatedPassword) { %>
             <div class="error-msg">
-              <%= errors.checkPassword.msg %>           
+              <%= errors.repeatedPassword.msg %>           
            </div> 
            <% } %>
      </div>
@@ -172,9 +153,9 @@
       <div class="error-msg oculto" id="error-msg">Debes completar todos los campos y aceptar terminos y condiciones</div>
 
       <div class="checkbox">
-        <label for="tyc"><input type="checkbox" 
-          name="tyc" 
-          id="tyc" 
+        <label for="terms_conditions"><input type="checkbox" 
+          name="terms_conditions" 
+          id="terms_conditions" 
           value=1 />
           Acepto términos y condiciones</label>
             
@@ -187,9 +168,9 @@
           Quiero recibir promociones en mi correo</label>
       </div>
       <!--if con donde vienen los mensajes de error -->
-            <% if (locals.errors && errors.tyc) { %>
-              <div class="error-tyc">
-                <%= errors.tyc.msg %>           
+            <% if (locals.errors && errors.terms_conditions) { %>
+              <div class="error-msg">
+                <%= errors.terms_conditions.msg %>           
              </div> 
              <% } %>
   
@@ -207,5 +188,5 @@
 }
   </script>
 
-  <script src="/js/signUpValidation.js"></script>
+  <script src="/js/validations/registerValidation.js"></script>
   </html>

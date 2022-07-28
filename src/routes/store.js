@@ -2,7 +2,7 @@
 const path = require("path");
 const multer = require("multer");
 const express = require("express");
-const productController = require("../controllers/store");
+const productCreate = require('../middlewares/validations/store/validationsProduct')
 
 // Requiring Controller && Middlewares
 const controller = require("../controllers/store");
