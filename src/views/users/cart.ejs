@@ -10,32 +10,56 @@
 		<hr>
 
 		<% if (locals.products) { %>
-			<article class="cartItems">
+			<article class="cart__items">
 				<% products.forEach(product => { %>
-					<div class="cartItem">
-						<a href="/store/<%= product.name %>">
-							<figure>
+					<div class="cart__item">
+						<figure class="cart__item__image">
+							<a href="/store/<%= product.name %>">
 								<img src="/img/products/<%= product.image %> " alt="<%= product.title %> ">
-							</figure>
-						</a>
-						<div class="itemDesc">
-							<div class="detailLeft">
+							</a>
+						</figure>
+						<div class="cart__item__caption">
+							<div class="cart__item__caption_left">
 								<a href="/store/<%= product.name %>">
-									<h3> <%= product.title %> </h3>
+									<span> <%= product.name %> </span>
 								</a>
 							</div>
-							<div class="counter">
-								<span class="btn">-</span>
-								<span class="counter">2</span>
-								<span class="btn">+</span>
-							</div>
-							<div class="detailRight">
-								<h4> USD <%= product.price %> </h4>
-								<p class="later">Comprar más tarde</p>
-								<p class="remove">Quitar del carrito</p>
+							<div class="cart__item__caption_right">
+								<div class="cart__item__counter">
+									<input 
+									type="number" 
+									class="cart__item__counter"
+									id="cart__item__counter-<%= product.product_id %>"
+									value="1"
+									>
+									<div class="cart__item__counter__buttons">
+										<p 
+										id="cart__item__plus-<%= product.product_id %>"
+										class="cart__item__button"
+										> + </p>
+										<p 
+										id="cart__item__minus-<%= product.product_id %>"
+										class="cart__item__button"
+										> - </p>
+									</div>
+								</div>
+								<div>
+									<p 
+									class="cart__item__price"
+									> 
+										USD <%= product.price %> 
+									</p>
+									<p 
+									id="cart__remove-<%= product.product_id %>"
+									class="cart__remove"
+									>
+										Quitar del carrito
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
+					<hr class="product-divider">
 				<% }) %>
 			</article>
 			<hr>
