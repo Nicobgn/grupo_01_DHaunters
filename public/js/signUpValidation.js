@@ -80,6 +80,9 @@ const validarPassword2 = () => {
   }
 };
 
+
+//Validacion imagen
+
 document.querySelector("#image").addEventListener("change", () => {
   let valorImg = document.querySelector("#image").files[0].name;
   let extImg = valorImg.split(".").pop().toLowerCase();

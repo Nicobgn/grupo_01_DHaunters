@@ -32,11 +32,10 @@ router.get("/login", guestHandler, controller.signIn);
 router.post("/login", validationLogIn, controller.login);
 router.get(
   "/register",
-  uploadFile.single("image"),
   guestHandler,
   controller.signUp
 );
-router.post("/register", validationRegister, controller.register);
+router.post("/register",uploadFile.single("image"),validationRegister, controller.register);
 router.get("/", loggedHandler, controller.profile);
 router.get("/logout", loggedHandler, controller.logout);
 

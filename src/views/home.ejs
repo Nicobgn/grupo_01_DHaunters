@@ -40,7 +40,7 @@
 		<% for (let product of products) {%>
 
 
-			<% if(product.category=="Epic" ){%>
+			<% if(product.tier_id==5 ){%>
 
 
 
@@ -50,7 +50,7 @@
 
 						<article class="product">
 							<figure>
-								<img src="/img/products/<%=product.img%>" alt="" />
+								<img src="/img/products/<%=product.image%>" alt="" />
 							</figure>
 							<div class="productDetail">
 								<h3>
@@ -78,14 +78,14 @@
 
 	<% for (let product of products) {%>
 
-		<% if(product.category=="Common" ){%>
+		<% if(product.tier_id==1 ){%>
 
 		<div class="containerProduct">
 			<a href="/store/productDetails/<%=product.id%>">
 
 				<article class="product">
 					<figure>
-						<img src="/img/products/<%=product.img%>" alt="" />
+						<img src="/img/products/<%=product.image%>"  alt="" />
 					</figure>
 					<div class="productDetail">
 						<h3>
@@ -112,14 +112,14 @@
 
 		<% for (let product of products) {%>
 
-			<% if(product.category=="Rare" ){%>
+			<% if(product.tier_id==3 ){%>
 
 				<div class="containerProduct">
 					<a href="/store/productDetails/<%=product.id%>">
 
 						<article class="product">
 							<figure>
-								<img src="/img/products/<%=product.img%>"" alt="" />
+								<img src="/img/products/<%=product.image%>"  alt="" />
 							</figure>
 							<div class="productDetail">
 								<h3>
@@ -145,14 +145,14 @@
 		</div>
 		<% for (let product of products) {%>
 
-			<% if(product.category=="Very rare" ){%>
+			<% if(product.tier_id==4 ){%>
 
 				<div class="containerProduct">
 					<a href="/store/productDetails/<%=product.id%>">
 
 						<article class="product">
 							<figure>
-								<img src="/img/products/<%=product.img%>"" alt="" />
+								<img src="/img/products/<%=product.image%>" alt="" />
 							</figure>
 							<div class="productDetail">
 								<h3>
