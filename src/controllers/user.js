@@ -359,6 +359,8 @@ const controller = {
   cartPage: async (req, res) => {
     let scripts = ["cart"];
 
+    let finalPrice = 0;
+
     let productsLimited = await Product.findAll({
       where: { deleted: 0 },
       offset: 5,
@@ -371,6 +373,7 @@ const controller = {
       title: "Carrito",
       css: "stylesCart",
       products: cart,
+      finalPrice,
       length: productsLimited.length,
       scripts,
     });
