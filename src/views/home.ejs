@@ -7,20 +7,20 @@
   <% if (locals.banners && banners.length > 0) { %>
     <article class="carousel__slide">
       <img 
-      src="<%= banners[bannersLength - 1].image %>" 
+      src="/img/banners/<%= banners[bannersLength - 1].image %>" 
       alt="<%= banners[bannersLength - 1].title %>"
       class="carousel__slide_image"
       id="carousel__slide_image-last-clone">
     <% for (let banner of banners) { %>
       <img 
-      src="<%= banner.image %>" 
+      src="/img/banners/<%= banner.image %>" 
       alt="<%= banner.title %>"
       class="carousel__slide_image"
       id="carousel__slide_image-<%= banner.id %>"
       >
     <% } %>  
       <img 
-      src="<%= banners[0].image %>" 
+      src="/img/banners/<%= banners[0].image %>" 
       alt="<%= banners[0].title %>"
       class="carousel__slide_image"
       id="carousel__slide_image-first-clone">
@@ -46,8 +46,7 @@
       class="carousel__dot"
       id="carousel__dot-<%= banners[i].id %>"
       value="<%= banners[i].id %>"
-      index = "<%= i %>"
-      <%= (banners[i].id === banners[0].id) ? 'checked' : null %> 
+      index = "<%= i  %>"
       />
   <% } %>
    </ul>

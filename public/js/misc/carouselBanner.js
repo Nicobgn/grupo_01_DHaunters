@@ -8,6 +8,8 @@ window.onload = () => {
   let btnPrev = document.querySelector("#carousel__button_left");
   let btnNext = document.querySelector("#carousel__button_next");
 
+  dots[0].setAttribute("checked", "");
+
   const size = images[0].clientWidth;
   let counter = 1;
   let dotsCounter = dots[0].getAttribute("index");
@@ -16,6 +18,9 @@ window.onload = () => {
     // Setting the Effect and Target
     let transitionEffect = "transform 300ms ease-in-out";
     let { target } = e;
+
+    console.log(counter);
+    console.log(dotsCounter);
 
     try {
       let targetId = target.getAttribute("id");
@@ -62,11 +67,11 @@ window.onload = () => {
         /* If its a dot */
 
         let dot = e.target.getAttribute("value");
-        dotsCounter = e.target.getAttribute("index");
+        dotsCounter = Number(e.target.getAttribute("index"));
 
         dots[dotsCounter].setAttribute("checked", "");
         slide.style.transition = transitionEffect;
-        counter = dot;
+        counter = dotsCounter + 1;
         slide.style.transform = "translateX(" + -size * counter + "px)";
       }
     } catch (error) {}

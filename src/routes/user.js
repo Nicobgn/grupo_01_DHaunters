@@ -56,4 +56,9 @@ router.get("/:id/collection", controller.collectionList);
 router.post("/:id/collectionAdd", controller.collectionAdd);
 router.post("/:id/collectionDelete", controller.collectionDelete);
 
+// Cart
+router.get("/cart", loggedHandler, controller.cartPage);
+router.post("/cart/add/:id", loggedHandler, controller.cartAdd);
+router.post("/cart/delete/:id", loggedHandler, controller.cartDelete);
+
 module.exports = router;

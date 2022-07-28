@@ -8,7 +8,6 @@ CREATE TABLE `banners` (
 	`banner_id`SMALLINT(6) AUTO_INCREMENT PRIMARY KEY,
 	`title` VARCHAR(100) NOT NULL,
 	`image` VARCHAR(255) NOT NULL,
-	`status` TINYINT(1) DEFAULT 1 NOT NULL,
 	`created_at` DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	`updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
 	`deleted` TINYINT(1) DEFAULT 0 NOT NULL
@@ -113,7 +112,7 @@ CREATE TABLE `belongings`(
 	FOREIGN KEY (`product_id`) REFERENCES products(`product_id`)
 ) ENGINE=INNODB;
 
-INSERT INTO `banners` (`title`, `image`) VALUES ('Banner 1', '/img/banners/add-banner-1.jpeg'), ('Banner 2', '/img/banners/add-banner-2.jpeg'), ('Banner 3', '/img/banners/add-banner-3.jpeg');
+INSERT INTO `banners` (`title`, `image`) VALUES ('Grand Openning', 'grand-openning-banner-1.jpg'), ('Pokemon', 'pokemon-banner-3.jpg'), ('Dragon Ball Z', 'dragon-ball-banner-1.jpg'), ('One Piece', 'one-piece-banner-1.jpg'), ('Marvel Avengers', 'avengers-banner-1.jpg'),('Yu-Gi-Oh!','yu-gi-oh-banner-1.jpg');
 
 INSERT INTO `universes` (`universe`) VALUES ('Pokemon'),('Dragon Ball'),('Marvel'),('Yu-Gi-Oh'),('One Piece'),('Digimon'),('DC'),('Sonic');
 

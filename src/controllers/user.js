@@ -8,8 +8,6 @@ const Address = db.Address;
 const Order = db.Order;
 const OrderDetail = db.OrderDetail;
 const Product = db.Product;
-const Tier = db.Tier;
-const Universe = db.Universe;
 const User = db.User;
 const UserAddress = db.UserAddress;
 
@@ -32,22 +30,6 @@ let hs = 60 * mn;
 let DD = 24 * hs;
 let month = 31 * DD;
 let year = 365 * DD;
-
-// Troll Responses at Password
-let random = () => {
-  let rand = Math.random() * passwordResponses.length;
-  rand = Math.floor(rand);
-  return rand;
-};
-let passwordResponses = [
-  "You almost get it;)",
-  "Better luck next time",
-  "The password is... I won't tell you, why keep reading?",
-  "Keep trying, maybe sometime you'll get it",
-  "Soon you'll get it",
-  "Trust on yourself and you'll get it",
-  "Obviously I'm trolling you, I would never serve a password that easily",
-];
 
 // Defining Controller
 const controller = {

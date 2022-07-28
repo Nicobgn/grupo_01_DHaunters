@@ -11,11 +11,6 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false,
     },
-    status: {
-      type: dataTypes.BOOLEAN,
-      allowNull: false,
-      default: 1,
-    },
     created_at: {
       type: dataTypes.DATE(6),
       default: dataTypes.NOW,
