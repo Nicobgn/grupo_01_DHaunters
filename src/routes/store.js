@@ -30,7 +30,7 @@ router.get("/universe/:universe", adminHandler, controller.universeOne);
 router.get("/product/create", adminHandler, controller.productCreate);
 router.post("/product/create", upload, controller.productCreated);
 // router.get("/search", controller.productSearch);
-router.get("/:name/", controller.productDetail);
+router.get("/:product_id", controller.productDetail);
 router.post("/:name/delete", adminHandler, controller.productDelete);
 router.get("/:name/edit", controller.productEdit);
 router.post(

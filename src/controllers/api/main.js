@@ -43,12 +43,16 @@ const controller = {
           tiers: tiers.length,
           universes: universes.length,
           users: users.length,
+          deleted_products: deletedProducts.length,
+          deleted_users: deletedUsers.length,
         },
         data: {
           products: products,
           tiers: tiers,
           universes: universes,
           users: users,
+          deleted_products: deletedProducts,
+          deleted_users: deletedUsers,
         },
       });
     } catch (error) {
