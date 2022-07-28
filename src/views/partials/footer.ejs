@@ -28,11 +28,4 @@
         </h6>
     </div>
 </footer>
-<% if (locals.scripts && scripts.length > 0) { %>
-    <% for (let script of scripts) { %>
-        <script src="/js/<%= script %>.js"></script>
-    <% } %> 
-<% } %> 
-
-</body>
-</html>
+<%- include('./close') %> 
