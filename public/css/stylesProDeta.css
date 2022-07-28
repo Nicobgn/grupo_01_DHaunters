@@ -99,7 +99,7 @@ button:focus {
   padding-top: 10px;
 }
 
-figure{
+figure {
   object-fit: contain;
 }
 .imgCont {
@@ -111,13 +111,13 @@ figure{
 figure {
   border: 5px solid rgba(255, 255, 255, 0.55);
   width: 50%;
-  max-width: 250px;
-  min-width: 250px;
-  max-height: 250px;
-  min-height: 250px;
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
 }
 
-.imgcont figure img {
+.imgCont figure img {
   object-fit: contain;
   height: 100%;
   width: 100%;
@@ -150,13 +150,14 @@ figure {
     display: flex;
     justify-content: center;
   }
-  button {
-    background: rgba(50, 150, 150, 1);
-    padding: 20px;
-    border-radius: 10px;
-    font-weight: bolder;
-    bottom: 0;
-    margin: 2% 2%;
+
+  figure {
+    border: 5px solid rgba(255, 255, 255, 0.55);
+    width: 50%;
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    min-height: 150px;
   }
 }
 
@@ -167,12 +168,26 @@ figure {
   .product {
     display: flex;
     flex-direction: row;
-    max-width: 700px;
+    max-width: 500px;
+    min-width: 500px;
   }
 
-  
+  p {
+    font-size: 25px;
+  }
 
+  .product-text {
+    font-size: 20px;
+  }
 
+  figure {
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 300px;
+  }
+
+  .producDetails p {
+    font-size: 20px;
+  }
 }
-
-
