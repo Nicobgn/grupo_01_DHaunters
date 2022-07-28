@@ -16,6 +16,7 @@ const consoleLogError = require("../middlewares/other/consoleLogError");
 const controller = {
   store: async (req, res) => {
     let scripts = ["util/cart"];
+    console.log("El carrito actual es " + req.session.cart);
     try {
       let products = await Product.findAll({
         where: {
@@ -112,7 +113,12 @@ const controller = {
   },
   productDetail: async (req, res) => {
     try {
-      let name = req.params.name.split("%20").join("");
+      let name;
+      if (req.params.name.includes("%20")) {
+        name = req.params.name.split("%20").join("");
+      } else {
+        name = req.params.name;
+      }
       console.log(name);
       let product = await Product.findOne({
         where: {

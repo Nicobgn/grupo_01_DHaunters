@@ -47,6 +47,7 @@ const controller = {
           deleted_users: deletedUsers.length,
         },
         data: {
+          imageAbsolutePath: "http://localhost:3000/img/products/",
           products: products,
           tiers: tiers,
           universes: universes,

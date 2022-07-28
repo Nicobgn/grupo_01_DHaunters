@@ -29,10 +29,11 @@
               <%= product.price %>
             </span>
             <div class="cart__buttons">
-              <span class="cart__button cart__button_add">
+              <span class="cart__button cart__button_add" id="cart__button__add-<%= product.product_id %>">
                 Agregar
               </span>
-              <span class="cart__button cart__button_remove hidden">
+              <span class="cart__button cart__button_remove hidden"
+              id="cart__button__remove-<%= product.product_id %>">
                 Sacar
               </span>
             </div>

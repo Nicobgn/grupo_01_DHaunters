@@ -15,6 +15,7 @@ const UserAddress = db.UserAddress;
 const formattedDateDb = require("../middlewares/other/formattedDateDb");
 const consoleLogError = require("../middlewares/other/consoleLogError");
 const CartConstructor = require("../middlewares/utilities/cartConstructor");
+const cartConstructor = require("../middlewares/utilities/cartConstructor");
 
 let verifyEmpty = (isEmpty, oldData) => {
   if (isEmpty === "" || isEmpty === " ") {
@@ -332,15 +333,17 @@ const controller = {
       let id = req.params.id;
 
       // Calling the constructor
-      let cart = new CartConstructor(req.session.cart ? req.session.cart : {});
-
+      let cartOld = req.session.cart
+        ? req.session.cart
+        : { items: [], totalQuantity: 0, totalPrice: 0 };
       // Getting the product
       let productToAdd = Product.findOne({
         where: { product_id: id },
       });
+      let productId = productToAdd.product_id;
 
       // Modifying the cart
-      cart.add(productToAdd, productToAdd.product_id);
+      cartConstructor(cartOld);
       res.cookie("cartDhaunters", cart);
       req.session.cart = cart;
 
@@ -354,10 +357,16 @@ const controller = {
   },
   cartDelete: async (req, res) => {},
   cartPage: async (req, res) => {
+    let productsLimited = await Product.findAll({
+      where: { deleted: 0 },
+      offset: 5,
+      limit: 8,
+    });
+    cart = req.session.cart ? req.session.cart : productsLimited;
     res.render("users/cart", {
       title: "Carrito",
       css: "stylesCart",
-      products: req.session.cart,
+      products: cart,
     });
   },
   collectionAdd: async (req, res) => {

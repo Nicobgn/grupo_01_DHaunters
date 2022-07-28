@@ -144,6 +144,9 @@ section div.product-section-title h2 {
   border-radius: 5px;
   background-color: limegreen;
 }
+.cart__button_remove {
+  background-color: crimson;
+}
 
 div.productDetail {
   padding-top: 15px;
@@ -159,7 +162,7 @@ div.productDetail p {
   font-size: 1.2rem;
   padding-bottom: 5px;
 }
-div.productDetail h4 {
+div.productDetail .product__detail__price {
   margin-top: 4px;
   letter-spacing: 2px;
   font-size: 1.4rem;

@@ -19,20 +19,25 @@ module.exports = async (req, res, next) => {
     `\n${time} In ${req.socket.remoteAddress}:${PORT}${req.url} used ${req.method}`
   );
 
-  let existSession = req.session.user
-    ? "Hay una sesiòn iniciada"
-    : "No hay una sesiòn iniciada";
+  if (req.session.user) {
+    req.session.cart ? req.session.cart : {};
 
-  let isAdmin = req.session.admin
-    ? "El usuario es admin"
-    : "El usuario no es admin";
+    let existSession = req.session.user
+      ? "Hay una sesiòn iniciada"
+      : "No hay una sesiòn iniciada";
 
-  let cookieUser = req.cookies.cookieUser
-    ? `El usuario de la cookie es ${req.cookies.cookieUser}`
-    : "No hay un usuario en la cookie";
+    let isAdmin = req.session.admin
+      ? "El usuario es admin"
+      : "El usuario no es admin";
 
-  console.log(existSession);
-  console.log(isAdmin);
-  console.log(cookieUser);
+    let cookieUser = req.cookies.cookieUser
+      ? `El usuario de la cookie es ${req.cookies.cookieUser}`
+      : "No hay un usuario en la cookie";
+
+    console.log(existSession);
+    console.log(isAdmin);
+    console.log(cookieUser);
+  }
+
   next();
 };
