@@ -108,34 +108,39 @@
             </div>
 
             <div class="description">
-              <select name="category" id="category" class="<%= locals.errors && errors.category ? 'drawer-red' : 'drawer' %>">
+              <select name="tier" id="tier" class="<%= locals.errors && errors.tier ? 'drawer-red' : 'drawer' %>">
                 <option value="" disabled selected>Categoria</option>
 
-                <% let categorias=['Common', 'Rare', 'Very rare', 'Epic' ] %>
-                <% for (let categoria of categorias) {  %>
-                  <option value=" <%= categoria %>  "
-                  <%=  locals.oldDate && (categoria == oldDate.category) ? 'selected' : null %> 
-                  > <%= categoria %> </option>
+                <% for (let tier of tiers) {  %>
+                  <option value=" <%= tier %>  "
+                  <%=  locals.oldDate && (tier == oldDate.tier) ? 'selected' : null %> 
+                  > <%= tier.value %> </option>
                 <% } %> 
               </select>
 
-              <% if (locals.errors && errors.category) { %>
+              <% if (locals.errors && errors.tier) { %>
                 <div class="error-msg">
-                <%= errors.category.msg %>
+                <%= errors.tier.msg %>
                 </div> 
               <% } %> 
 
             </div>
             <div class="description">
-              <input type="text" name="universe" id="universe" class=" <%= locals.errors && errors.universe ? 'drawer-red' : 'drawer' %> "placeholder="Universo" />
+              <select name="universe" id="universe" class="<%= locals.errors && errors.universe ? 'drawer-red' : 'drawer' %>">
+                <option value="" disabled selected>Universo</option>
+
+                <% for (let universe of universes) {  %>
+                  <option value=" <%= universe %>  "
+                  <%=  locals.oldDate && (universe == oldDate.universe) ? 'selected' : null %> 
+                  > <%= universe.universe %> </option>
+                <% } %> 
+              </select>
 
               <% if (locals.errors && errors.universe) { %>
                 <div class="error-msg">
-                <%= errors.universe.msg %> 
-                </div>
+                <%= errors.universe.msg %>
+                </div> 
               <% } %> 
-
-              <div class="error-msg oculto universe">El universo no es valido </div>
 
             </div>
             </div>
