@@ -357,16 +357,22 @@ const controller = {
   },
   cartDelete: async (req, res) => {},
   cartPage: async (req, res) => {
+    let scripts = ["cart"];
+
     let productsLimited = await Product.findAll({
       where: { deleted: 0 },
       offset: 5,
       limit: 8,
     });
+
     cart = req.session.cart ? req.session.cart : productsLimited;
+
     res.render("users/cart", {
       title: "Carrito",
       css: "stylesCart",
       products: cart,
+      length: productsLimited.length,
+      scripts,
     });
   },
   collectionAdd: async (req, res) => {
