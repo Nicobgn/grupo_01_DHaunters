@@ -28,7 +28,12 @@ router.get("/universe/:universe", adminHandler, controller.universeOne);
 
 // Product Routes
 router.get("/product/create", adminHandler, controller.productCreate);
-router.post("/product/create", upload, controller.productCreated);
+router.post(
+  "/product/create",
+  upload,
+  validationProductCreate,
+  controller.productCreated
+);
 // router.get("/search", controller.productSearch);
 router.get("/:name", controller.productDetail);
 router.post("/:name/delete", adminHandler, controller.productDelete);

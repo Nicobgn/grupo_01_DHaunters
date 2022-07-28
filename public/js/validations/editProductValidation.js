@@ -2,8 +2,8 @@ const formulario = document.querySelector("form");
 const inputs = document.querySelectorAll("form input");
 
 const expresiones = {
-  description: /^[a-zA-Z0-9À-ÿ\_\-\s]{1,25}$/,
-  descriptionLong: /^[a-zA-Z0-9À-ÿ\_\-\s]{25,100}$/,
+  description: /^.{1,50}$/,
+  descriptionLong: /^.{50,1000}$/,
   category: /^[a-zA-ZÀ-ÿ\_\-\s]{1,20}$/,
   name: /^[a-zA-ZÀ-ÿ0-9\s]{3,40}$/, // Letras y espacios, pueden llevar acentos y numeros
   password: /^.{8,16}$/, // 4 a 12 digitos.
@@ -17,7 +17,6 @@ let campos = {
   price: false,
   shortDesc: false,
   longDesc: false,
-  universe: false,
   img: false,
 };
 
@@ -34,9 +33,6 @@ const validarFormulario = (e) => {
       break;
     case "longDesc":
       validarCampo(expresiones.descriptionLong, e.target, "longDesc");
-      break;
-    case "universe":
-      validarCampo(expresiones.name, e.target, "universe");
       break;
   }
 };
@@ -85,7 +81,6 @@ formulario.addEventListener("submit", (e) => {
     campos.price &&
     campos.shortDesc &&
     campos.longDesc &&
-    campos.universe &&
     campos.img
   ) {
     document.querySelector("#error-msg").classList.add("oculto");

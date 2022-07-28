@@ -71,6 +71,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
 }
 button {
   background: rgba(50, 150, 150, 1);
@@ -79,7 +80,7 @@ button {
   border-radius: 10px;
   font-weight: bolder;
   bottom: 0;
-  margin: 2% 2%;
+  margin: 1%;
 }
 
 button:hover,
@@ -96,6 +97,30 @@ button:focus {
 
 .description p {
   padding-top: 10px;
+}
+
+figure{
+  object-fit: contain;
+}
+.imgCont {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+figure {
+  border: 5px solid rgba(255, 255, 255, 0.55);
+  width: 50%;
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 250px;
+  min-height: 250px;
+}
+
+.imgcont figure img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 481px) {
@@ -138,11 +163,16 @@ button:focus {
 @media (min-width: 769px) {
   .card-1 {
     display: flex;
-    flex-direction: row;
   }
   .product {
     display: flex;
     flex-direction: row;
     max-width: 700px;
   }
+
+  
+
+
 }
+
+

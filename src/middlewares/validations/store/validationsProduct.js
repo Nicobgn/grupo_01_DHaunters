@@ -59,7 +59,7 @@ const validations = [
   body("longDesc")
     .notEmpty()
     .withMessage("Debes realizar la descripcion completa del producto"),
-  body("category").notEmpty().withMessage("Debes seleccionar una categoria"),
+  body("tier").notEmpty().withMessage("Debes seleccionar una categoria"),
   body("universe").notEmpty().withMessage("Debes seleccionar un universo"),
 ];
 
