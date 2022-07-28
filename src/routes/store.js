@@ -2,7 +2,6 @@
 const path = require("path");
 const multer = require("multer");
 const express = require("express");
-const productCreate = require('../middlewares/validations/store/validationsProduct')
 
 // Requiring Controller && Middlewares
 const controller = require("../controllers/store");
@@ -28,11 +27,7 @@ router.get("/universe/:universe", adminHandler, controller.universeOne);
 
 // Product Routes
 router.get("/product/create", adminHandler, controller.productCreate);
-router.post(
-  "/product/create",
-  upload.single("image"),
-  controller.productCreated
-);
+router.post("/product/create", upload, controller.productCreated);
 // router.get("/search", controller.productSearch);
 router.get("/:product_id", controller.productDetail);
 router.post("/:name/delete", adminHandler, controller.productDelete);

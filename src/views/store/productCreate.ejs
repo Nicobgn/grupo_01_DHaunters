@@ -2,7 +2,7 @@
   <%- include('../partials/header') %>
     <main>
       <div>
-        <form action="createProduct" method="post" enctype="multipart/form-data">
+        <form action="/store/product/create" method="post" enctype="multipart/form-data">
           <h3>Formulario de creacion de producto</h3>
 
         
@@ -47,24 +47,6 @@
                 <% } %> 
                  <!--if con donde vienen los mensajes de error de parte del front -->
                 <div class="error-msg oculto price">Solo se permiten numeros, puntos y comas</div>
-
-            </div>
-            <div class="description">
-              <!-- <label for="img">Ingrese la foto de su producto</label>
-              <input type="file" name="img" id="img" class="drawer" required /> -->
-              <label for="img" class="<%= locals.errors && errors.img ? 'drawer-red' : 'drawer' %>">
-                <span id="info">Ingrese la foto de su producto</span>
-              </label>
-              <input id="img" name="img" onchange='cambiar()' type="file" style='display: none;' />
-              
-              <% if (locals.errors && errors.img) { %>
-                <div class="error-msg">
-                <%= errors.img.msg %> 
-                </div>
-              <% } %>
-
-              <div class="error-msg oculto img"> El archivo no es permitido </div>
-              
 
             </div>
 
@@ -112,7 +94,7 @@
                 <option value="" disabled selected>Categoria</option>
 
                 <% for (let tier of tiers) {  %>
-                  <option value=" <%= tier %>  "
+                  <option value="<%= tier.tier_id %>"
                   <%=  locals.oldDate && (tier == oldDate.tier) ? 'selected' : null %> 
                   > <%= tier.value %> </option>
                 <% } %> 
@@ -130,7 +112,7 @@
                 <option value="" disabled selected>Universo</option>
 
                 <% for (let universe of universes) {  %>
-                  <option value=" <%= universe %>  "
+                  <option value="<%= universe.universe_id %>"
                   <%=  locals.oldDate && (universe == oldDate.universe) ? 'selected' : null %> 
                   > <%= universe.universe %> </option>
                 <% } %> 
@@ -141,6 +123,24 @@
                 <%= errors.universe.msg %>
                 </div> 
               <% } %> 
+
+            </div>
+            <div class="description">
+              <!-- <label for="img">Ingrese la foto de su producto</label>
+              <input type="file" name="img" id="img" class="drawer" required /> -->
+              <label for="img" class="<%= locals.errors && errors.img ? 'drawer-red' : 'drawer' %>">
+                <span id="info">Ingrese la foto de su producto</span>
+              </label>
+              <input id="img" name="img" onchange='cambiar()' type="file" style='display: none;' />
+              
+              <% if (locals.errors && errors.img) { %>
+                <div class="error-msg">
+                <%= errors.img.msg %> 
+                </div>
+              <% } %>
+
+              <div class="error-msg oculto img"> El archivo no es permitido </div>
+              
 
             </div>
             </div>
