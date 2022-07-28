@@ -71,7 +71,7 @@ const controller = {
         // Setting fields that doesn't came directly form the form
         let image = "default.png";
         if (req.file) {
-          return (image = tier + "/" + req.file.filename);
+          image = tier + "/" + req.file.filename;
         }
 
         let created_at = formattedDateDb;
@@ -109,17 +109,17 @@ const controller = {
     }
   },
   productDetail: async (req, res) => {
-    let product_id  = req.params.product_id;
+    let product_id = req.params.product_id;
     let product = await Product.findOne({
       where: {
         product_id: product_id,
       },
     });
-    console.log(product)
+    console.log(product);
     res.render("store/productDetail", {
       css: "stylesProDelta",
       title: `${product.name}`,
-      product
+      product,
     });
   },
   productDelete: async (req, res) => {

@@ -81,8 +81,7 @@ formulario.addEventListener("submit", (e) => {
     campos.name &&
     campos.price &&
     campos.shortDesc &&
-    campos.longDesc &&
-    campos.universe &&
+    campos.longDesc &&  
     campos.img
   ) {
     document.querySelector("#error-msg").classList.add("oculto");
