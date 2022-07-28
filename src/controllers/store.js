@@ -121,7 +121,7 @@ const controller = {
       });
       console.log(`El producto es ${product}`);
       res.render("store/productDetail", {
-        css: "stylesProDelta",
+        css: "stylesProDeta",
         title: `${product.name}`,
         product,
       });

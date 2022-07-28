@@ -64,6 +64,13 @@ main {
    background-color: rgba(0, 0, 0, 0.2);
 } */
 
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 section div.product-section-title {
   padding-left: 20px;
   padding-top: 8px;
@@ -79,15 +86,12 @@ section div.product-section-title h2 {
   font-weight: bolder;
 }
 
-.container-product > a {
-  margin: 14px 20px;
-  padding: 0;
-}
-
 .product {
   min-height: 60px;
   width: 70vw;
   /* height: 20%; */
+  margin-bottom: 14px;
+  padding: 20px;
   display: flex;
   justify-content: flex-start;
   background: rgba(15, 139, 141, 1);
@@ -116,30 +120,6 @@ section div.product-section-title h2 {
   border-color: rgb(255, 249, 249, 0.6);
   border-radius: 1px 20px 2px 22px;
 }
-
-div.product__detail {
-  padding-top: 15px;
-  margin-left: 0px;
-}
-div.product__detail .product__detail__name {
-  letter-spacing: 1.5px;
-  font-size: 1.2rem;
-  font-family: "Comfortaa", cursive;
-}
-div.product__detail .product__detail__description {
-  letter-spacing: 1.3px;
-  font-size: 1.2rem;
-  padding-bottom: 5px;
-}
-div.product__detail .product__detail__price {
-  margin-top: 4px;
-  letter-spacing: 2px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  font-family: "Comfortaa", cursive;
-  padding-bottom: 5px;
-}
-
 .cart__product__detail__buttons,
 .cart__buttons {
   display: flex;
@@ -148,6 +128,7 @@ div.product__detail .product__detail__price {
   align-items: center;
   text-align: center;
 }
+
 .cart__buttons {
   display: inline;
   float: right;
@@ -162,6 +143,29 @@ div.product__detail .product__detail__price {
   padding: 2px 4px;
   border-radius: 5px;
   background-color: limegreen;
+}
+
+div.productDetail {
+  padding-top: 15px;
+  margin-left: 0px;
+}
+div.productDetail h3 {
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+  font-family: "Comfortaa", cursive;
+}
+div.productDetail p {
+  letter-spacing: 1.3px;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+div.productDetail h4 {
+  margin-top: 4px;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: "Comfortaa", cursive;
+  padding-bottom: 5px;
 }
 
 main section.productList div.fullCatalogue-icon {
