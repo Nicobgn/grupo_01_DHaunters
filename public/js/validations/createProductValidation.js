@@ -17,7 +17,6 @@ let campos = {
   price: false,
   shortDesc: false,
   longDesc: false,
-  universe: false,
   img: false,
 };
 
@@ -34,9 +33,6 @@ const validarFormulario = (e) => {
       break;
     case "longDesc":
       validarCampo(expresiones.descriptionLong, e.target, "longDesc");
-      break;
-    case "universe":
-      validarCampo(expresiones.name, e.target, "universe");
       break;
   }
 };

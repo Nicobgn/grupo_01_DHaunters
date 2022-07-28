@@ -109,12 +109,13 @@ const controller = {
     }
   },
   productDetail: async (req, res) => {
-    let { name } = req.params;
-    let product = Product.findOne({
+    let product_id  = req.params.product_id;
+    let product = await Product.findOne({
       where: {
-        product_id: name,
+        product_id: product_id,
       },
     });
+    console.log(product)
     res.render("store/productDetail", {
       css: "stylesProDelta",
       title: `${product.name}`,

@@ -34,7 +34,7 @@ router.post(
   controller.productCreated
 );
 // router.get("/search", controller.productSearch);
-router.get("/:name/", controller.productDetail);
+router.get("/:product_id", controller.productDetail);
 router.post("/:name/delete", adminHandler, controller.productDelete);
 router.get("/:name/edit");
 
