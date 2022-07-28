@@ -15,7 +15,7 @@
 					<div class="cart__item">
 						<figure class="cart__item__image">
 							<a href="/store/<%= product.name %>">
-								<img src="/img/products/<%= product.image %> " alt="<%= product.title %> ">
+								<img src="/img/products/<%= product.image %> " alt="<%= product.name %>">
 							</a>
 						</figure>
 						<div class="cart__item__caption">
@@ -59,7 +59,9 @@
 							</div>
 						</div>
 					</div>
-					<hr class="product-divider">
+					<% if (product.product_id !== products[products.length-1].product_id) { %>
+						<hr class="product-divider">
+					<% } %>
 				<% }) %>
 			</article>
 			<hr>
@@ -71,9 +73,17 @@
 					<div class="subtotal">
 						<p>Subtotal</p>
 						<h6>Items <%= length %></h6>
+						<% products.forEach(product => {
+							finalPrice += product.price
+						}); %> 
+						<p class="final__price">USD <%= finalPrice %></p>
 					</div>
-					<h4>USD 155</h4>
-					<button type="submit">Comprar</button>
+
+					<div class="checkout__button__holder">
+						<button 
+						type="submit" class="checkout__button" id="checkout__button"
+						>Comprar</button>
+					</div>
 				</div>
 			</article>
 	</section>
