@@ -114,7 +114,7 @@
                 <% for (let tier of tiers) {  %>
                   <option value=" <%= tier %>  "
                   <%=  locals.oldDate && (tier == oldDate.tier) ? 'selected' : null %> 
-                  > <%= categoria %> </option>
+                  > <%= tier.value %> </option>
                 <% } %> 
               </select>
 
@@ -132,7 +132,7 @@
                 <% for (let universe of universes) {  %>
                   <option value=" <%= universe %>  "
                   <%=  locals.oldDate && (universe == oldDate.universe) ? 'selected' : null %> 
-                  > <%= categoria %> </option>
+                  > <%= universe.universe %> </option>
                 <% } %> 
               </select>
 
