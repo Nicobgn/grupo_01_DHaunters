@@ -30,7 +30,7 @@ router.get("/product/create", adminHandler, controller.productCreate);
 router.post("/product/create", upload, controller.productCreated);
 // router.get("/search", controller.productSearch);
 router.get("/:product_id", controller.productDetail);
-router.post("/:name/delete", adminHandler, controller.productDelete);
+router.post("/:product_id/delete", adminHandler, controller.productDelete);
 router.get("/:name/edit");
 
 module.exports = router;

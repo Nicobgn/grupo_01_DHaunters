@@ -117,13 +117,13 @@ const controller = {
     });
     console.log(product);
     res.render("store/productDetail", {
-      css: "stylesProDelta",
+      css: "stylesProDeta",
       title: `${product.name}`,
       product,
     });
   },
   productDelete: async (req, res) => {
-    let { name } = req.params;
+    let { product_id } = req.params;
     try {
       Product.update(
         {
@@ -131,13 +131,13 @@ const controller = {
           deleted: 1,
         },
         {
-          where: { name: name },
+          where: { product_id: product_id },
         }
       );
       res.redirect("/store");
     } catch (error) {
       console.log(error);
-      res.redirect(`/store/${name}`);
+      res.redirect(`/store/${product_id}`);
     }
   },
   productEdit: async (req, res) => {

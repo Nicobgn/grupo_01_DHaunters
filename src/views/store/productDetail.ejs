@@ -7,7 +7,7 @@
         <img src="/img/products/<%=product.image%>"   alt="" />
       </figure>
       <div class="producDetails">
-        <a href=""><%= product.name %> </a>
+        <h2><%= product.name %> <h2>
         <p><%= product.short_desc %></p>
         <p><%= product.universe %></p>
       </div>
@@ -27,8 +27,13 @@
         <div class="button">
           <button>Comprar</button>
           <% if (locals.admin && locals.admin === true) { %>
-            <a href="/store/<%= product.name %>/edit"> Editar </a>
-            <a href="/store/<%= product.name %>/delete"> Eliminar </a>
+            <button><a href="/store/<%= product.product_id %>/edit"> Editar </a></button>
+          <form
+            action="/store/<%= product.product_id %>/delete"
+            method="POST"
+          >
+            <button type="submit">Eliminar</button>
+          </form>
           <% } %>
         </div>
       
