@@ -118,6 +118,7 @@ const controller = {
     res.render("store/productDetail", {
       css: "stylesProDelta",
       title: `${product.name}`,
+      product
     });
   },
   productDelete: async (req, res) => {

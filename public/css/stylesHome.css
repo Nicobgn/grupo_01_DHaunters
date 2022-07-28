@@ -37,8 +37,8 @@ main {
   width: 25px;
   height: 25px;
   padding: 5px;
-  color: crimson;
-  background-color: #9f000050;
+  color: whitesmoke;
+  background-color: rgba(15, 139, 141, 1);
   border-radius: 50%;
 }
 
@@ -51,12 +51,13 @@ main {
   background: none;
   width: 10px;
   height: 10px;
-  border: 2px solid crimson;
+  margin-top: 5px;
+  border: 2px solid rgba(15, 139, 141);
   border-radius: 50%;
   cursor: pointer;
 }
 .carousel__dot[checked] {
-  background-color: crimson;
+  background-color: rgba(15, 139, 141, 1);
 }
 
 /* section.productList {
