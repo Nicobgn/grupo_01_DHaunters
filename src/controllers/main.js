@@ -8,7 +8,7 @@ const Banner = db.Banner;
 
 const mainController = {
   home: async (req, res) => {
-    let scripts = ["misc/carouselBanner", "misc/navbarToggle"];
+    let scripts = ["misc/carouselBanner.js", "misc/navbarToggle.js"];
     let banners = await Banner.findAll({
       where: {
         deleted: 0,
