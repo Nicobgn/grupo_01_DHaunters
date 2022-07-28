@@ -15,7 +15,7 @@ main {
 }
 .carousel__slide {
   transform: translateX(-650px);
-  display: flex;
+  display: none;
   width: 100%;
 }
 .carousel__slide_image {
@@ -43,7 +43,7 @@ main {
 }
 
 .carousel__controls {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 5px;
 }
@@ -258,6 +258,13 @@ footer div.botFooter {
 
 h2 {
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  .carousel__slide,
+  .carousel__controls{
+    display: flex;
+  }
 }
 
 @media (min-width: 1260px) {
