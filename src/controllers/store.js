@@ -2,6 +2,7 @@
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
+const {Sequelize, QueryTypes} = require('sequelize');
 
 // Placing Abbreviations of Models
 const Product = db.Product;
@@ -121,15 +122,22 @@ const controller = {
       }
       console.log(name);
       let product = await Product.findOne({
-        where: {
-          name: name,
-        },
-      });
+      where: {
+        name: name
+      }
+    })
+    let universe = await Universe.findOne({
+      where: {
+        universe_id: product.universe_id
+      }
+    })
       console.log(`El producto es ${product}`);
+      await console.log(`El universo es` +universe);
       res.render("store/productDetail", {
         css: "stylesProDeta",
         title: `${product.name}`,
         product,
+        universe
       });
     } catch (error) {
       consoleLogError(error);
